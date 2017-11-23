@@ -1,5 +1,7 @@
 
 export const Colors = {
   accent: '#ee5e5e',
-  unselectedTab: '#666'
+  well: '#DC5959',
+  unselectedTab: '#666',
+  searchColor: '#E5DFDF'
 };

@@ -21,7 +21,6 @@ import TabNavigator from 'react-native-tab-navigator';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {Dimensions} from 'react-native';
 import { Colors } from './constants/Colors.js';
-
 const deviceW = Dimensions.get('window').width
 
 const basePx = 375
