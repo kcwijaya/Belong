@@ -8,6 +8,12 @@ import {
 import TabNavigator from 'react-native-tab-navigator';
 import Icon from 'react-native-vector-icons/FontAwesome'
 import {Dimensions} from 'react-native'
+import {
+  sliderstyle,
+  colors,
+  sliderWidth, 
+  itemWidth
+} from '../../components/sliders/SliderStyle.js';
 
 const deviceW = Dimensions.get('window').width
 
@@ -22,7 +28,9 @@ export default class QAHome extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Q & A
+          hello
+          {sliderWidth}
+          {itemWidth}
         </Text>
       </View>
     )

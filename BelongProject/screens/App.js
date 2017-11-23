@@ -11,9 +11,10 @@ import {
   Text,
   View
 } from 'react-native';
+import Colors from 'constants/Colors';
 import TabNavigator from 'react-native-tab-navigator';
-import Icon from 'react-native-vector-icons/FontAwesome'
-import {Dimensions} from 'react-native'
+import Icon from 'react-native-vector-icons/FontAwesome';
+import {Dimensions} from 'react-native';
 
 const deviceW = Dimensions.get('window').width
 
@@ -96,45 +97,45 @@ export default class TabDemo extends Component {
         <TabNavigator.Item
           selected={this.state.selectedTab === 'QA'}
           title="Q & A"
-          selectedTitleStyle={{color: "#ee5e5e"}}
-          renderIcon={() => <Icon name="question-circle-o" size={px2dp(22)} color="#666"/>}
-          renderSelectedIcon={() => <Icon name="question-circle-o" size={px2dp(22)} color="#ee5e5e"/>}
+          selectedTitleStyle={{color: Colors.accent}}
+          renderIcon={() => <Icon name="question-circle-o" size={px2dp(22)} color={Colors.unselectedTab}/>}
+          renderSelectedIcon={() => <Icon name="question-circle-o" size={px2dp(22)} color={Colors.accent}/>}
           onPress={() => this.setState({selectedTab: 'QA'})}>
           <QA/>
         </TabNavigator.Item>
         <TabNavigator.Item
           selected={this.state.selectedTab === 'resources'}
           title="Resources"
-          selectedTitleStyle={{color: "#ee5e5e"}}
-          renderIcon={() => <Icon name="cutlery" size={px2dp(22)} color="#666"/>}
-          renderSelectedIcon={() => <Icon name="cutlery" size={px2dp(22)} color="#ee5e5e"/>}
+          selectedTitleStyle={{color: Colors.accent}}
+          renderIcon={() => <Icon name="cutlery" size={px2dp(22)} color={Colors.unselectedTab}/>}
+          renderSelectedIcon={() => <Icon name="cutlery" size={px2dp(22)} color={Colors.accent}/>}
           onPress={() => this.setState({selectedTab: 'resources'})}>
           <Resources/>
         </TabNavigator.Item>
          <TabNavigator.Item
           selected={this.state.selectedTab === 'map'}
           title="Map"
-          selectedTitleStyle={{color: "#ee5e5e"}}
-          renderIcon={() => <Icon name="map-marker" size={px2dp(22)} color="#666"/>}
-          renderSelectedIcon={() => <Icon name="map-marker" size={px2dp(22)} color="#ee5e5e"/>}
+          selectedTitleStyle={{color: Colors.accent}}
+          renderIcon={() => <Icon name="map-marker" size={px2dp(22)} color={Colors.unselectedTab}/>}
+          renderSelectedIcon={() => <Icon name="map-marker" size={px2dp(22)} color={Colors.accent}/>}
           onPress={() => this.setState({selectedTab: 'map'})}>
           <Map/>
         </TabNavigator.Item>
          <TabNavigator.Item
           selected={this.state.selectedTab === 'people'}
           title="People"
-          selectedTitleStyle={{color: "#ee5e5e"}}
-          renderIcon={() => <Icon name="users" size={px2dp(22)} color="#666"/>}
-          renderSelectedIcon={() => <Icon name="users" size={px2dp(22)} color="#ee5e5e"/>}
+          selectedTitleStyle={{color: Colors.accent}}
+          renderIcon={() => <Icon name="users" size={px2dp(22)} color={Colors.unselectedTab}/>}
+          renderSelectedIcon={() => <Icon name="users" size={px2dp(22)} color={Colors.accent}/>}
           onPress={() => this.setState({selectedTab: 'people'})}>
           <People/>
         </TabNavigator.Item>
         <TabNavigator.Item
           selected={this.state.selectedTab === 'settings'}
           title="Settings"
-          selectedTitleStyle={{color: "#ee5e5e"}}
-          renderIcon={() => <Icon name="cog" size={px2dp(22)} color="#666"/>}
-          renderSelectedIcon={() => <Icon name="cog" size={px2dp(22)} color="#ee5e5e"/>}
+          selectedTitleStyle={{color: Colors.accent}}
+          renderIcon={() => <Icon name="cog" size={px2dp(22)} color={Colors.unselectedTab}/>}
+          renderSelectedIcon={() => <Icon name="cog" size={px2dp(22)} color={Colors.accent}/>}
           onPress={() => this.setState({selectedTab: 'settings'})}>
           <Settings/>
         </TabNavigator.Item>
