@@ -5,6 +5,13 @@
  */
 
 import React, { Component } from 'react';
+
+import QA from './screens/QA/QAHome.js';
+import Resources from './screens/Resources/ResourcesHome.js';
+import Map from './screens/Map/MapHome.js';
+import People from './screens/People/PeopleHome.js';
+import Settings from './screens/Settings/SettingsHome.js';
+
 import {
   AppRegistry,
   StyleSheet,
@@ -22,68 +29,6 @@ const basePx = 375
 function px2dp(px) {
   return px *  deviceW / basePx
 }
-
-class QA extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          QA
-        </Text>
-      </View>
-    )
-  }
-}
-
-class Resources extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Resources
-        </Text>
-      </View>
-    )
-  }
-}
-
-class Map extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Map
-        </Text>
-      </View>
-    )
-  }
-}
-
-class People extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          People
-        </Text>
-      </View>
-    )
-  }
-}
-
-class Settings extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Settings
-        </Text>
-      </View>
-    )
-  }
-}
-
-
 
 export default class TabDemo extends Component {
   state= {
