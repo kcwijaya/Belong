@@ -39,15 +39,14 @@ export default StyleSheet.create({
         marginBottom: 30
     },
     title: {
-        paddingHorizontal: 30,
+        paddingHorizontal: 15,
         backgroundColor: 'transparent',
         color: Colors.accent,
         fontSize: 20,
-        fontWeight: 'bold',
     },
     subtitle: {
         marginTop: 5,
-        paddingHorizontal: 30,
+        paddingHorizontal: 15,
         backgroundColor: 'transparent',
         color: Colors.unselectedTab,
         fontSize: 13,

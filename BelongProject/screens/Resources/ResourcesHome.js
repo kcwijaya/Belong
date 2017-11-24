@@ -10,9 +10,9 @@ import {
 
 import Icon from 'react-native-vector-icons/FontAwesome'
 import {Dimensions} from 'react-native'
-import { SearchBar } from 'react-native-elements'
 import ListingCarousel from '../../components/sliders/ListingCarousel.js'
-import { Colors } from '../../constants/Colors.js';
+import { Colors } from '../../constants/Colors.js'
+import Search from '../../components/Search.js'
 
 const deviceW = Dimensions.get('window').width
 const deviceH = Dimensions.get('window').height
@@ -87,14 +87,7 @@ export default class Resources extends Component {
     render () {
          return (
             <View style={styles.container}>
-                <SearchBar
-                  placeholder='Search'
-                  round
-                  containerStyle={styles.searchBarContainer}
-                  inputStyle={styles.searchBarInput}
-                  placeholderTextColor={Colors.searchColor}
-                  icon={{color:Colors.searchColor, name: 'search'}}
-                />
+                <Search/>
                 <StatusBar
                   translucent={true}
                   backgroundColor={Colors.accent}
@@ -133,14 +126,6 @@ const styles = StyleSheet.create({
   scrollviewContentContainer: {
     paddingBottom: 50
   },
-  searchBarContainer: {
-    backgroundColor: Colors.accent,
-    borderWidth: 0,
-    width: deviceW
-  },
-  searchBarInput: {
-    backgroundColor: Colors.well
-  },
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -148,15 +133,5 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     width: deviceW,
     height: deviceH
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
   },
 });
