@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 export default class LargeButton extends Component {
     render () {
         return (
-            <TouchableHighlight style={styles.container} onPress={()=>{}}>
+            <TouchableHighlight style={styles.container} onPress={this.props.onPress}>
                 <View style={styles.buttonContainer}>
                     <Icon name={this.props.icon} style={styles.icon}/>
                     <Text style={styles.title}>{this.props.title}</Text>

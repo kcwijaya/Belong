@@ -12,11 +12,7 @@ import LargeButton from '../../components/buttons/LargeButton.js'
 import Search from '../../components/Search.js'
 import { Colors } from '../../constants/Colors.js'
 const deviceW = Dimensions.get('window').width
-const basePx = 375
-
-function px2dp(px) {
-  return px *  deviceW / basePx
-}
+const deviceH = Dimensions.get('window').height;
 
 export default class People extends Component {
   render() {
@@ -29,12 +25,14 @@ export default class People extends Component {
             <LargeButton
               title="Peers"
               icon="user"
+              onPress={() => this.props.navigation.navigate("Peers")}
             />
           </Row>
           <Row>
            <LargeButton
               title="Mentors"
               icon="graduation-cap"
+              onPress={() => this.props.navigation.navigate("Mentors")}
             />
           </Row>
         </Col>
@@ -44,12 +42,14 @@ export default class People extends Component {
             <LargeButton
               title="Groups"
               icon="users"
+              onPress={() => this.props.navigation.navigate("Groups")}
             />
           </Row>
           <Row>
            <LargeButton
               title="All"
               icon="list"
+              onPress={() => this.props.navigation.navigate("All")}
             />
           </Row>
         </Col>

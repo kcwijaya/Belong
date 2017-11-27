@@ -1,18 +1,14 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
+import Router from './Router';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { TabNavigator, StackNavigator } from "react-navigation";
-import { Colors } from './constants/Colors';
+import Colors from './constants/Colors';
 
 import QA from './screens/QA/QAHome.js'
 import Resources from './screens/Resources/ResourcesHome.js'
 import Map from './screens/Map/MapHome.js'
-import People from './screens/People/index.js'
+import People from './screens/People/PeopleHome.js'
 import Settings from './screens/Settings/SettingsHome.js'
 import {Dimensions} from 'react-native';
 const deviceW = Dimensions.get('window').width
@@ -29,7 +25,7 @@ const RootNavigator = TabNavigator({
     navigationOptions: {
       tabBarLabel: 'QA',
       tabBarIcon: ({ tintColor }) => (
-        <Icon name="question-circle-o" size={px2dp(22)} color={tintColor}/>
+        <Icon name="question-circle-o" size={px2dp(22)} color={Colors.unselectedTab}/>
       ),
     },
   },
@@ -38,7 +34,7 @@ const RootNavigator = TabNavigator({
      navigationOptions: {
       tabBarLabel: 'Resources',
       tabBarIcon: ({ tintColor }) => (
-        <Icon name="cutlery" size={px2dp(22)} color={tintColor}/>
+        <Icon name="cutlery" size={px2dp(22)} color={Colors.unselectedTab}/>
       ),
     },
   },
@@ -47,7 +43,7 @@ const RootNavigator = TabNavigator({
      navigationOptions: {
       tabBarLabel: 'Map',
       tabBarIcon: ({ tintColor }) => (
-        <Icon name="map-marker" size={px2dp(22)} color={tintColor}/>
+        <Icon name="map-marker" size={px2dp(22)} color={Colors.unselectedTab}/>
       ),
     },
   },
@@ -56,7 +52,7 @@ const RootNavigator = TabNavigator({
      navigationOptions: {
       tabBarLabel: 'People',
       tabBarIcon: ({ tintColor }) => (
-        <Icon name="users" size={px2dp(22)} color={tintColor}/>
+        <Icon name="users" size={px2dp(22)} color={Colors.unselectedTab}/>
       ),
     },
   },
@@ -65,7 +61,7 @@ const RootNavigator = TabNavigator({
      navigationOptions: {
       tabBarLabel: 'Settings',
       tabBarIcon: ({ tintColor }) => (
-        <Icon name="cog" size={px2dp(22)} color={tintColor}/>
+        <Icon name="cog" size={px2dp(22)} color={Colors.unselectedTab}/>
       ),
     },
   }
@@ -75,9 +71,8 @@ const RootNavigator = TabNavigator({
   animationEnabled: true,
   tabBarOptions: {
     activeTintColor: Colors.accent,
-    inactiveTintColor: Colors.unselectedTab,
   },
-  initialRouteName: 'Map',
+  initialRouteName: 'Map'
 });
 
 export default RootNavigator;

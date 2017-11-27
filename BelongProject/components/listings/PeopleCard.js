@@ -2,37 +2,44 @@ import React, {Component} from "react";
 import {
 	StyleSheet,
 	View, 
-	Text, 
-	Button,
-	TouchableHighlight
+	TouchableHighlight,
+	Image,
 } from "react-native";
+import { Col, Row, Grid } from "react-native-easy-grid";
 import { Colors } from '../../constants/Colors.js'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import {Dimensions} from 'react-native'
+import { Container, Card, CardItem, Body, Content, Header, Left, Right, Title, Button, Text } from "native-base";
 
 const deviceW = Dimensions.get('window').width
 
 
-export default class QACard extends Component {
+export default class PeopleCard extends Component {
 	constructor(props) {
 		super(props);
 	}
+
 	render() {
 		return (
 			<View style={styles.container}>
 				<TouchableHighlight style={styles.entry} >
 					<View style={styles.task}>
-						<View style={styles.taskText}>
-			            	<Text numberOfLines={1} style={styles.title}> {this.props.QAInfo.question} </Text>
-				            <View style={styles.buttonGroup}>
-								<TouchableHighlight style={styles.answerButton}>
-					        		<Text style={styles.buttonText}> Answer </Text>
-					        	</TouchableHighlight>
-					        	<View style={{width: 10}} />
-								<TouchableHighlight style={styles.bookmarkButton}>
-						        	<Text style={styles.buttonText}> Bookmark </Text>
-					        	</TouchableHighlight>
-				        	</View>
+						<View style={styles.taskText} >
+							<Grid>
+								<Col size={25}> 
+					    			<Image 
+					    				source={this.props.PeopleInfo.img} 
+					    				style={styles.profpic} 
+					    			/>
+								</Col>
+								<Col size={75}>
+				        			<Text 
+				        				numberOfLines={1} 
+				        				style={styles.title}>
+				        			{this.props.PeopleInfo.name} 
+				        			</Text>
+								</Col>
+							</Grid>
 			            </View>
 			        </View>
 			    </TouchableHighlight>
@@ -47,6 +54,12 @@ export default class QACard extends Component {
 const styles = StyleSheet.create({
 	container: {
 		height: 75
+	},
+	profpic: {
+	  	width: 40,
+	 	height: 40,
+	    borderRadius: 20,
+	    backgroundColor: 'red'
 	},
 	buttonText: {
 		textAlign: 'center',
@@ -93,12 +106,10 @@ const styles = StyleSheet.create({
   		marginTop: 10
   	},
 	title: {
-		marginTop: 5,
+		marginTop: 8,
 	    marginRight: 30, 
 	    color: 'black',
-	    marginLeft: 15,
-	    fontSize: 16,
-	    textAlign: 'center'
+	    fontSize: 20,
     },
     creator: {
     	marginLeft: 15,
@@ -109,12 +120,14 @@ const styles = StyleSheet.create({
     },
     taskText: {
     	flex: 4,
+    	flexDirection: 'row',
+    	padding: 15
     },
 	task: {
 	    backgroundColor: 'white',
 	    marginTop: 0, 
 	    flexDirection: 'column',
-	    width: deviceW
+	    width: deviceW,
   	},
   	chevron: {
   		alignSelf: 'center',
