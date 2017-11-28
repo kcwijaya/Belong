@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
-  View
+  View,
+  Alert
 } from 'react-native';
 import { Container, Card, CardItem, Body, Content, Header, Left, Right, Title, Button, Text } from "native-base";
 import Icon from 'react-native-vector-icons/FontAwesome'
@@ -12,7 +13,7 @@ import LargeButton from '../../components/buttons/LargeButton.js'
 import Search from '../../components/Search.js'
 import { Colors } from '../../constants/Colors.js'
 import PeopleListingView from '../../components/listings/PeopleListingView.js'
-
+import renderIf from '../../components/renderIf.js'
 const data = [
   {
     name: "Kimberly Wijaya",
@@ -62,53 +63,54 @@ const data = [
 ];
 
 export default class Mentors extends Component {
-   static navigationOptions = ({ navigation }) => ({
-    header: (
-      <Header>
+  constructor(){
+    super();
+    this.state = {
+      showSearch: false
+    }
+    this.toggleSearch = this.toggleSearch.bind(this);
+  }
+
+  static navigationOptions = ({ navigation }) => ({
+    header: null
+  });
+
+  render() {
+    return (
+      <View style = {styles.container}>
+       <Header>
         <Left>
-          <Button transparent onPress={() => navigation.goBack()}>
+          <Button transparent onPress={() => this.props.navigation.goBack()}>
             <Icon size={20} name="chevron-left" color={Colors.accent}/>
           </Button>
         </Left>
         <Body>
           <Title color={Colors.accent}>Mentors</Title>
         </Body>
-        <Right />
+        <Right>
+          <Button transparent onPress={() => this.toggleSearch()}>
+            <Icon size={20} name="search" color={this.state.showSearch ? Colors.pressed : Colors.accent}/>
+          </Button>
+        </Right>
       </Header>
-    )
-  });
-
-  render() {
-    return (
-      <View style = {styles.container}>
-        <Search/>
+        {this.state.showSearch && (<Search/>)}
         <PeopleListingView
           people={data}
         />
       </View>
     )
   }
+
+  toggleSearch = () => {
+    console.log("TOGGLING SEARCH");
+    this.setState({showSearch: !this.state.showSearch})
+    console.log("SHOW SEARCH IS NOW: " + this.state.showSearch);
+    this.forceUpdate();
+  }
 }
 
 const styles = StyleSheet.create({
-  grid: {
-    marginLeft: 30,
-    marginTop: 50,
-  },
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
   },
 });

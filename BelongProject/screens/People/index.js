@@ -7,10 +7,15 @@ import All from "./AllList.js";
 
 import { StackNavigator } from "react-navigation";
 
-export default (TabNav = StackNavigator({
-  PeopleHome: { screen: PeopleHome },
-  Peers: { screen: Peers },
-  Mentors: { screen: Mentors },
-  Groups: { screen: Groups },
-  All: { screen: All },
-}));
+export default (DrawNav = StackNavigator(
+	{
+	  PeopleHome: { screen: PeopleHome },
+	  Peers: { screen: Peers },
+	  Mentors: { screen: Mentors },
+	  Groups: { screen: Groups },
+	  All: { screen: All },
+	},
+	{
+		initialRouteName: 'PeopleHome'
+	}
+));

@@ -10,7 +10,7 @@ import {
 import TabNavigator from 'react-native-tab-navigator';
 import Icon from 'react-native-vector-icons/FontAwesome'
 import {Dimensions} from 'react-native'
-
+import Legend from '../../components/Legend.js'
 const deviceW = Dimensions.get('window').width
 const deviceH = Dimensions.get('window').height
 
@@ -25,6 +25,7 @@ export default class Map extends Component {
     return (
       <ScrollView
           style={styles.container}>
+          <Legend />
            <MapView
               style={styles.map}
               region={{ latitude: 37.2969326, 
@@ -41,7 +42,6 @@ export default class Map extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 15,
   },
   welcome: {
     fontSize: 20,
@@ -56,5 +56,6 @@ const styles = StyleSheet.create({
   map: {
     width: deviceW, 
     height: deviceH,
+    zIndex: -10
   },
 });

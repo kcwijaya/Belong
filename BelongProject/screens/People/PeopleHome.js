@@ -11,10 +11,15 @@ import { Col, Row, Grid } from "react-native-easy-grid";
 import LargeButton from '../../components/buttons/LargeButton.js'
 import Search from '../../components/Search.js'
 import { Colors } from '../../constants/Colors.js'
+
 const deviceW = Dimensions.get('window').width
 const deviceH = Dimensions.get('window').height;
 
 export default class People extends Component {
+  static navigationOptions = ({ navigation }) => ({
+    header: null
+  });
+
   render() {
     return (
       <View style={styles.container}>
@@ -66,18 +71,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+  
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+
 });

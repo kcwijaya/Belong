@@ -63,31 +63,17 @@ export default class QAHome extends Component {
   render() {
     return (
       <View style={styles.container}>
-      <Search/>
-      <QAListingView 
-        questions={data}
-      />
+        <Search/>
+        <QAListingView 
+          questions={data}
+        />
      </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
-  grid: {
-    marginLeft: 30,
-    marginTop: 50,
-  },
   container: {
     backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
   },
 });
