@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import {
-  Text,
   View,
   ScrollView,
 } from 'react-native';
+import { Container, Card, CardItem, Body, Content, Header, Left, Right, Title, Button, Text } from "native-base";
 
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/FontAwesome'
@@ -35,22 +35,24 @@ export default class ListingCarousel extends Component {
         };
     }
 
-    _renderItem ({item, index}) {
+    _renderItem = ({item, index}) => {
         return (
             <SliderEntry
               data={item}
               even={(index + 1) % 2 === 0}
+              navigation={this.props.navigation}
             />
         );
     }
 
-    _renderItemWithParallax ({item, index}, parallaxProps) {
+    _renderItemWithParallax =  ({item, index}, parallaxProps) => {
         return (
             <SliderEntry
               data={item}
               even={(index + 1) % 2 === 0}
               parallax={true}
               parallaxProps={parallaxProps}
+              navigation={this.props.navigation}
             />
         );
     }
@@ -69,10 +71,20 @@ export default class ListingCarousel extends Component {
     render () {
          return (
            <View style={sliderstyle.exampleContainer}>
-                <Text style={sliderstyle.title}>{this.props.title}</Text>
-                <Text style={sliderstyle.subtitle}>
-                   {this.props.subtitle}
-                </Text>
+                <View> 
+                  <Header style={sliderstyle.header}>
+                  <Left>
+                  <Text style={sliderstyle.title}>{this.props.title}</Text>
+                  </Left>
+                  <Right>
+                  <Button transparent style={sliderstyle.button} onPress={() => {this.props.navigation.navigate("ResourcesCategory", {category: this.props.title})}}>
+                  <Text style={sliderstyle.subtitle}>
+                     {this.props.subtitle}
+                  </Text>
+                  </Button>
+                  </Right>
+                  </Header>
+                </View>
                 <Carousel
                   ref={(c) => { if (!this.state.slider1Ref) { this.setState({ slider1Ref: c }); } }}
                   data={this.props.data}

@@ -3,20 +3,18 @@ import {
   AppRegistry,
   StyleSheet,
   View,
-  ScrollView,
-  StatusBar
+  Alert
 } from 'react-native';
-import { Container, Card, CardItem, Body, Content, Header, Left, Right, Title, Button, Text } from "native-base";
+import {Header, Body, Left, Right, Title, Button, Text} from "native-base";
 import Icon from 'react-native-vector-icons/FontAwesome'
 import {Dimensions} from 'react-native'
+import { Col, Row, Grid } from "react-native-easy-grid";
+import LargeButton from '../../components/buttons/LargeButton.js'
 import Search from '../../components/Search.js'
-import ListingCarousel from '../../components/sliders/ListingCarousel.js'
-import { Colors } from '../../constants/Colors.js';
+import { Colors } from '../../constants/Colors.js'
+import ResourceListingView from '../../components/listings/ResourceListingView.js'
 
-const deviceW = Dimensions.get('window').width
-const deviceH = Dimensions.get('window').height
-
-const ENTRIES1 = [
+const data = [
   {
     name: "Palo Alto Food Bank",
     img: require('../../imgs/placeholders/resource.jpg'),
@@ -101,8 +99,7 @@ const ENTRIES1 = [
   }
 ];
 
-export default class ResourcesHome extends Component {
-
+export default class ResourcesBookmarks extends Component {
   constructor(){
     super();
     this.state = {
@@ -112,59 +109,34 @@ export default class ResourcesHome extends Component {
   }
 
   static navigationOptions = ({ navigation }) => ({
-      header: null
-  });    
+    header: null
+  });
 
-
-  render () {
-       return (
-          <View style={styles.container}>
-              <Header style={styles.header}>
-              <Left>
-                <Button transparent onPress={() => this.props.navigation.goBack()}>
-                  <Icon size={20} name="chevron-left" color={Colors.accent}/>
-                </Button>
-              </Left>
-              <Body>
-                <Title color={Colors.accent}>All Resources</Title>
-              </Body>
-              <Right>
-                <Button transparent onPress={() => this.toggleSearch()}>
-                  <Icon size={20} name="search" color={this.state.showSearch ? Colors.pressed : Colors.accent}/>
-                </Button>
-              </Right>
-              </Header>
-              {this.state.showSearch && <Search />}
-
-              <StatusBar
-                translucent={true}
-                backgroundColor={Colors.accent}
-                tintColorSearch={Colors.accent}
-                barStyle={'light-content'}
-              />
-              { this.gradient }
-              <ScrollView
-                style={styles.scrollview}
-                contentContainerStyle={styles.scrollviewContentContainer}
-                indicatorStyle={'white'}
-                scrollEventThrottle={200}
-                directionalLockEnabled={true}
-              >
-                <ListingCarousel
-                  title='Food Banks'
-                  subtitle='See all'
-                  data={ENTRIES1}
-                  navigation={this.props.navigation}
-                />
-                 <ListingCarousel
-                  title='Home Shelters'
-                  subtitle='See all'
-                  data={ENTRIES1}
-                  navigation={this.props.navigation}
-                />
-              </ScrollView>
-          </View>
-      );
+  render() {
+    return (
+      <View style = {styles.container}>
+       <Header>
+        <Left>
+          <Button transparent onPress={() => this.props.navigation.goBack()}>
+            <Icon size={20} name="chevron-left" color={Colors.accent}/>
+          </Button>
+        </Left>
+        <Body>
+          <Title color={Colors.accent}>{this.props.navigation.state.params.category}</Title>
+        </Body>
+        <Right>
+          <Button transparent onPress={() => this.toggleSearch()}>
+            <Icon size={20} name="search" color={this.state.showSearch ? Colors.pressed : Colors.accent}/>
+          </Button>
+        </Right>
+      </Header>
+        {this.state.showSearch && (<Search/>)}
+        <ResourceListingView
+          resources={data}
+          navigation={this.props.navigation}
+        />
+      </View>
+    )
   }
 
   toggleSearch = () => {
@@ -176,35 +148,7 @@ export default class ResourcesHome extends Component {
 }
 
 const styles = StyleSheet.create({
-  scrollview: {
-      flex: 1,
-      backgroundColor: 'white'
-  },
-  header: {
-    borderWidth: 0
-  },
-  scrollviewContentContainer: {
-    paddingBottom: 50
-  },
-  searchBarContainer: {
-    backgroundColor: Colors.accent,
-    borderWidth: 0,
-    width: deviceW
-  },
-  searchBarInput: {
-    backgroundColor: Colors.well
-  },
   container: {
     flex: 1,
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
   },
 });

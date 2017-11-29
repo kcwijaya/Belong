@@ -10,7 +10,7 @@ import { TabNavigator, StackNavigator } from "react-navigation";
 import { Colors } from './constants/Colors';
 
 import QA from './screens/QA/QAHome.js'
-import Resources from './screens/Resources/ResourcesHome.js'
+import Resources from './screens/Resources/index.js'
 import Map from './screens/Map/MapHome.js'
 import People from './screens/People/index.js'
 import Settings from './screens/Settings/SettingsHome.js'

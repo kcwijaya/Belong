@@ -45,12 +45,11 @@ export default StyleSheet.create({
         fontSize: 20,
     },
     subtitle: {
-        marginTop: 5,
-        paddingHorizontal: 15,
         backgroundColor: 'transparent',
         color: Colors.unselectedTab,
         fontSize: 13,
         fontStyle: 'italic',
+        textAlign: 'right'
     },
     slider: {
         marginTop: 25
@@ -66,5 +65,8 @@ export default StyleSheet.create({
         borderRadius: 4,
         marginHorizontal: 8
     },
-
+    header: {
+        backgroundColor: 'white',
+        borderWidth: 0
+    },
 });

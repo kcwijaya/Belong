@@ -11,4 +11,5 @@ export const Colors = {
   food: '#70BE51',
   shelters: '#38A6E1',
   pressed: '#A43838',
+  offwhite: '#F5F4F4'
 };

@@ -65,29 +65,6 @@ const styles = StyleSheet.create({
 		textAlign: 'center',
 		color: 'white'
 	},
-	answerButton: {
-	    backgroundColor:Colors.answer,
-	    borderRadius:10,
-	    borderWidth: 2,
-	    borderColor: '#fff',
-	    width: 120,
-	    height: 30,
-	    paddingBottom: 14,
-	    paddingTop: 4,
-	    overflow: 'hidden'
-
-	},
-	bookmarkButton: {
-		backgroundColor: Colors.accent,
-		borderRadius:10,
-	    borderWidth: 2,
-	    borderColor: '#fff',
-	    width: 120,
-	    height: 30, 
-		paddingBottom: 14,
-		paddingTop: 4,
-		overflow: 'hidden'
-	},
 	divide: {
 	    backgroundColor: '#F2F2F2', 
 	    alignSelf: 'stretch', 
@@ -99,24 +76,11 @@ const styles = StyleSheet.create({
   		borderColor: '#F2F2F2',
   		borderWidth: 2
   	},
-  	buttonGroup: {
-  		flexDirection: 'row', 
-  		flex: 1,
-  		justifyContent: 'center',
-  		marginTop: 10
-  	},
 	title: {
 		marginTop: 8,
 	    marginRight: 30, 
 	    color: 'black',
 	    fontSize: 20,
-    },
-    creator: {
-    	marginLeft: 15,
-    	color: '#706C6C',
-    	fontSize: 14,
-    	marginTop: 5,
-    	marginBottom: 5,
     },
     taskText: {
     	flex: 4,
@@ -128,9 +92,5 @@ const styles = StyleSheet.create({
 	    marginTop: 0, 
 	    flexDirection: 'column',
 	    width: deviceW,
-  	},
-  	chevron: {
-  		alignSelf: 'center',
-  		marginRight: 15,
   	},
 });

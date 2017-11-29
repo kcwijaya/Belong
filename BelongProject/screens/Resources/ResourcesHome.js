@@ -28,16 +28,16 @@ export default class Resources extends Component {
         <Row>
           <Col>
             <LargeButton
-              title="list"
-              icon="user"
-              onPress={() => this.props.navigation.navigate("Peers")}
+              title="All"
+              icon="list"
+              onPress={() => this.props.navigation.navigate("ResourcesAll")}
             />
           </Col>
           <Col>
            <LargeButton
               title="Bookmarks"
               icon="bookmark"
-              onPress={() => this.props.navigation.navigate("Mentors")}
+              onPress={() => this.props.navigation.navigate("ResourcesBookmarks")}
             />
           </Col>
         </Row>
@@ -50,7 +50,7 @@ export default class Resources extends Component {
 const styles = StyleSheet.create({
   grid: {
     marginLeft: 30,
-    marginTop: 50,
+    marginTop: deviceH/4,
   },
   container: {
     flex: 1,
