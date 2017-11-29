@@ -78,9 +78,11 @@ export default class AnswerQuestion extends Component {
           {this.props.navigation.state.params.details}
         </Text>
 
-        <Text style={styles.asker}>
-          Asked by: {this.props.navigation.state.params.user}
-        </Text>
+        <TouchableHighlight onPress={() => this.props.navigation.navigate("ProfilePage", {img: require('../../imgs/placeholders/user.jpg'),name: this.props.navigation.state.params.user})}>
+          <Text style={styles.asker}>
+            Asked by: {this.props.navigation.state.params.user}
+          </Text>
+        </TouchableHighlight>
 
       </View>
       <View style={styles.dividerContainer}>

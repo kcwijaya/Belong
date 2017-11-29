@@ -23,10 +23,12 @@ export default class AnswerCard extends Component {
 			<View style={styles.container}>
 				<TouchableHighlight style={styles.entry} >
 					<View style={styles.task}>
-						<View style={styles.taskText}>
-			            	<Text numberOfLines={1} style={styles.title}> {this.props.AnswerInfo.user} </Text>
+						<TouchableHighlight onPress={() => this.props.navigation.navigate("ProfilePage", {img: require('../../imgs/placeholders/user.jpg'), name: this.props.AnswerInfo.user})}>
+							<View  style={styles.taskText}>
+			            		<Text numberOfLines={1} style={styles.title}> {this.props.AnswerInfo.user} </Text>
 				           	<Text style={styles.answer}> {this.props.AnswerInfo.answer} </Text>
-			            </View>
+			            	</View>
+			            </TouchableHighlight>
 			        </View>
 			    </TouchableHighlight>
 		        <View> 
@@ -90,6 +92,7 @@ const styles = StyleSheet.create({
 	    color: 'black',
 	    marginLeft: 15,
 	    fontSize: 16,
+	    color: Colors.accent,
     },
 
     taskText: {

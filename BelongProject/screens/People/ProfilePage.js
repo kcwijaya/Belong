@@ -47,20 +47,12 @@ export default class ProfilePage extends Component {
         source={this.props.navigation.state.params.img}
       />
 
-      {!this.props.navigation.state.params.is_mentor ? 
-      <PeerSummary
-        location={this.props.navigation.state.params.location}
-        about={this.props.navigation.state.params.about}
-      /> 
-      :
       <MentorSummary
         location={this.props.navigation.state.params.location}
         about={this.props.navigation.state.params.about}
         specialties={this.props.navigation.state.params.specialties}
         time={this.props.navigation.state.params.time}
       /> 
-
-      }
 
       { !this.props.navigation.state.params.is_saved ? 
        <View style={styles.buttonGroup}>
@@ -69,7 +61,7 @@ export default class ProfilePage extends Component {
             </TouchableHighlight>
             <View style={{width: 10}} />
         <TouchableHighlight style={styles.addButton}>
-              <Text style={styles.buttonText}> Add Contact </Text>
+              <Text style={styles.buttonText}> Add Peer </Text>
             </TouchableHighlight>
           </View>
       :
@@ -79,7 +71,7 @@ export default class ProfilePage extends Component {
             </TouchableHighlight>
             <View style={{width: 10}} />
         <TouchableHighlight style={styles.deleteButton}>
-              <Text style={styles.buttonText}> Delete Contact </Text>
+              <Text style={styles.buttonText}> Delete Peer </Text>
             </TouchableHighlight>
       </View>
     }
