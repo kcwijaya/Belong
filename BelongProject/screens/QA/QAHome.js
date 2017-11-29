@@ -12,6 +12,9 @@ import LargeButton from '../../components/buttons/LargeButton.js'
 import Search from '../../components/Search.js'
 import { Colors } from '../../constants/Colors.js'
 import QAListingView from '../../components/listings/QAListingView.js'
+import PlusIcon from '../../components/buttons/PlusIcon.js'
+
+
 const deviceW = Dimensions.get('window').width
 
 const basePx = 375
@@ -63,6 +66,7 @@ export default class QAHome extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <PlusIcon />
         <Search/>
         <QAListingView 
           questions={data}
@@ -76,4 +80,11 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#F5FCFF',
   },
+  plus: {
+    position: 'absolute', 
+    zIndex: 1, 
+    backgroundColor: 'transparent',
+    bottom: 60, 
+    right: 20
+  }
 });

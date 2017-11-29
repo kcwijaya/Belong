@@ -96,7 +96,9 @@ export default class Groups extends Component {
         {this.state.showSearch && (<Search/>)}
         <PeopleListingView
           people={data}
+          navigation={this.props.navigation}
         />
+
       </View>
     )
   }

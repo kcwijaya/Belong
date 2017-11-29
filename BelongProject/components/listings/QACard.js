@@ -100,13 +100,6 @@ const styles = StyleSheet.create({
 	    fontSize: 16,
 	    textAlign: 'center'
     },
-    creator: {
-    	marginLeft: 15,
-    	color: '#706C6C',
-    	fontSize: 14,
-    	marginTop: 5,
-    	marginBottom: 5,
-    },
     taskText: {
     	flex: 4,
     },
@@ -115,9 +108,5 @@ const styles = StyleSheet.create({
 	    marginTop: 0, 
 	    flexDirection: 'column',
 	    width: deviceW
-  	},
-  	chevron: {
-  		alignSelf: 'center',
-  		marginRight: 15,
   	},
 });

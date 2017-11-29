@@ -19,10 +19,14 @@ export default class PeopleCard extends Component {
 		super(props);
 	}
 
+
+
 	render() {
+		var payload = this.props.PeopleInfo;
+		payload.navigation = this.props.navigation;
 		return (
 			<View style={styles.container}>
-				<TouchableHighlight style={styles.entry} >
+				<TouchableHighlight style={styles.entry} onPress={() => {this.props.navigation.navigate('ProfilePage', payload)}} >
 					<View style={styles.task}>
 						<View style={styles.taskText} >
 							<Grid>

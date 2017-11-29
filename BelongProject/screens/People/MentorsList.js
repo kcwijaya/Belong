@@ -19,46 +19,64 @@ const data = [
     name: "Kimberly Wijaya",
     img: require('../../imgs/placeholders/user.jpg'),
     user_id: 1,
+    is_mentor: true,
   },
   {
     name: "Tristan Vanech",
     img: require('../../imgs/placeholders/user.jpg'),
     user_id: 2,
+    is_mentor: true,
+    is_saved: true,
+
   },
   {
     name: "Greg Ramel",
     img: require('../../imgs/placeholders/user.jpg'),
     user_id: 3,
+    is_mentor: true,
+
   },
   {
     name: "Cameron Andrews",
     img: require('../../imgs/placeholders/user.jpg'),
     user_id: 4,
+    is_mentor: true,
+
   },
   {
     name: "Eddy Rosales",
     img: require('../../imgs/placeholders/user.jpg'),
     user_id: 5,
+    is_mentor: true,
+
   },
   {
     name: "Belinda Esqueda",
     img: require('../../imgs/placeholders/user.jpg'),
     user_id: 6,
+    is_mentor: true,
+
   },
   {
     name: "Maria Gutierrez",
     img: require('../../imgs/placeholders/user.jpg'),
     user_id: 7,
+    is_mentor: true,
+
   },
   {
     name: "Virgilio Urmeneta",
     img: require('../../imgs/placeholders/user.jpg'),
     user_id: 8,
+    is_mentor: true,
+
   },
   {
     name: "Robert Wilkins",
     img: require('../../imgs/placeholders/user.jpg'),
     user_id: 9,
+    is_mentor: true,
+
   }
 ];
 
@@ -96,7 +114,9 @@ export default class Mentors extends Component {
         {this.state.showSearch && (<Search/>)}
         <PeopleListingView
           people={data}
+          navigation={this.props.navigation}
         />
+
       </View>
     )
   }

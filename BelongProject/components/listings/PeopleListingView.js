@@ -21,6 +21,7 @@ export default class PeopleListingView extends Component {
             <PeopleCard 
               PeopleInfo={PeopleInfo} 
               key={PeopleInfo.user_id}
+              navigation={this.props.navigation}
             /> 
           );
         })}
