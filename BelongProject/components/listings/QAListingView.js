@@ -21,6 +21,7 @@ export default class QAListingView extends Component {
             <QACard 
               QAInfo={QAInfo} 
               key={QAInfo.question_id}
+              navigation={this.props.navigation}
             /> 
           );
         })}

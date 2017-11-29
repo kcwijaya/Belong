@@ -9,7 +9,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { TabNavigator, StackNavigator } from "react-navigation";
 import { Colors } from './constants/Colors';
 
-import QA from './screens/QA/QAHome.js'
+import QA from './screens/QA/index.js'
 import Resources from './screens/Resources/index.js'
 import Map from './screens/Map/MapHome.js'
 import People from './screens/People/index.js'

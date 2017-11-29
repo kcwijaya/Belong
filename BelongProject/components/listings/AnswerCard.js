@@ -13,7 +13,7 @@ import {Dimensions} from 'react-native'
 const deviceW = Dimensions.get('window').width
 
 
-export default class QACard extends Component {
+export default class AnswerCard extends Component {
 	constructor(props) {
 		super(props);
 	}
@@ -21,11 +21,11 @@ export default class QACard extends Component {
 	render() {
 		return (
 			<View style={styles.container}>
-				<TouchableHighlight style={styles.entry} onPress={() => this.props.navigation.navigate("AnswerQuestion", this.props.QAInfo)}>
+				<TouchableHighlight style={styles.entry} >
 					<View style={styles.task}>
 						<View style={styles.taskText}>
-			            	<Text numberOfLines={1} style={styles.title}> {this.props.QAInfo.question} </Text>
-			            	<Text style={styles.user}> Asked by: {this.props.QAInfo.user} </Text>
+			            	<Text numberOfLines={1} style={styles.title}> {this.props.AnswerInfo.user} </Text>
+				           	<Text style={styles.answer}> {this.props.AnswerInfo.answer} </Text>
 			            </View>
 			        </View>
 			    </TouchableHighlight>
@@ -38,19 +38,34 @@ export default class QACard extends Component {
 }
 
 const styles = StyleSheet.create({
-	user: {
-		color: 'gray', 
-		fontStyle: 'italic', 
-		fontSize: 13,
-		textAlign: 'center',
-		marginTop: 5,
-	},
 	container: {
 		height: 75
 	},
 	buttonText: {
 		textAlign: 'center',
 		color: 'white'
+	},
+	answerButton: {
+	    backgroundColor:Colors.answer,
+	    borderRadius:10,
+	    borderWidth: 2,
+	    borderColor: '#fff',
+	    width: 120,
+	    height: 30,
+	    paddingBottom: 14,
+	    paddingTop: 4,
+	    overflow: 'hidden'
+	},
+	bookmarkButton: {
+		backgroundColor: Colors.accent,
+		borderRadius:10,
+	    borderWidth: 2,
+	    borderColor: '#fff',
+	    width: 120,
+	    height: 30, 
+		paddingBottom: 14,
+		paddingTop: 4,
+		overflow: 'hidden'
 	},
 	divide: {
 	    backgroundColor: '#F2F2F2', 
@@ -61,19 +76,31 @@ const styles = StyleSheet.create({
   		height: 75,
   		backgroundColor: 'white',
   		borderColor: '#F2F2F2',
-  		borderWidth: 2,
+  		borderWidth: 2
   	},
-
+  	buttonGroup: {
+  		flexDirection: 'row', 
+  		flex: 1,
+  		justifyContent: 'center',
+  		marginTop: 10
+  	},
 	title: {
+		marginTop: 5,
 	    marginRight: 30, 
-	    color: Colors.accent,
+	    color: 'black',
 	    marginLeft: 15,
 	    fontSize: 16,
-	    textAlign: 'center',
-	    marginTop: 10
     },
+
     taskText: {
     	flex: 4,
+    },
+    answer: {
+		marginTop: 5,
+	    marginRight: 30, 
+	    color: 'black',
+	    marginLeft: 15,
+	    fontSize: 14,
     },
 	task: {
 	    backgroundColor: 'white',
