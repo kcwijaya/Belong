@@ -12,7 +12,7 @@ import { Col, Row, Grid } from "react-native-easy-grid";
 import LargeButton from '../../components/buttons/LargeButton.js'
 import Search from '../../components/Search.js'
 import { Colors } from '../../constants/Colors.js'
-import PeopleListingView from '../../components/listings/PeopleListingView.js'
+import MessagesListingView from '../../components/listings/MessagesListingView.js'
 import renderIf from '../../components/renderIf.js'
 const data = [
   {
@@ -62,7 +62,7 @@ const data = [
   }
 ];
 
-export default class Peers extends Component {
+export default class MessagesHome extends Component {
   constructor(){
     super();
     this.state = {
@@ -78,8 +78,23 @@ export default class Peers extends Component {
   render() {
     return (
       <View style = {styles.container}>
-        {(<Search/>)}
-        <PeopleListingView
+       <Header>
+        <Left>
+          <Button transparent onPress={() => this.props.navigation.goBack()}>
+            <Icon size={20} name="chevron-left" color={Colors.accent}/>
+          </Button>
+        </Left>
+        <Body>
+          <Title color={Colors.accent}>Peers</Title>
+        </Body>
+        <Right>
+          <Button transparent onPress={() => this.toggleSearch()}>
+            <Icon size={20} name="search" color={this.state.showSearch ? Colors.pressed : Colors.accent}/>
+          </Button>
+        </Right>
+      </Header>
+        {this.state.showSearch && (<Search/>)}
+        <MessagesListingView
           people={data}
           navigation={this.props.navigation}
         />

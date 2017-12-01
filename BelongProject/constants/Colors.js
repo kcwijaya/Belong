@@ -12,5 +12,6 @@ export const Colors = {
   shelters: '#38A6E1',
   pressed: '#A43838',
   offwhite: '#F5F4F4',
-  message: '#38A6E1'
+  message: '#38A6E1',
+  buttongen: '#D84E4E'
 };

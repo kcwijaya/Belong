@@ -56,7 +56,7 @@ export default class ProfilePage extends Component {
 
       { !this.props.navigation.state.params.is_saved ? 
        <View style={styles.buttonGroup}>
-        <TouchableHighlight style={styles.answerButton} onPress={() => {this.props.navigation.navigate("Messages", payload)}}>
+        <TouchableHighlight style={styles.answerButton} onPress={() => {this.props.navigation.navigate("MessageScreen", payload)}}>
               <Text style={styles.buttonText}> Message </Text>
             </TouchableHighlight>
             <View style={{width: 10}} />
@@ -75,6 +75,11 @@ export default class ProfilePage extends Component {
             </TouchableHighlight>
       </View>
     }
+      <View style={{flexDirection: 'row', justifyContent: 'center'}}>
+        <TouchableHighlight style={styles.reportButton}>
+                <Text style={styles.buttonText}> Report/Block </Text>
+        </TouchableHighlight>
+      </View>
     </ScrollView>
       </View>
     )
@@ -92,7 +97,7 @@ const styles = StyleSheet.create({
     color: 'white'
   },
   answerButton: {
-      backgroundColor:Colors.message,
+      backgroundColor:Colors.buttongen,
       borderRadius:10,
       borderWidth: 2,
       borderColor: 'transparent',
@@ -104,7 +109,7 @@ const styles = StyleSheet.create({
 
   },
   deleteButton: {
-    backgroundColor: Colors.pressed,
+    backgroundColor: Colors.buttongen,
     borderRadius:10,
     borderWidth: 2,
     borderColor: 'transparent',
@@ -114,8 +119,20 @@ const styles = StyleSheet.create({
     paddingTop: 6,
     overflow: 'hidden'
   },
+    reportButton: {
+    backgroundColor: Colors.buttongen,
+    borderRadius:10,
+    borderWidth: 2,
+    borderColor: 'transparent',
+    width: 290,
+    height: 40, 
+    paddingBottom: 5,
+    paddingTop: 6,
+    overflow: 'hidden',
+    marginTop: 10
+  },
   addButton: {
-    backgroundColor: Colors.food,
+    backgroundColor: Colors.buttongen,
     borderRadius:10,
     borderWidth: 2,
     borderColor: 'transparent',
@@ -129,6 +146,6 @@ const styles = StyleSheet.create({
       flexDirection: 'row', 
       flex: 1,
       justifyContent: 'center',
-      marginTop: 40
+      marginTop: 20
     },
 });

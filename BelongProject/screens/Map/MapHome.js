@@ -5,12 +5,15 @@ import {
   StyleSheet,
   Text,
   View,
-  ScrollView
+  ScrollView,
+  TouchableOpacity,
 } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
 import Icon from 'react-native-vector-icons/FontAwesome'
 import {Dimensions} from 'react-native'
 import Legend from '../../components/Legend.js'
+import { Colors } from '../../constants/Colors.js' 
+
 const deviceW = Dimensions.get('window').width
 const deviceH = Dimensions.get('window').height
 
@@ -21,11 +24,22 @@ function px2dp(px) {
 }
 
 export default class Map extends Component {
+  constructor() {
+    super();
+    this.state = {
+      location: false
+    };
+    this.toggleLocation = this.toggleLocation.bind(this);
+  }
+
   render() {
     return (
       <ScrollView
           style={styles.container}>
           <Legend />
+          <TouchableOpacity style={styles.ghost} onPress={() => this.toggleLocation()}> 
+            <Icon size={20} style={styles.eye} name={this.state.location ? "eye" : "eye-slash"} color='white'/>
+          </TouchableOpacity>
            <MapView
               style={styles.map}
               region={{ latitude: 37.2969326, 
@@ -37,11 +51,31 @@ export default class Map extends Component {
         </ScrollView>
     );
   }
+
+  toggleLocation = () => {
+    this.setState({location: !this.state.location});
+    this.forceUpdate();
+  }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  ghost: {
+    borderWidth:1,
+   borderColor:'white',
+   alignItems:'center',
+   justifyContent:'center',
+   width:40,
+   height:40,
+   backgroundColor: Colors.accent,
+   borderRadius:20,
+   padding: 3,
+   overflow: 'hidden',
+   position: 'absolute', 
+   right: 20, 
+   top: 20
   },
   welcome: {
     fontSize: 20,

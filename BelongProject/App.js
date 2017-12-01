@@ -54,7 +54,7 @@ const RootNavigator = TabNavigator({
   People: {
     screen: People,
      navigationOptions: {
-      tabBarLabel: 'People',
+      tabBarLabel: 'Peers',
       tabBarIcon: ({ tintColor }) => (
         <Icon name="users" size={px2dp(22)} color={tintColor}/>
       ),

@@ -119,23 +119,6 @@ export default class ResourcesHome extends Component {
   render () {
        return (
           <View style={styles.container}>
-              <Header style={styles.header}>
-              <Left>
-                <Button transparent onPress={() => this.props.navigation.goBack()}>
-                  <Icon size={20} name="chevron-left" color={Colors.accent}/>
-                </Button>
-              </Left>
-              <Body>
-                <Title color={Colors.accent}>All Resources</Title>
-              </Body>
-              <Right>
-                <Button transparent onPress={() => this.toggleSearch()}>
-                  <Icon size={20} name="search" color={this.state.showSearch ? Colors.pressed : Colors.accent}/>
-                </Button>
-              </Right>
-              </Header>
-              {this.state.showSearch && <Search />}
-
               <StatusBar
                 translucent={true}
                 backgroundColor={Colors.accent}

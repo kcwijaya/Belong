@@ -12,7 +12,7 @@ export default class Legend extends Component {
                     <Row>
                         <Col size={5}></Col>
                         <Col size={20}>
-                           <Icon size={20} name='ios-pizza' color={Colors.food} />
+                           <Icon size={20} name='ios-pizza'  color={Colors.accent}/>
                         </Col>
                         <Col size={75}>
                             <Text style={styles.legend}> Food </Text>
@@ -21,16 +21,16 @@ export default class Legend extends Component {
                     <Row>
                         <Col size={5}></Col>
                         <Col size={20}>
-                            <Icon size={20} name='ios-school' color={Colors.mentors} />
+                            <Icon size={20} name='ios-school'   color={Colors.accent}/>
                         </Col>
                         <Col size={75}>
-                            <Text style={styles.legend}> Mentors </Text>
+                            <Text style={styles.legend}> Schools </Text>
                         </Col>
                     </Row>
                     <Row>
                         <Col size={5}></Col>                    
                         <Col size={20}>
-                            <Icon size={20} name='ios-home' color={Colors.shelters} />
+                            <Icon size={20} name='ios-home'   color={Colors.accent}/>
                         </Col>
                         <Col size={75}>
                             <Text style={styles.legend}> Shelters </Text>

@@ -12,63 +12,88 @@ import { Col, Row, Grid } from "react-native-easy-grid";
 import LargeButton from '../../components/buttons/LargeButton.js'
 import Search from '../../components/Search.js'
 import { Colors } from '../../constants/Colors.js'
-import PeopleListingView from '../../components/listings/PeopleListingView.js'
-import renderIf from '../../components/renderIf.js'
+import MessagesListingView from '../../components/listings/MessagesListingView.js'
+
 const data = [
   {
     name: "Kimberly Wijaya",
     img: require('../../imgs/placeholders/user.jpg'),
     user_id: 1,
+    message: "It's so nice to meet you",
+    is_saved: true,
   },
   {
     name: "Tristan Vanech",
     img: require('../../imgs/placeholders/user.jpg'),
     user_id: 2,
+    message: "It's so nice to meet you",
+    is_saved: true,
+
   },
   {
     name: "Greg Ramel",
     img: require('../../imgs/placeholders/user.jpg'),
     user_id: 3,
+    message: "It's so nice to meet you",
+    is_saved: true,
+
   },
   {
     name: "Cameron Andrews",
     img: require('../../imgs/placeholders/user.jpg'),
     user_id: 4,
+    message: "It's so nice to meet you",
+    is_saved: true,
+
   },
   {
     name: "Eddy Rosales",
     img: require('../../imgs/placeholders/user.jpg'),
     user_id: 5,
+    message: "It's so nice to meet you",
+    is_saved: true,
+
   },
   {
     name: "Belinda Esqueda",
     img: require('../../imgs/placeholders/user.jpg'),
     user_id: 6,
+    message: "It's so nice to meet you",
+    is_saved: true,
+
   },
   {
     name: "Maria Gutierrez",
     img: require('../../imgs/placeholders/user.jpg'),
     user_id: 7,
+    message: "It's so nice to meet you",
+    is_saved: true,
+
   },
   {
     name: "Virgilio Urmeneta",
     img: require('../../imgs/placeholders/user.jpg'),
     user_id: 8,
+    message: "It's so nice to meet you",
+    is_saved: true,
+
   },
   {
     name: "Robert Wilkins",
     img: require('../../imgs/placeholders/user.jpg'),
     user_id: 9,
+    message: "It's so nice to meet you",
+    is_saved: true,
+
   }
 ];
 
-export default class Peers extends Component {
+export default class Messages extends Component {
   constructor(){
     super();
     this.state = {
       showSearch: false
     }
-    this.toggleSearch = this.toggleSearch.bind(this);
   }
 
   static navigationOptions = ({ navigation }) => ({
@@ -78,21 +103,15 @@ export default class Peers extends Component {
   render() {
     return (
       <View style = {styles.container}>
-        {(<Search/>)}
-        <PeopleListingView
-          people={data}
+        <Search/>
+        <MessagesListingView
+          messages={data}
           navigation={this.props.navigation}
         />
       </View>
     )
   }
 
-  toggleSearch = () => {
-    console.log("TOGGLING SEARCH");
-    this.setState({showSearch: !this.state.showSearch})
-    console.log("SHOW SEARCH IS NOW: " + this.state.showSearch);
-    this.forceUpdate();
-  }
 }
 
 const styles = StyleSheet.create({

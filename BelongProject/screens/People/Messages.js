@@ -13,7 +13,7 @@ import { Col, Row, Grid } from "react-native-easy-grid";
 import { Colors } from '../../constants/Colors.js'
 import {GiftedChat} from 'react-native-gifted-chat'
 
-export default class Messages extends Component {
+export default class MessageScreen extends Component {
   constructor(){
     super();
   }
@@ -59,7 +59,9 @@ export default class Messages extends Component {
           </Button>
         </Left>
         <Body>
-          <Title color={Colors.accent}>{this.props.navigation.state.params.name.split(' ')[0]}</Title>
+          <TouchableHighlight onPress={() => this.props.navigation.navigate("ProfilePage", this.props.navigation.state.params)}>
+            <Title color={Colors.accent}>{this.props.navigation.state.params.name.split(' ')[0]}</Title>
+          </TouchableHighlight>
         </Body>
         <Right></Right>
       </Header>

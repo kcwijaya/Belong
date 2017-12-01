@@ -14,25 +14,23 @@ import { Container, Card, CardItem, Body, Content, Header, Left, Right, Title, B
 const deviceW = Dimensions.get('window').width
 
 
-export default class PeopleCard extends Component {
+export default class MessageCard extends Component {
 	constructor(props) {
 		super(props);
 	}
 
-
-
 	render() {
-		var payload = this.props.PeopleInfo;
+		var payload = this.props.MessageInfo;
 		payload.navigation = this.props.navigation;
 		return (
 			<View style={styles.container}>
-				<TouchableHighlight style={styles.entry} onPress={() => {this.props.navigation.navigate('ProfilePage', payload)}} >
+				<TouchableHighlight style={styles.entry} onPress={() => {this.props.navigation.navigate('MessageScreen', payload)}} >
 					<View style={styles.task}>
 						<View style={styles.taskText} >
 							<Grid>
 								<Col size={25}> 
 					    			<Image 
-					    				source={this.props.PeopleInfo.img} 
+					    				source={this.props.MessageInfo.img} 
 					    				style={styles.profpic} 
 					    			/>
 								</Col>
@@ -40,7 +38,12 @@ export default class PeopleCard extends Component {
 				        			<Text 
 				        				numberOfLines={1} 
 				        				style={styles.title}>
-				        			{this.props.PeopleInfo.name} 
+				        			{this.props.MessageInfo.name} 
+				        			</Text>
+				        			<Text 
+				        				numberOfLines={1} 
+				        				style={styles.message}>
+				        			{this.props.MessageInfo.message} 
 				        			</Text>
 								</Col>
 							</Grid>

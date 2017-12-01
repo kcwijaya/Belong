@@ -5,7 +5,7 @@ import Mentors from "./MentorsList.js";
 import Groups from "./GroupsList.js";
 import All from "./AllList.js";
 import ProfilePage from "./ProfilePage.js";
-import Messages from "./Messages.js";
+import MessageScreen from "./Messages.js";
 
 import { StackNavigator } from "react-navigation";
 
@@ -17,7 +17,7 @@ export default (DrawNav = StackNavigator(
 	  Groups: { screen: Groups },
 	  All: { screen: All },
 	  ProfilePage: { screen: ProfilePage},
-	  Messages: {screen: Messages},
+	  MessageScreen: {screen: MessageScreen},
 	},
 	{
 		initialRouteName: 'PeopleHome'

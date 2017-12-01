@@ -170,7 +170,9 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     width: 350,
     borderRadius: 20, 
-    marginTop: 10
+    marginTop: 10,
+    paddingLeft:0,
+    paddingTop:0,
   },
   questionContainer: {
     backgroundColor: 'white',

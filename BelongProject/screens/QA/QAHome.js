@@ -62,18 +62,21 @@ const data = [
     question: "Have you told your friends you're homeless?",
     question_id: 7,
     details: "Here are all the details of this question. Here are all the details of this question. Here are all the details of this question. Here are all the details of this question.",
+    user: "Robert Wilkins",
 
   },
   {
     question: "Have you ever gone busking?",
     question_id: 8,
     details: "Here are all the details of this question. Here are all the details of this question. Here are all the details of this question. Here are all the details of this question.",
+    user: "Robert Wilkins",
 
   },
   {
     question: "Best way to ask a friend if you can crash?",
     question_id: 9,
     details: "Here are all the details of this question. Here are all the details of this question. Here are all the details of this question. Here are all the details of this question.",
+    user: "Robert Wilkins",
 
   }
 ];
