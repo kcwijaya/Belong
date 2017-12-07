@@ -5,7 +5,7 @@ import Mentors from "./MentorsList.js";
 import Groups from "./GroupsList.js";
 import All from "./AllList.js";
 import ProfilePage from "./ProfilePage.js";
-import MessageScreen from "./Messages.js";
+import MessageScreen from "./MessageScreen.js";
 
 import { StackNavigator } from "react-navigation";
 

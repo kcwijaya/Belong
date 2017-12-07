@@ -32,6 +32,10 @@ export default class Map extends Component {
     this.toggleLocation = this.toggleLocation.bind(this);
   }
 
+  static navigationOptions = ({ navigation }) => ({
+    header: null
+  });
+
   render() {
     return (
       <ScrollView
@@ -47,6 +51,9 @@ export default class Map extends Component {
               latitudeDelta: 0.1,
               longitudeDelta: 0.1}}
             >
+            <MapView.Marker coordinate={{latitude: 37.2969326, longitude: -121.9578387}}>
+              <Icon name='location-arrow' size={40} color={Colors.accent} />
+            </MapView.Marker>
             </MapView>
         </ScrollView>
     );

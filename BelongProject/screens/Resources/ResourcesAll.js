@@ -11,7 +11,9 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 import {Dimensions} from 'react-native'
 import Search from '../../components/Search.js'
 import ListingCarousel from '../../components/sliders/ListingCarousel.js'
-import { Colors } from '../../constants/Colors.js';
+import { Colors } from '../../constants/Colors.js'
+import PlusIcon from '../../components/buttons/PlusIcon.js'
+import SearchIcon from '../../components/buttons/SearchIcon.js'
 
 const deviceW = Dimensions.get('window').width
 const deviceH = Dimensions.get('window').height
@@ -119,13 +121,9 @@ export default class ResourcesHome extends Component {
   render () {
        return (
           <View style={styles.container}>
-              <StatusBar
-                translucent={true}
-                backgroundColor={Colors.accent}
-                tintColorSearch={Colors.accent}
-                barStyle={'light-content'}
-              />
-              { this.gradient }
+              <SearchIcon style={{bottom: 11}} onPress={() => this.toggleSearch()}/>
+              <PlusIcon style={{bottom: 10}} onPress={()=> this.props.navigation.navigate('ResourceCreate')}/>
+              {this.state.showSearch && <Search/>}
               <ScrollView
                 style={styles.scrollview}
                 contentContainerStyle={styles.scrollviewContentContainer}
@@ -179,15 +177,5 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
   },
 });

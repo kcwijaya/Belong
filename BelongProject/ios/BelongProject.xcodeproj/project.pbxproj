@@ -62,6 +62,10 @@
 		D7D3CE927D1F4BF7959D118E /* rubicon-icon-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D51A024538EF498AADD3B7EF /* rubicon-icon-font.ttf */; };
 		C35FD8B946CE450F9395A43C /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18E3EE48E1094789B1CB4816 /* SimpleLineIcons.ttf */; };
 		55CC9E30FBC24FC293986EF7 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E667CB037CF4484B730F41F /* Zocial.ttf */; };
+		A7E4936E19CE49579C059A77 /* Raleway-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1911DA8C205A47D9AB402008 /* Raleway-Italic.ttf */; };
+		303D66E81088475C9AAAB1D7 /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 474457B0004C4A689DCD0682 /* Raleway-Regular.ttf */; };
+		10B972AE1F1E484C94118A83 /* Raleway-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E2E28FD8A85469EACB792FE /* Raleway-Light.ttf */; };
+		E29FBA0F8ACE49A8B8825220 /* libRCTVideo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 400BB99D8ABD44AA8DB6E58F /* libRCTVideo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -318,6 +322,11 @@
 		D51A024538EF498AADD3B7EF /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; name = "rubicon-icon-font.ttf"; path = "../node_modules/native-base/Fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		18E3EE48E1094789B1CB4816 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/native-base/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		9E667CB037CF4484B730F41F /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/native-base/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1911DA8C205A47D9AB402008 /* Raleway-Italic.ttf */ = {isa = PBXFileReference; name = "Raleway-Italic.ttf"; path = "../assets/fonts/Raleway-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		474457B0004C4A689DCD0682 /* Raleway-Regular.ttf */ = {isa = PBXFileReference; name = "Raleway-Regular.ttf"; path = "../assets/fonts/Raleway-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9E2E28FD8A85469EACB792FE /* Raleway-Light.ttf */ = {isa = PBXFileReference; name = "Raleway-Light.ttf"; path = "../assets/fonts/Raleway-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4183CBB98D0C4A518DFB35AC /* RCTVideo.xcodeproj */ = {isa = PBXFileReference; name = "RCTVideo.xcodeproj"; path = "../node_modules/react-native-video/ios/RCTVideo.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		400BB99D8ABD44AA8DB6E58F /* libRCTVideo.a */ = {isa = PBXFileReference; name = "libRCTVideo.a"; path = "libRCTVideo.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -349,6 +358,7 @@
 				DCAB72500104429D8044DAEA /* libRNVectorIcons.a in Frameworks */,
 				BE599C51EE0C4B82BDC3C357 /* libAirMaps.a in Frameworks */,
 				D35CE9AF98F8448DBC9CBEFD /* libBVLinearGradient.a in Frameworks */,
+				E29FBA0F8ACE49A8B8825220 /* libRCTVideo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +530,7 @@
 				268C5349E9B44066B05A2D19 /* RNVectorIcons.xcodeproj */,
 				08A5C6E5D40E4277804A00AB /* AirMaps.xcodeproj */,
 				F3CD17FD5EAE4A56853FC6ED /* BVLinearGradient.xcodeproj */,
+				4183CBB98D0C4A518DFB35AC /* RCTVideo.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -592,6 +603,9 @@
 				D51A024538EF498AADD3B7EF /* rubicon-icon-font.ttf */,
 				18E3EE48E1094789B1CB4816 /* SimpleLineIcons.ttf */,
 				9E667CB037CF4484B730F41F /* Zocial.ttf */,
+				1911DA8C205A47D9AB402008 /* Raleway-Italic.ttf */,
+				474457B0004C4A689DCD0682 /* Raleway-Regular.ttf */,
+				9E2E28FD8A85469EACB792FE /* Raleway-Light.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -989,6 +1003,9 @@
 				D7D3CE927D1F4BF7959D118E /* rubicon-icon-font.ttf in Resources */,
 				C35FD8B946CE450F9395A43C /* SimpleLineIcons.ttf in Resources */,
 				55CC9E30FBC24FC293986EF7 /* Zocial.ttf in Resources */,
+				A7E4936E19CE49579C059A77 /* Raleway-Italic.ttf in Resources */,
+				303D66E81088475C9AAAB1D7 /* Raleway-Regular.ttf in Resources */,
+				10B972AE1F1E484C94118A83 /* Raleway-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1125,12 +1142,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-maps/lib/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
+					"$(SRCROOT)/../node_modules/react-native-video/ios",
 				);
 			};
 			name = Debug;
@@ -1154,12 +1173,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-maps/lib/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
+					"$(SRCROOT)/../node_modules/react-native-video/ios",
 				);
 			};
 			name = Release;
@@ -1184,6 +1205,7 @@
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-maps/lib/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
+					"$(SRCROOT)/../node_modules/react-native-video/ios",
 				);
 			};
 			name = Debug;
@@ -1207,6 +1229,7 @@
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-maps/lib/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
+					"$(SRCROOT)/../node_modules/react-native-video/ios",
 				);
 			};
 			name = Release;
@@ -1239,12 +1262,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-maps/lib/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
+					"$(SRCROOT)/../node_modules/react-native-video/ios",
 				);
 			};
 			name = Debug;
@@ -1277,12 +1302,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-maps/lib/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
+					"$(SRCROOT)/../node_modules/react-native-video/ios",
 				);
 			};
 			name = Release;
@@ -1310,6 +1337,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -1334,6 +1362,7 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",

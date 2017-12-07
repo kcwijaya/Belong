@@ -57,7 +57,7 @@ export default class PeopleCard extends Component {
 
 const styles = StyleSheet.create({
 	container: {
-		height: 75
+		height: 75,
 	},
 	profpic: {
 	  	width: 40,
@@ -85,11 +85,13 @@ const styles = StyleSheet.create({
 	    marginRight: 30, 
 	    color: 'black',
 	    fontSize: 20,
+	    fontFamily: 'HelveticaNeue-Thin'
     },
     message: {
     	fontStyle: 'italic',
     	fontSize: 15,
-    	color: 'gray'
+    	color: 'gray',
+    	fontFamily: 'HelveticaNeue-Thin'
     },
     taskText: {
     	flex: 4,

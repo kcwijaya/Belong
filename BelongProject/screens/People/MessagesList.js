@@ -13,6 +13,8 @@ import LargeButton from '../../components/buttons/LargeButton.js'
 import Search from '../../components/Search.js'
 import { Colors } from '../../constants/Colors.js'
 import MessagesListingView from '../../components/listings/MessagesListingView.js'
+import PlusIcon from '../../components/buttons/PlusIcon.js'
+import SearchIcon from '../../components/buttons/SearchIcon.js'
 
 const data = [
   {
@@ -94,6 +96,8 @@ export default class Messages extends Component {
     this.state = {
       showSearch: false
     }
+
+    this.toggleSearch = this.toggleSearch.bind(this)
   }
 
   static navigationOptions = ({ navigation }) => ({
@@ -103,13 +107,20 @@ export default class Messages extends Component {
   render() {
     return (
       <View style = {styles.container}>
-        <Search/>
+        <PlusIcon style={{bottom: 15}}/>
+        <SearchIcon style={{bottom: 16}} onPress={() => this.toggleSearch()}/>
+        { this.state.showSearch && <Search />}
         <MessagesListingView
           messages={data}
           navigation={this.props.navigation}
         />
       </View>
     )
+  }
+
+  toggleSearch = () => {
+    this.setState({showSearch: !this.state.showSearch})
+    this.forceUpdate();
   }
 
 }

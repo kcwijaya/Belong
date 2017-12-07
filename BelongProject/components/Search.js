@@ -1,21 +1,21 @@
 import React, { Component } from 'react'
 import {StyleSheet} from 'react-native'
 import { Colors } from '../constants/Colors.js'
-import { SearchBar } from 'react-native-elements'
+// import { SearchBar } from 'react-native-elements'
 import { Dimensions } from 'react-native'
-
+import SearchBar from 'react-native-searchbar'
 const deviceW = Dimensions.get('window').width
 
 export default class Search extends Component {
     render () {
         return (
            <SearchBar
-                  placeholder='Search'
-                  round
-                  containerStyle={styles.searchBarContainer}
-                  inputStyle={styles.searchBarInput}
-                  placeholderTextColor={Colors.searchColor}
-                  icon={{color:Colors.searchColor, name: 'search'}}
+              ref={(ref) => this.searchBar = ref}
+              showOnLoad
+              hideBack
+              textColor={Colors.accent}
+              placeholder={this.props.placeholder ? this.props.placeholder: "Search"}
+              placeholderTextColor={Colors.accent}         
             />
         );
     }

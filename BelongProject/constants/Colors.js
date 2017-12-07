@@ -13,5 +13,7 @@ export const Colors = {
   pressed: '#A43838',
   offwhite: '#F5F4F4',
   message: '#38A6E1',
-  buttongen: '#D84E4E'
+  buttongen: '#D84E4E',
+  unselectedTop: '#F3F1F1',
+  formbg: '#F5F0F0'
 };

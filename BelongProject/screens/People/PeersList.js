@@ -14,6 +14,8 @@ import Search from '../../components/Search.js'
 import { Colors } from '../../constants/Colors.js'
 import PeopleListingView from '../../components/listings/PeopleListingView.js'
 import renderIf from '../../components/renderIf.js'
+const deviceW = Dimensions.get('window').width
+
 const data = [
   {
     name: "Kimberly Wijaya",
@@ -68,7 +70,6 @@ export default class Peers extends Component {
     this.state = {
       showSearch: false
     }
-    this.toggleSearch = this.toggleSearch.bind(this);
   }
 
   static navigationOptions = ({ navigation }) => ({
@@ -78,7 +79,6 @@ export default class Peers extends Component {
   render() {
     return (
       <View style = {styles.container}>
-        {(<Search/>)}
         <PeopleListingView
           people={data}
           navigation={this.props.navigation}

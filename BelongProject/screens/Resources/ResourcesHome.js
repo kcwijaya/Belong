@@ -24,13 +24,19 @@ const ResourcesTabNav = TabNavigator({
   All: {
     screen: ResourcesAll,
     navigationOptions: {
+     tabBarIcon: ({ tintColor}) => (
+        <Icon name='list' color={tintColor} style={{marginTop: 2}} size={20} />
+        ),
       tabBarLabel: 'All',
     },
   },
   Bookmarks: {
     screen: ResourcesBookmarks,
      navigationOptions: {
-      tabBarLabel: 'Bookmarks',
+       tabBarIcon: ({ tintColor}) => (
+          <Icon name='bookmark' color={tintColor} size={22} />
+          ),
+        tabBarLabel: 'Bookmarks',
     },
   },
 },
@@ -39,11 +45,18 @@ const ResourcesTabNav = TabNavigator({
   animationEnabled: true,
   tabBarOptions: {
     activeTintColor: Colors.accent,
+    activeBackgroundColor: Colors.unselectedTop, 
+    inactiveBackgroundColor: Colors.white, 
+    inactiveTintColor: Colors.unselectedTab, 
+    activeTintColor: Colors.accent,
     labelStyle: {
-      fontSize: 15,
+      fontSize: 14,
+      marginTop: 7,
+      fontFamily: 'System'
+
     },
     tabStyle: {
-      padding: 10    
+      padding: 5    
     },
   },
   initialRouteName: 'All'

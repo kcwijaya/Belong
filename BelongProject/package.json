@@ -13,20 +13,30 @@
     "react-native-easy-grid": "^0.1.15",
     "react-native-elements": "^0.18.2",
     "react-native-gifted-chat": "^0.3.0",
+    "react-native-gifted-form": "^0.1.1",
     "react-native-linear-gradient": "^2.3.0",
     "react-native-maps": "^0.17.1",
+    "react-native-modal": "^4.1.1",
     "react-native-phone-call": "^1.0.4",
     "react-native-search-box": "0.0.13",
+    "react-native-searchbar": "^1.13.0",
     "react-native-snap-carousel": "^3.4.0",
     "react-native-tab-navigator": "^0.3.4",
     "react-native-vector-icons": "^4.4.2",
-    "react-navigation": "^1.0.0-beta.21"
+    "react-native-video": "^2.0.0",
+    "react-navigation": "^1.0.0-beta.21",
+    "tcomb-form-native": "^0.6.11"
   },
   "devDependencies": {
     "babel-jest": "21.2.0",
     "babel-preset-react-native": "4.0.0",
     "jest": "21.2.1",
     "react-test-renderer": "16.0.0"
+  },
+  "rnpm": {
+    "assets": [
+      "./assets/fonts"
+    ]
   },
   "jest": {
     "preset": "react-native"

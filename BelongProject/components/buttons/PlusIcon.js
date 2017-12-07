@@ -6,20 +6,16 @@ import {
   View
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome'
-import {Dimensions} from 'react-native'
-import { Col, Row, Grid } from "react-native-easy-grid";
-import LargeButton from '../../components/buttons/LargeButton.js'
 import Search from '../../components/Search.js'
 import { Colors } from '../../constants/Colors.js'
-import QAListingView from '../../components/listings/QAListingView.js'
 
-export default class QAHome extends Component {
+export default class PlusIcon extends Component {
   render() {
     return (
         <Icon size={55} 
           color={Colors.accent} 
           name='plus-circle' 
-          style={styles.plus} 
+          style={[styles.plus,this.props.style]} 
           onPress={this.props.onPress}
         />
     )
@@ -31,7 +27,11 @@ const styles = StyleSheet.create({
     position: 'absolute', 
     zIndex: 1, 
     backgroundColor: 'transparent',
-    bottom: 60, 
-    right: 20
+    right: 20,
+    opacity: 1,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 1,
   }
 });

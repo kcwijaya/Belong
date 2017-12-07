@@ -24,12 +24,18 @@ const PeopleTabNav = TabNavigator({
   Messages: {
     screen: Messages,
      navigationOptions: {
+      tabBarIcon: ({ tintColor}) => (
+        <Icon name='comments' color={tintColor} size={22} />
+        ),
       tabBarLabel: 'Messages',
     },
   },
   Peers: {
     screen: Peers,
     navigationOptions: {
+       tabBarIcon: ({ tintColor}) => (
+        <Icon name='user' color={tintColor} size={22} />
+        ),
       tabBarLabel: 'Peers',
     },
   },
@@ -40,11 +46,16 @@ const PeopleTabNav = TabNavigator({
   animationEnabled: true,
   tabBarOptions: {
     activeTintColor: Colors.accent,
+    activeBackgroundColor: Colors.unselectedTop, 
+    inactiveBackgroundColor: Colors.white, 
+    inactiveTintColor: Colors.unselectedTab, 
     labelStyle: {
-      fontSize: 15,
+      fontSize: 14,
+      marginTop: 7,
+      fontFamily: 'HelveticaNeue-Thin'
     },
     tabStyle: {
-      padding: 10    
+      padding: 5  
     },
   },
   initialRouteName: 'Messages'

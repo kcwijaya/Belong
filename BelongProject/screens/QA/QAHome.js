@@ -90,7 +90,7 @@ export default class QAHome extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <PlusIcon />
+        <PlusIcon style={{bottom:20}}/>
         <Search/>
         <QAListingView 
           questions={data}

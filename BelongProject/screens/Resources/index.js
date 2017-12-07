@@ -4,6 +4,7 @@ import ResourcesBookmarks from "./ResourcesBookmarks.js";
 import ResourcesAll from "./ResourcesAll.js";
 import ResourcesCategory from "./ResourcesCategory.js";
 import ResourceDetails from "./ResourceDetails.js";
+import ResourceCreate from "./ResourceCreate.js";
 import { StackNavigator } from "react-navigation";
 
 export default (DrawNav = StackNavigator(
@@ -13,6 +14,7 @@ export default (DrawNav = StackNavigator(
 	  ResourcesAll: { screen: ResourcesAll },
 	  ResourcesCategory: { screen: ResourcesCategory },
 	  ResourceDetails: { screen: ResourceDetails },
+	  ResourceCreate: {screen: ResourceCreate },
 	},
 	{
 		initialRouteName: 'ResourcesHome'

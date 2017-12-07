@@ -43,13 +43,16 @@ export default StyleSheet.create({
         backgroundColor: 'transparent',
         color: Colors.accent,
         fontSize: 20,
+        fontFamily: 'System'
     },
     subtitle: {
         backgroundColor: 'transparent',
         color: Colors.unselectedTab,
         fontSize: 13,
         fontStyle: 'italic',
-        textAlign: 'right'
+        textAlign: 'right',
+        fontFamily: 'System'
+
     },
     slider: {
         marginTop: 25

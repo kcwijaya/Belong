@@ -120,8 +120,8 @@ const styles = StyleSheet.create({
     title: {
         color: colors.black,
         fontSize: 13,
-        fontWeight: 'bold',
-        letterSpacing: 0.5
+        letterSpacing: 0.5,
+        fontFamily: 'System'
     },
     titleEven: {
         color: 'white'
@@ -130,7 +130,9 @@ const styles = StyleSheet.create({
         marginTop: 6,
         color: colors.gray,
         fontSize: 12,
-        fontStyle: 'italic'
+        fontStyle: 'italic',
+        fontFamily: 'System'
+
     },
     subtitleEven: {
         color: 'rgba(255, 255, 255, 0.7)'
