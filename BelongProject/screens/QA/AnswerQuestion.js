@@ -23,28 +23,6 @@ function px2dp(px) {
   return px *  deviceW / basePx
 }
 
-const data = [
-  {
-    answer: "Here's is my answer!",
-    user: "Kimberly Wijaya",
-    answer_id: 1,
-  },
-  {
-    answer: "Here's is second answer!",
-    user: "Tristan Vanech",
-    answer_id: 2,
-  },
-  {
-    answer: "Here's is third answer!",
-    user: "Greg Ramel",
-    answer_id: 3,
-  },
-  {
-    answer: "Here's is fourth answer!",
-    user: "Cameron Andrews",
-    answer_id: 4,
-  },
-]
 
 export default class AnswerQuestion extends Component {
 
@@ -92,7 +70,7 @@ export default class AnswerQuestion extends Component {
       <View style={styles.questionContainer} >
         <Text style={styles.question}> Answers </Text>
       <AnswerListingView 
-        answers={data}
+        answers={global.answers}
         navigation={this.props.navigation}
         />
       </View>

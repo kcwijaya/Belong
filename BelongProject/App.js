@@ -7,6 +7,9 @@ import SignUpContact from './screens/Login/SignUpContact.js'
 import SignUpSecurity from './screens/Login/SignUpSecurity.js'
 import SignUpAbout from './screens/Login/SignUpAbout.js'
 import SignUpPermissions from './screens/Login/SignUpPermissions'
+// import CacheStore from 'react-native-cache-store';
+
+// CacheStore.flush()
 
 export default (DrawNav = StackNavigator(
   {

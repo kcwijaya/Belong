@@ -15,6 +15,7 @@ import Colors from 'constants/Colors';
 import TabNavigator from 'react-native-tab-navigator';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {Dimensions} from 'react-native';
+// import CacheStore from 'react-native-cache-store';
 
 const deviceW = Dimensions.get('window').width
 
@@ -23,6 +24,8 @@ const basePx = 375
 function px2dp(px) {
   return px *  deviceW / basePx
 }
+
+
 
 class QA extends Component {
   render() {
@@ -92,6 +95,23 @@ export default class TabDemo extends Component {
   };
 
   render() {
+    // CacheStore.get('foodBanks').then((value) => {
+    //      CacheStore.set('foodBanks', foodBanks)
+    //      console.log("food is cached")
+    // }).catch(() => {});
+
+    // CacheStore.get('homeShelters').then((value) => {
+    //     CacheStore.set('homeShelters', homeShelters)
+    //     console.log("homeShelters is cached")
+    // }).catch(() => {});
+
+    // CacheStore.get('questions').then((value) => {
+    //     CacheStore.set('questions', questions)
+    //     console.log("questions is cached")
+    // }).catch(() => {});
+
+
+
     return (
       <TabNavigator style={styles.container}>
         <TabNavigator.Item
