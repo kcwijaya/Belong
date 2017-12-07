@@ -13,6 +13,9 @@ import { Col, Row, Grid } from "react-native-easy-grid";
 import { Colors } from '../../constants/Colors.js'
 import {GiftedChat} from 'react-native-gifted-chat'
 
+
+
+
 export default class MessageScreen extends Component {
   constructor(){
     super();
@@ -22,21 +25,10 @@ export default class MessageScreen extends Component {
     messages: []
   };
 
+
+
   componentWillMount = () => {
-    this.setState({
-       messages: [
-        {
-          _id: 1,
-          text: 'So nice to meet you!',
-          createdAt: new Date(),
-          user: {
-            _id: 2,
-            name: 'React Native',
-            avatar: 'https://facebook.github.io/react/img/logo_og.png',
-          },
-        },
-      ],
-    });
+    this.setState(global.function.getMessages('fake news'))
   }
 
   static navigationOptions = ({ navigation }) => ({
@@ -44,9 +36,13 @@ export default class MessageScreen extends Component {
   });
 
   onSend = (messages = []) => {
+    global.functions.addMessage(this.state.messages, messages)
     this.setState((previousState) => ({
       messages: GiftedChat.append(previousState.messages, messages),
     }));
+    //console.log()
+    //global.functions.addMessage(previousState.messages, messages)
+
   }
 
   render() {
