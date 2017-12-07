@@ -72,12 +72,13 @@ const RootNavigator = TabNavigator({
 },
 {
   tabBarPosition: 'bottom',
-  animationEnabled: true,
+  animationEnabled: false,
   tabBarOptions: {
     activeTintColor: Colors.accent,
     inactiveTintColor: Colors.unselectedTab,
   },
   initialRouteName: 'Map',
+
 });
 
 export default RootNavigator;

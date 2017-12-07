@@ -42,7 +42,7 @@ const ResourcesTabNav = TabNavigator({
 },
 {
   tabBarPosition: 'top',
-  animationEnabled: true,
+  animationEnabled: false,
   tabBarOptions: {
     activeTintColor: Colors.accent,
     activeBackgroundColor: Colors.unselectedTop, 
@@ -52,7 +52,7 @@ const ResourcesTabNav = TabNavigator({
     labelStyle: {
       fontSize: 14,
       marginTop: 7,
-      fontFamily: 'System'
+      fontWeight: '300'
 
     },
     tabStyle: {

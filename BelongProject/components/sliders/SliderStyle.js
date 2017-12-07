@@ -43,7 +43,7 @@ export default StyleSheet.create({
         backgroundColor: 'transparent',
         color: Colors.accent,
         fontSize: 20,
-        fontFamily: 'System'
+        fontWeight: '300'
     },
     subtitle: {
         backgroundColor: 'transparent',
@@ -51,8 +51,7 @@ export default StyleSheet.create({
         fontSize: 13,
         fontStyle: 'italic',
         textAlign: 'right',
-        fontFamily: 'System'
-
+        fontWeight: '300'
     },
     slider: {
         marginTop: 25

@@ -156,7 +156,8 @@ const styles = StyleSheet.create({
     textAlign: 'right', 
     fontStyle: 'italic',
     fontSize: 10,
-    color: Colors.accent
+    color: Colors.accent,
+    fontWeight: '400'
   },
   answerContainer: {
     backgroundColor: 'white',
@@ -180,11 +181,13 @@ const styles = StyleSheet.create({
   },
   question: {
     color: Colors.accent, 
-    fontSize: 18
+    fontSize: 18,
+    fontWeight: '300'
   },
   details: {
-    fontSize: 12,
-    marginTop: 5
+    fontSize: 15,
+    marginTop: 5,
+    fontWeight: '300'
   },
   plus: {
     position: 'absolute', 

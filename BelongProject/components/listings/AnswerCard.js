@@ -93,6 +93,7 @@ const styles = StyleSheet.create({
 	    marginLeft: 15,
 	    fontSize: 16,
 	    color: Colors.accent,
+	    fontWeight: '400'
     },
 
     taskText: {
@@ -104,6 +105,7 @@ const styles = StyleSheet.create({
 	    color: 'black',
 	    marginLeft: 15,
 	    fontSize: 14,
+	    fontWeight: '300'
     },
 	task: {
 	    backgroundColor: 'white',

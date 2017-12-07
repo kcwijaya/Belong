@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 20,
-    marginLeft: 5
+    marginLeft: 5,
+    fontWeight: '300'
   }
 });

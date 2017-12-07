@@ -66,9 +66,11 @@ const styles = StyleSheet.create({
   title: {
     color: Colors.accent, 
     fontSize: 25,
+    fontWeight: '400'
   },
   aboutText: {
     fontSize: 15,
+    fontWeight: '300'
   },
   image: {
     width: deviceW, 

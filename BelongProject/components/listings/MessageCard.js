@@ -88,13 +88,13 @@ const styles = StyleSheet.create({
 	    marginRight: 30, 
 	    color: 'black',
 	    fontSize: 20,
-	    fontFamily: 'HelveticaNeue-Thin'
+	    fontWeight: '300'
     },
     message: {
     	fontStyle: 'italic',
     	fontSize: 15,
     	color: 'gray',
-    	fontFamily: 'HelveticaNeue-Thin'
+	    fontWeight: '300'
     },
     taskText: {
     	flex: 4,

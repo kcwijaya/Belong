@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
         fontSize: 12,
         marginTop: 2,
         marginLeft: 5,
-        fontFamily: 'HelveticaNeue-Thin'
+        fontWeight: '300'
     },
     buttonContainer: {
         width: 150,

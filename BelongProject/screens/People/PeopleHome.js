@@ -43,7 +43,7 @@ const PeopleTabNav = TabNavigator({
 },
 {
   tabBarPosition: 'top',
-  animationEnabled: true,
+  animationEnabled: false,
   tabBarOptions: {
     activeTintColor: Colors.accent,
     activeBackgroundColor: Colors.unselectedTop, 
@@ -52,7 +52,7 @@ const PeopleTabNav = TabNavigator({
     labelStyle: {
       fontSize: 14,
       marginTop: 7,
-      fontFamily: 'HelveticaNeue-Thin'
+      fontWeight: '300'
     },
     tabStyle: {
       padding: 5  

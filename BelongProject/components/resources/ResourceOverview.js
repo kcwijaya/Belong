@@ -91,7 +91,8 @@ const styles = StyleSheet.create({
 	},
 	title: {
 		color: Colors.accent, 
-		fontSize: 20
+		fontSize: 20,
+		fontWeight: '300'
 	},
 	bookmark: {
 		borderRadius: 20, 

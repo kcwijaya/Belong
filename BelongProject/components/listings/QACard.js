@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
 		color: 'gray', 
 		fontStyle: 'italic', 
 		fontSize: 13,
+		fontWeight: '400',
 		textAlign: 'center',
 		marginTop: 5,
 	},
@@ -69,6 +70,7 @@ const styles = StyleSheet.create({
 	    color: Colors.accent,
 	    marginLeft: 15,
 	    fontSize: 16,
+	    fontWeight: '400',
 	    textAlign: 'center',
 	    marginTop: 10
     },
