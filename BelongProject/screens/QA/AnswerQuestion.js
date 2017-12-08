@@ -56,7 +56,7 @@ export default class AnswerQuestion extends Component {
           {this.props.navigation.state.params.details}
         </Text>
 
-        <TouchableHighlight onPress={() => this.props.navigation.navigate("ProfilePage", {img: require('../../imgs/placeholders/user.jpg'),name: this.props.navigation.state.params.user})}>
+        <TouchableHighlight onPress={() => this.props.navigation.navigate("ProfilePage", global.functions.getUserInfo(this.props.navigation.state.params))}>
           <Text style={styles.asker}>
             Asked by: {this.props.navigation.state.params.user}
           </Text>

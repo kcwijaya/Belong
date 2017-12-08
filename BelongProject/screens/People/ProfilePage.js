@@ -60,7 +60,7 @@ export default class ProfilePage extends Component {
               <Text style={styles.buttonText}> Message </Text>
             </TouchableHighlight>
             <View style={{width: 10}} />
-        <TouchableHighlight style={styles.addButton}>
+        <TouchableHighlight style={styles.addButton} onPress={() => {global.functions.addPeer(this.props.navigation.state.params), this.forceUpdate()}}>
               <Text style={styles.buttonText}> Add Peer </Text>
             </TouchableHighlight>
           </View>
@@ -70,7 +70,7 @@ export default class ProfilePage extends Component {
               <Text style={styles.buttonText}> Message </Text>
             </TouchableHighlight>
             <View style={{width: 10}} />
-        <TouchableHighlight style={styles.deleteButton}>
+        <TouchableHighlight style={styles.deleteButton} onPress={() => {global.functions.removePeer(this.props.navigation.state.params.user_id), this.forceUpdate()}}>
               <Text style={styles.buttonText}> Delete Peer </Text>
             </TouchableHighlight>
       </View>
