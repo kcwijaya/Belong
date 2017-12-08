@@ -23,6 +23,10 @@ export default class ResourcesBookmarks extends Component {
       sources: global.bookmarks
     }
     this.toggleSearch = this.toggleSearch.bind(this);
+    setInterval(() => {
+      this.setState({showSearch: this.state.showSearch, sources: global.bookmarks})
+      this.forceUpdate()
+      }, 1500);
   }
 
   static navigationOptions = ({ navigation }) => ({
@@ -36,6 +40,10 @@ export default class ResourcesBookmarks extends Component {
     console.log(this.state.sources)
     this.forceUpdate()
   }
+
+
+ 
+
 
   onBack = () => {
     this.state.sources = global.bookmarks

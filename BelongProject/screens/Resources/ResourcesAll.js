@@ -50,14 +50,12 @@ export default class ResourcesHome extends Component {
     this.forceUpdate()
   }
 
-  componentDidMount(){
-    this.forceUpdate();
-  }
+
   render () {
       
        return (
           <View style={styles.container}>
-              <PlusIcon style={{bottom: 10}} onPress={()=> this.props.navigation.navigate('ResourceCreate')}/>
+              <PlusIcon style={{bottom: 10}} onPress={()=> {this.props.navigation.navigate('ResourceCreate'), this.props.screenProps = true}}/>
               {this.state.showSearch && <Search handleResults={this.changeData}  placeholder="Search for resource" data={global.questions} onBack={this.onBack}/>}
               <ScrollView
                 style={styles.scrollview}

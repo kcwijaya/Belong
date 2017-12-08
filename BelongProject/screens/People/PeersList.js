@@ -26,6 +26,10 @@ export default class Peers extends Component {
       showSearch: false,
       data: global.peers
     }
+    setInterval(() => {
+      this.setState({showSearch: this.state.showSearch, data: global.peers})
+      this.forceUpdate()
+    }, 1500);
   }
 
   changeData = (results) => {
