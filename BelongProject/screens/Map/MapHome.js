@@ -173,7 +173,7 @@ export default class Map extends Component {
                         </Col>
                         <Col size={75}>
                             <TouchableHighlight onPress={() => {this.showObject('peer')}}>
-                              <Text style={[styles.legend,{color: this.state.peerColor}]}> Peer </Text>
+                              <Text style={[styles.legend,{color: this.state.peerColor}]}> Peers </Text>
                           </TouchableHighlight>
                         </Col>
                     </Row>
@@ -196,13 +196,13 @@ export default class Map extends Component {
           </TouchableOpacity>
            <MapView
               style={styles.map}
-              region={{ latitude: 37.2969326, 
-              longitude: -121.9578387,
+              region={{ latitude: 37.352637, 
+              longitude: -122.017210,
               latitudeDelta: 0.1,
               longitudeDelta: 0.1}}
             >
 
-            <MapView.Marker coordinate={{latitude: 37.2969326, longitude: -121.9578387}}>
+            <MapView.Marker coordinate={{latitude: 37.352637, longitude: -122.017210}}>
               <Icon type='ionicon' name='ios-radio-button-on' size={40} color={this.state.location ? Colors.accent : 'gray'} />
             </MapView.Marker>
 
