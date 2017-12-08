@@ -209,34 +209,91 @@ global.homeShelters = [
 
 global.education = [
   {
-    name: "Second Harvest Food Bank",
+    name: "Sunnyvale Public Library",
     img: require('./imgs/placeholders/resource.jpg'),
     resource_id: 1,
-    address: '1051 Bing St San Carlos, CA 94070',
-    lat: 37.496094,
-    lon: -122.244577,
+    address: '655 W Olive Ave Sunnyvale, CA 94086',
+    lat: 37.371641,
+    lon: -122.039203,
     hours: '7AM-9PM',
     phone: '6504900437',
-    about: 'Based in Silicon Valley, Second Harvest Food Bank of Santa Clara and San Mateo Counties is one of the largest food banks in the nation. Currently providing food to more than one quarter of a million people every month, Second Harvest is a trusted community-based organization that was founded in 1974. Despite the immense wealth in Silicon Valley, and partly due to the high cost of living, hunger and malnutrition are pervasive. The Food Bank distributes nutritious food, including more fresh produce than almost any other food bank in the country, through a network of 300 nonprofit partners at 905 sites. Second Harvest is pursuing innovative efforts to increase access to food resources as it seeks to feed an additional 100,000 hungry people each month. To reach more people, it connects those in need to federal nutrition programs and other food resources.',
+    about: "Since 1908, Sunnyvale's Library has grown from a reading room with 50 books and a volunteer staff to today's City-owned and operated Sunnyvale Public Library, located in a 60,800-square-foot facility at 665 W. Olive Ave. The Library also operates a lending machine in the lobby of the Columbia Neighborhood Center at 785 Morse Ave.",
+  },
+  {
+    name: "Fremont High School",
+    img: require('./imgs/placeholders/resource.jpg'),
+    resource_id: 1,
+    address: '1279 Sunnyvale Saratoga Rd Sunnyvale, CA 94087',
+    lat: 37.352826,
+    lon: -122.032438,
+    hours: '7AM-9PM',
+    phone: '6504900437',
+    about: 'Fremont High School is a co-educational, public high school in Sunnyvale, California, United States. Fremont is currently the only open public high school located in the city of Sunnyvale and is part of the Fremont Union High School District.',
   }
 ];
 
 
-
+global.areaPeople = [
+  {
+    name: "Tristan Vanech",
+    resource_id: 1,
+    lat: 37.374239,
+    lon: -122.057574
+  },
+  {
+    name: "Greg Ramel",
+    resource_id: 2,
+    lat: 37.376046,
+    lon: -122.029907
+  }
+]
 
 
 global.miscellaneous = [
   {
-    name: "Second Harvest Food Bank",
+    name: "Professor Consultation",
     img: require('./imgs/placeholders/resource.jpg'),
     resource_id: 1,
-    address: '1051 Bing St San Carlos, CA 94070',
-    lat: 37.496094,
-    lon: -122.244577,
+    address: '849 Tolman Dr Stanford, CA 94305',
+    lat: 37.409807,
+    lon: -122.155934,
     hours: '7AM-9PM',
     phone: '6504900437',
-    about: 'Based in Silicon Valley, Second Harvest Food Bank of Santa Clara and San Mateo Counties is one of the largest food banks in the nation. Currently providing food to more than one quarter of a million people every month, Second Harvest is a trusted community-based organization that was founded in 1974. Despite the immense wealth in Silicon Valley, and partly due to the high cost of living, hunger and malnutrition are pervasive. The Food Bank distributes nutritious food, including more fresh produce than almost any other food bank in the country, through a network of 300 nonprofit partners at 905 sites. Second Harvest is pursuing innovative efforts to increase access to food resources as it seeks to feed an additional 100,000 hungry people each month. To reach more people, it connects those in need to federal nutrition programs and other food resources.',
-  }
+    about: 'Happy Easter!',
+  },
+  {
+    name: "FedEx Office Print & Ship Center",
+    img: require('./imgs/placeholders/resource.jpg'),
+    resource_id: 2,
+    address: '560 E El Camino Real Suite B',
+    lat: 37.362637,
+    lon: -122.027210,
+    hours: '7AM-9PM',
+    phone: '6504900437',
+    about: 'More than shipping.',
+  },
+  {
+    name: "McDonald's",
+    img: require('./imgs/placeholders/resource.jpg'),
+    resource_id: 3,
+    address: '5122 Stevens Creek Blvd San Jose, CA 95129',
+    lat: 37.322663,
+    lon: -122.992819,
+    hours: '24 hours',
+    phone: '6504900437',
+    about: 'Free wi-fi, open 24 hours, and a McPick 2 for $2.50 menu.',
+  },
+  {
+    name: "Sunnyvale Caltrain Station",
+    img: require('./imgs/placeholders/resource.jpg'),
+    resource_id: 4,
+    address: '121 W Evelyn Ave Sunnyvale, CA 94086',
+    lat: 37.378183,
+    lon: -122.030344,
+    hours: '7AM-9PM',
+    phone: '6504900437',
+    about: 'Cheap passes to get up to Palo Alto quickly.',
+  },
 ];
 
 
