@@ -24,7 +24,8 @@ global.userInfo = {
 global.foodBanks = [
   {
     name: "Second Harvest Food Bank",
-    img: require('./imgs/placeholders/resource.jpg'),
+    // img: require('./imgs/placeholders/resource.jpg'),
+    img: {uri: 'https://grassroots.groupon.com/files/2014/11/402155_10150549547086640_1069935900_n.jpg'},
     resource_id: 1,
     address: '1051 Bing St San Carlos, CA 94070',
     lat: 37.496094,
@@ -35,7 +36,7 @@ global.foodBanks = [
   },
   {
     name: "Second Harvest Food Bank",
-    img: require('./imgs/placeholders/resource.jpg'),
+    img: {uri: 'https://grassroots.groupon.com/files/2014/11/402155_10150549547086640_1069935900_n.jpg'},
     resource_id: 2,
     address: '4001 N 1st St San Jose, CA 95134',
     lat: 37.413259,
@@ -92,7 +93,7 @@ global.foodBanks = [
   },
   {
     name: "Second Harvest Food Bank of Santa Clara and San Mateo Counties - Curtner Center",
-    img: require('./imgs/placeholders/resource.jpg'),
+    img: {uri: 'https://grassroots.groupon.com/files/2014/11/402155_10150549547086640_1069935900_n.jpg'},
     resource_id: 7,
     address: '750 Curtner Ave San Jose, CA 95125',
     lat: 37.291686,
