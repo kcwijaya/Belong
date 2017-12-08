@@ -918,7 +918,7 @@ global.functions = {
 
 
     voteAnswer: function(Qid, Aid, delta) {
-        for x in global.answers[Qid]{
+        for (x in global.answers[Qid]){
             answer = global.answers[Qid][x]
             if (answer.answer_id == Aid){
                 global.answers[Qid][x].votes = global.answers[Qid][x].votes + delta
