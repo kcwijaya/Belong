@@ -434,7 +434,7 @@ global.haveMessaged = [
 
 
 global.messages = {
-'all': {
+'start': {
        messages: [
         {
           _id: 0,
@@ -457,40 +457,54 @@ global.messages = {
 global.functions = {
     addFood: function(temp) {
 		global.foodBanks.push(temp);
-		console.log("ADDED FOOD!");
+		//console.log("ADDED FOOD!");
 		console.log(global.foodBanks);
 },
     addShelter: function(temp) {
 		global.homeShelters.push(temp);
-		console.log("ADDED SHELTER!");
+		//console.log("ADDED SHELTER!");
 		console.log(global.foodBanks)
 },
 	addBookmark: function(temp) {
 		//key = {temp.bookmarks}
 		global.bookmarks.push(temp);
-		console.log("ADDED BOOKMARK!");
+		//console.log("ADDED BOOKMARK!");
 		console.log(global.bookmarks);
 },
 	addQuestion: function(temp) {
 		global.numQuestions = global.numQuestions + 1
 		global.questions.push(temp);
-		console.log("ADDED QUESTION!");
+		//console.log("ADDED QUESTION!");
 		console.log(global.numQuestions);
 },
 	addAnswer: function(temp) {
 		global.foodBanks.push(temp);
-		console.log("ADDED!");
+		//console.log("ADDED!");
 		console.log(global.foodBanks);
 },
 	getMessages: function(id) {
-		return global.messages['all']
+		console.log('get messages:')
+		console.log(id==1)
+		// if (Object.keys(global.messages).indexOf(id) > -1) {
+		if (global.messages[id]) {
+			console.log('found exiting messages')
+			console.log(global.messages)
+			return global.messages[id]
+		} else {
+			console.log('returning start')
+			console.log(global.messages)
+			return global.messages['start']
+
+		}
+
+		//return global.messages['all']
 		//global.foodBanks.push(temp);
 		//console.log("ADDED!");
 		console.log(global.foodBanks);
-}, 	addMessage: function(messages) {
-		global.messages['all'] = messages;
+}, 	addMessage: function(messages, id) {
+		global.messages[id] = {'messages': messages};
 		console.log("ADDED!");
-		console.log(messages);
+		console.log(global.messages[id]);
 }
 	
 // 	addUser: function(temp) {

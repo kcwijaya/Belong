@@ -23,7 +23,7 @@ export default class MessageScreen extends Component {
   };
 
   componentWillMount = () => {
-    this.setState(global.functions.getMessages('fake news'));
+    this.setState(global.functions.getMessages(this.props.navigation.state.params.user_id));
   }
 
   static navigationOptions = ({ navigation }) => ({
@@ -31,26 +31,15 @@ export default class MessageScreen extends Component {
   });
 
 
-
-  //var lastMessageID = 1
-
   onSend = (messages = []) => {
-    //console.log(this.state.messages)
-    //global.functions.addMessage(this.state.messages, messages)
     this.setState((previousState) => ({
       messages: GiftedChat.append(previousState.messages, messages),
     }));
-    //console.log(this.state.messages)
-    //console.log("end")
     console.log('new message')
-    global.functions.addMessage(this.state.messages)
-    //lastMessageID = lastMessageID + 1
+    global.functions.addMessage(GiftedChat.append(this.state.messages, messages), this.props.navigation.state.params.user_id)
   }
 
   render() {
-    //this.componentWillMount()
-    //console.log("params")
-    //console.log(this.props.navigation.state.params)
     return (
       <View style = {styles.container}>
        <Header>

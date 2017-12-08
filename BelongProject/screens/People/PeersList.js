@@ -34,7 +34,7 @@ export default class Peers extends Component {
     return (
       <View style = {styles.container}>
         <PeopleListingView
-          people={data}
+          people={global.peers}
           navigation={this.props.navigation}
         />
       </View>
