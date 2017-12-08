@@ -129,7 +129,7 @@ global.homeShelters = [
   {
     name: "Sunnyvale County Winter Shelter",
     img: require('./imgs/placeholders/resource.jpg'),
-    resource_id: 1,
+    resource_id: 10,
     address: '999 Hamlin Ct Sunnyvale, CA 94089',
     lat: 37.401492,
     lon: -122.029907,
@@ -140,7 +140,7 @@ global.homeShelters = [
   {
     name: "HomeFirst - Eight Trees Apartments",
     img: require('./imgs/placeholders/resource.jpg'),
-    resource_id: 2,
+    resource_id: 11,
     address: '183 Acalanes Dr Sunnyvale, CA 94086',
     lat: 37.382876,
     lon: -122.057574,
@@ -152,7 +152,7 @@ global.homeShelters = [
   {
     name: "Bill Wilson Center",
     img: require('./imgs/placeholders/resource.jpg'),
-    resource_id: 3,
+    resource_id: 12,
     address: '3490 The Alameda Santa Clara, CA 95050',
     lat: 37.353880,
     lon: -121.941636,
@@ -164,7 +164,7 @@ global.homeShelters = [
   {
     name: "YWCA Silicon Valley",
     img: require('./imgs/placeholders/resource.jpg'),
-    resource_id: 4,
+    resource_id: 13,
     address: '298 S Sunnyvale Ave Sunnyvale, CA 94086',
     lat: 37.374239,
     lon: -122.029505,
@@ -175,7 +175,7 @@ global.homeShelters = [
   {
     name: "HomeFirst Services of Santa County",
     img: require('./imgs/placeholders/resource.jpg'),
-    resource_id: 5,
+    resource_id: 14,
     address: '507 Valley Way Milpitas, CA 95035',
     lat: 37.427502,
     lon: -121.915947,
@@ -186,7 +186,7 @@ global.homeShelters = [
   {
     name: "HomeFirst - Sobrato House Youth Center",
     img: require('./imgs/placeholders/resource.jpg'),
-    resource_id: 6,
+    resource_id: 15,
     address: '496 S 3rd St San Jose, CA 95112',
     lat: 37.329895,
     lon: -121.882743,
@@ -197,7 +197,7 @@ global.homeShelters = [
   {
     name: "Project WeHOPE",
     img: require('./imgs/placeholders/resource.jpg'),
-    resource_id: 7,
+    resource_id: 16,
     address: '1854 Bay Rd East Palo Alto, CA 94303',
     lat: 37.472128,
     lon: -122.133445,
@@ -214,7 +214,7 @@ global.education = [
   {
     name: "Sunnyvale Public Library",
     img: require('./imgs/placeholders/resource.jpg'),
-    resource_id: 1,
+    resource_id: 17,
     address: '655 W Olive Ave Sunnyvale, CA 94086',
     lat: 37.371641,
     lon: -122.039203,
@@ -225,7 +225,7 @@ global.education = [
   {
     name: "Fremont High School",
     img: require('./imgs/placeholders/resource.jpg'),
-    resource_id: 1,
+    resource_id: 18,
     address: '1279 Sunnyvale Saratoga Rd Sunnyvale, CA 94087',
     lat: 37.352826,
     lon: -122.032438,
@@ -239,13 +239,13 @@ global.education = [
 global.areaPeople = [
   {
     name: "Tristan Vanech",
-    resource_id: 1,
+    resource_id: 19,
     lat: 37.374239,
     lon: -122.057574
   },
   {
     name: "Greg Ramel",
-    resource_id: 2,
+    resource_id: 20,
     lat: 37.376046,
     lon: -122.029907
   }
@@ -256,7 +256,7 @@ global.miscellaneous = [
   {
     name: "Professor Consultation",
     img: require('./imgs/placeholders/resource.jpg'),
-    resource_id: 1,
+    resource_id: 21,
     address: '849 Tolman Dr Stanford, CA 94305',
     lat: 37.409807,
     lon: -122.155934,
@@ -267,7 +267,7 @@ global.miscellaneous = [
   {
     name: "FedEx Office Print & Ship Center",
     img: require('./imgs/placeholders/resource.jpg'),
-    resource_id: 2,
+    resource_id: 22,
     address: '560 E El Camino Real Suite B',
     lat: 37.362637,
     lon: -122.027210,
@@ -278,7 +278,7 @@ global.miscellaneous = [
   {
     name: "McDonald's",
     img: require('./imgs/placeholders/resource.jpg'),
-    resource_id: 3,
+    resource_id: 23,
     address: '5122 Stevens Creek Blvd San Jose, CA 95129',
     lat: 37.322663,
     lon: -122.992819,
@@ -289,7 +289,7 @@ global.miscellaneous = [
   {
     name: "Sunnyvale Caltrain Station",
     img: require('./imgs/placeholders/resource.jpg'),
-    resource_id: 4,
+    resource_id: 24,
     address: '121 W Evelyn Ave Sunnyvale, CA 94086',
     lat: 37.378183,
     lon: -122.030344,
@@ -349,65 +349,63 @@ global.bookmarks = [
   }
 ];
 
-
-
 global.numQuestions = 9
 global.questions = [
   {
     question: "Where's the best shelter around Sunnyvale?",
     question_id: 1,
     details: "Here are all the details of this question. Here are all the details of this question. Here are all the details of this question. Here are all the details of this question.",
-    user: "Kimberly Wijaya",
+    user: "Kimberly",
   },
   {
     question: "Where do you go to print your HW?",
     question_id: 2,
     details: "Here are all the details of this question. Here are all the details of this question. Here are all the details of this question. Here are all the details of this question.",
-    user: "Maria Gutierrez", 
+    user: "Maria", 
   },
   {
     question: "How do you ask your GC for help?",
     question_id: 3,
     details: "Here are all the details of this question. Here are all the details of this question. Here are all the details of this question. Here are all the details of this question.",
-    user: "Eddy Rosales",
+    user: "Eddy",
   },
   {
     question: "Whre's the cheapest internet cafe near SCU?",
     question_id: 4,
     details: "Here are all the details of this question. Here are all the details of this question. Here are all the details of this question. Here are all the details of this question.",
-    user: "Belinda Esqueda",
+    user: "Belinda",
   },
   {
     question: "Does anyone buy bulk at TJs?",
     question_id: 5,
     details: "Here are all the details of this question. Here are all the details of this question. Here are all the details of this question. Here are all the details of this question.",
-    user: "Virgilio Urmeneta",
+    user: "Virgilio",
   },
   {
     question: "Where do you recommend going for a cheap meal?",
     question_id: 6,
     details: "Here are all the details of this question. Here are all the details of this question. Here are all the details of this question. Here are all the details of this question.",
-    user: "Robert Wilkins",
+    user: "Robert",
   },
   {
     question: "Have you told your friends you're homeless?",
     question_id: 7,
     details: "Here are all the details of this question. Here are all the details of this question. Here are all the details of this question. Here are all the details of this question.",
-    user: "Robert Wilkins",
+    user: "Salvador",
 
   },
   {
     question: "Have you ever gone busking?",
     question_id: 8,
     details: "Here are all the details of this question. Here are all the details of this question. Here are all the details of this question. Here are all the details of this question.",
-    user: "Robert Wilkins",
+    user: "Nick",
 
   },
   {
     question: "Best way to ask a friend if you can crash?",
     question_id: 9,
     details: "Here are all the details of this question. Here are all the details of this question. Here are all the details of this question. Here are all the details of this question.",
-    user: "Robert Wilkins",
+    user: "Cristian",
 
   }
 ];
