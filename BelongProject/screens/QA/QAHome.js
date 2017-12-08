@@ -53,7 +53,7 @@ export default class QAHome extends Component {
       <View style={styles.container}>
         <PlusIcon style={{bottom:20}} onPress={() => {this.props.navigation.navigate("CreateQuestion")}}/>
         <Search handleResults={this.changeData}   placeholder="Search for question" data={global.questions} onBack={this.onBack}/>
-        <QAListingView 
+        <QAListingView
           questions={this.state.data}
           navigation={this.props.navigation}
         />
