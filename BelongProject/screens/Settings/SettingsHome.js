@@ -5,7 +5,8 @@ import {
   TouchableHighlight,
   Alert,
   Text,
-  View
+  View,
+  TouchableOpacity
 } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator'
 import Icon from 'react-native-vector-icons/FontAwesome'
@@ -50,21 +51,23 @@ signEmOut = () => {
 
       <View style={styles.container}>
         <Header>
-          <Title color={Colors.accent}>Settings</Title>
+          <Title style={{fontWeight: '300', marginTop: 5}} color={Colors.accent}>Settings</Title>
         </Header>
 
-        <View style={styles.info}>
+        <View style={styles.optionContainer}> 
+        <View style={styles.overlay}>
+  <View style={styles.info}>
           <Left>
-            <Text style={styles.headerText}>Info</Text>
+            <Text style={styles.headerText}>field</Text>
           </Left>
           <Right>
-            <Text style={styles.headerText}>Public?</Text>
+            <Text style={styles.headerText}>public?</Text>
           </Right>
         </View>
 
         <View style={styles.info}>
           <Left>
-            <Text style={styles.infoText}>Name:</Text>
+            <Text style={styles.infoText}>name</Text>
           </Left>
           <Right>
             <Switch 
@@ -76,7 +79,7 @@ signEmOut = () => {
 
         <View style={styles.info}>
           <Left>
-            <Text style={styles.infoText}>School:</Text>
+            <Text style={styles.infoText}>school</Text>
           </Left>
           <Right>
             <Switch 
@@ -88,7 +91,7 @@ signEmOut = () => {
 
         <View style={styles.info}>
           <Left>
-            <Text style={styles.infoText}>Age:</Text>
+            <Text style={styles.infoText}>age</Text>
           </Left>
           <Right>
             <Switch 
@@ -100,7 +103,7 @@ signEmOut = () => {
 
         <View style={styles.info}>
           <Left>
-            <Text style={styles.infoText}>Location:</Text>
+            <Text style={styles.infoText}>location</Text>
           </Left>
           <Right>
             <Switch 
@@ -111,25 +114,50 @@ signEmOut = () => {
         </View>
 
        
+        </View> 
+      
 
         <View style={styles.buttonGroup}>
-          <TouchableHighlight style={styles.logout} onPress={() => {this.signEmOut()}}>
-              <Text style={styles.buttonText}> Logout </Text>
-              </TouchableHighlight>
-              <View style={{width: 10}} />
+
+            <TouchableOpacity onPress={() => {this.signEmOut()}} style={styles.submitContainer}> 
+              <View style={styles.submitOverlay} />
+              <Text style={styles.submit}> logout </Text>
+            </TouchableOpacity> 
+
         </View>
 
+</View> 
       </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
+  overlay: {
+    backgroundColor: 'white', 
+    position: 'absolute', 
+    top: 40, 
+    left: 45, 
+    width: 300, 
+    height: 400,
+    borderWidth: 1,
+    borderRadius: 2,
+    borderColor: Colors.unselectedTop,
+    borderBottomWidth: 0,
+    shadowColor: Colors.unselectedTab,
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 1,
+    elevation: 1,
+  },
+  optionsContainer: {
+
+  },
   container: {
     flex: 1,
     // justifyContent: 'center',
     // alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: 'white',
   },
   info: {
     flex: 1,
@@ -140,10 +168,13 @@ const styles = StyleSheet.create({
   infoText: {
     // fontWeight: 'bold',
     fontSize: 20,
+    fontWeight: '300',
+    letterSpacing: 4
   },
   headerText: {
-    fontWeight: 'bold',
     fontSize: 20,
+    fontWeight: '500',
+    letterSpacing: 2
   },
   buttonText: {
     textAlign: 'center',
@@ -165,6 +196,33 @@ const styles = StyleSheet.create({
     flexDirection: 'row', 
     flex: 1,
     justifyContent: 'center',
-    marginTop: 20
+    marginTop: 20,
+    position: 'absolute', 
+    top: 445,
+    left: 100
+  },
+  submitOverlay: {
+    opacity: 0.3,
+    backgroundColor: Colors.accent,
+    position: 'absolute',
+    width: 200,
+    borderRadius: 100,
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    height: 35
+  },
+  submitContainer: {
+    backgroundColor: 'transparent', 
+    marginTop: 10
+  },
+  submit: {
+    fontSize: 20, 
+    textAlign: 'center',
+    marginTop: 5,
+    color: 'white',
+    fontWeight: '300',
+    marginLeft: 60
   },
 });
