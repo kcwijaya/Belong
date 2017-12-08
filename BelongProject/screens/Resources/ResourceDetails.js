@@ -21,6 +21,10 @@ const deviceH = Dimensions.get('window').height
 const imageSource = require('../../imgs/placeholders/resource.jpg');
    
 export default class ResourceDetails extends Component {
+  constructor() {
+    super()
+  }
+
   static navigationOptions = ({ navigation }) => ({
     header: null
   });
@@ -74,7 +78,7 @@ const styles = StyleSheet.create({
   },
   title: {
     color: Colors.accent, 
-    fontSize: 25,
+    fontSize: 20,
     fontWeight: '400'
   },
   aboutText: {

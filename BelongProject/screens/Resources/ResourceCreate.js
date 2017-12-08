@@ -53,7 +53,9 @@ export default class ResourceCreate extends Component {
       categoryColor: '#9e9e9e',
       locationColor: '#9e9e9e',
       phoneColor: '#9e9e9e',
-      detailsColor: '#9e9e9e'
+      detailsColor: '#9e9e9e',
+      name: '',
+      nameColor: '#9e9e9e'
     };
     this._showOpenDatePicked = this._showOpenDatePicked.bind(this);
     this._handleOpenDatePicked = this._handleOpenDatePicked.bind(this)
@@ -81,6 +83,13 @@ export default class ResourceCreate extends Component {
       canSubmit = false
     } else {
       this.state.phoneColor = '#9e9e9e'
+    }
+
+    if (this.state.name == '') {
+      this.state.nameColor = Colors.accent
+      canSubmit = false
+    } else {
+      this.state.nameColor = '#9e9e9e'
     }
 
     if (this.state.details == '') {
@@ -121,7 +130,7 @@ export default class ResourceCreate extends Component {
       openHours: this.state.openHours, 
       closeHours: this.state.closedHours,
       about: this.state.details,
-      name: ""
+      name: this.state.name,
     }
 
     //console.log(resource)
@@ -206,6 +215,20 @@ export default class ResourceCreate extends Component {
         </Right>
       </Header>
       <ScrollView style={styles.container}>
+
+       <View>
+            <FormLabel
+              labelStyle={[styles.name,{color: this.state.nameColor}]}
+              > name </FormLabel>
+            <FormInput 
+              placeholder= 'Enter name'
+              containerStyle={styles.inputStyle}
+              multiline={true}
+              inputStyle={styles.text}
+              onChangeText={(text) => {this.state.name = text}}
+              />
+          </View> 
+
         <View style={styles.formContainer}>
         <FormLabel
           labelStyle={[styles.name,{color: this.state.categoryColor}]}> category </FormLabel>
@@ -281,7 +304,7 @@ export default class ResourceCreate extends Component {
         <View style={styles.two}>
           <View> 
             <FormLabel
-              labelStyle={[styles.name,{color: this.state.openColor}]}> hours: open </FormLabel>
+              labelStyle={[styles.name,{color: this.state.openColor}]}> open from </FormLabel>
             <TouchableHighlight onPress={() => {this._showOpenDatePicked()}} 
               style={styles.twoInputStyle}>
               <View>
@@ -304,7 +327,7 @@ export default class ResourceCreate extends Component {
           </View> 
           <View> 
             <FormLabel
-              labelStyle={[styles.name,{color: this.state.closeColor}]}> hours: close </FormLabel>
+              labelStyle={[styles.name,{color: this.state.closeColor}]}> closes at </FormLabel>
            <TouchableHighlight onPress={() => {this._showCloseDatePicked()}} 
               style={styles.twoInputStyleRight}>
               <View> 
@@ -331,7 +354,7 @@ export default class ResourceCreate extends Component {
           <View>
             <FormLabel
               labelStyle={[styles.name,{color: this.state.phoneColor}]}
-              keyboardTyle='phone-pad'> phone </FormLabel>
+              keyboardType='phone-pad'> phone </FormLabel>
             <FormInput 
               placeholder= 'Enter phone number.'
               containerStyle={styles.inputStyle}
@@ -345,7 +368,7 @@ export default class ResourceCreate extends Component {
         <FormInput 
           placeholder="Describe as much as you can"
           inputStyle={styles.text}
-          containerStyle={[styles.inputStyle, {height: Math.max(50, this.state.detailsHeight)}]}
+          containerStyle={[styles.inputStyle, {paddingRight: 20, height: Math.max(50, this.state.detailsHeight)}]}
           numberOfLines={40}
           multiline={true}
           onChangeText={(text) => {this.state.details = text}}

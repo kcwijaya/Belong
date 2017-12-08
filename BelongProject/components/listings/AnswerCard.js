@@ -23,7 +23,7 @@ export default class AnswerCard extends Component {
 			<View style={styles.container}>
 				<TouchableHighlight style={styles.entry} >
 					<View style={styles.task}>
-						<TouchableHighlight onPress={() => this.props.navigation.navigate("ProfilePage", {img: require('../../imgs/placeholders/user.jpg'), name: this.props.AnswerInfo.user})}>
+						<TouchableHighlight onPress={() => { if (this.props.AnswerInfo.answer != 'Be the first to comment!') { this.props.navigation.navigate("ProfilePage", {img: require('../../imgs/placeholders/user.jpg'), name: this.props.AnswerInfo.user})}}}>
 							<View  style={styles.taskText}>
 			            		<Text numberOfLines={1} style={styles.title}> {this.props.AnswerInfo.user} </Text>
 				           	<Text style={styles.answer}> {this.props.AnswerInfo.answer} </Text>
