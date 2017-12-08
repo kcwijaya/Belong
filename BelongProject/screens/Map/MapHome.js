@@ -116,12 +116,9 @@ export default class Map extends Component {
       '',
       [
         {text: "Don't Allow"},
-        {text: 'Okay, go to settings!', onPress:  () => {this.props.navigation.navigate('Settings')}},
-        // {text: "Don't Allow"},
-        // {text: 'Okay, take me to settings!'},
+        {text: 'Okay, go to settings!', onPress:  () => {this.props.navigation.navigate('Settings')}}
       ]
     )
-    //this.forceUpdate()
     }
   }
   
