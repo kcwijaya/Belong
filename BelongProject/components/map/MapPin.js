@@ -26,7 +26,44 @@ export default class MapPin extends Component {
 		}
 	}
 
+	doCallout = (type) => {
+		name = ''
+		switch(type) {
+			case 'food': 
+				name = 'ResourceDetails'
+				break;
+			case 'school': 
+				name = 'ResourceDetails'
+				break;
+			case 'shelter':
+				name = 'ResourceDetails'
+				break;
+			case 'peer':
+				name = 'ProfilePage'
+				break;
+			case 'misc':
+				name = 'ResourceDetails'
+				break;
+			default:
+				name = 'MapHome'
+				break;
+		}
+		item = this.props.item;
+		if (type == 'peer') {
+			index = 0
+			for (i = 0; i < global.peers.length; i++) {
+				if (global.peers[i].user_id == this.props.item.resource_id) {
+					item = global.peers[i]
+					break;
+				}
+			}
+		}
+
+		this.props.navigation.navigate(name, item)
+	}
+
 	render() {
+
 		const coord = {
 			latitude: this.props.item.lat,
 			longitude: this.props.item.lon,
@@ -34,11 +71,11 @@ export default class MapPin extends Component {
 
 		return (
 			 <MapView.Marker
-		      coordinate={coord} onCalloutPress={() => {this.getIcon('help')}}>
+		      coordinate={coord} onCalloutPress={() => {this.doCallout(this.props.type)}}>
       			<Icon type='ionicon' name={this.getIcon(this.props.type)} size={40} color={Colors.accent} />
       			<MapView.Callout  style={styles.calloutParent}>
         			<View style={styles.callout}>
-         				<Text style={styles.title}> {this.props.item.name} </Text>
+         				<Text numberOfLines={1}  style={styles.title}> {this.props.item.name.substring(0, 15) + " ... "} </Text>
           				<TouchableOpacity style={styles.submitContainer}> 
 			              <View style={styles.submitOverlay} />
 			              <Text style={styles.submit}> see more </Text>
@@ -61,7 +98,9 @@ const styles = StyleSheet.create({
   calloutParent: {
     flex: 1, 
     position: 'relative',
-    marginLeft: -100,
+    marginBottom: 15, 
+    marginRight: 12
+
   },
   label: {
     color: 'white',

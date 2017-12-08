@@ -11,7 +11,7 @@ import { TabNavigator, StackNavigator } from "react-navigation";
 import {Colors} from '../constants/Colors.js'
 import QA from '../screens/QA/index.js'
 import Resources from '../screens/Resources/index.js'
-import Map from '../screens/Map/MapHome.js'
+import Map from '../screens/Map/index.js'
 import People from '../screens/People/index.js'
 import Settings from '../screens/Settings/SettingsHome.js'
 import {Dimensions} from 'react-native';

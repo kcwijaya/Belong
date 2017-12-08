@@ -239,13 +239,13 @@ global.education = [
 global.areaPeople = [
   {
     name: "Tristan Vanech",
-    resource_id: 19,
+    resource_id: 2,
     lat: 37.374239,
     lon: -122.057574
   },
   {
     name: "Greg Ramel",
-    resource_id: 20,
+    resource_id: 3,
     lat: 37.376046,
     lon: -122.029907
   }

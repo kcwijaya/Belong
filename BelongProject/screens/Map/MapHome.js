@@ -107,7 +107,7 @@ export default class Map extends Component {
   render() {
 
     return (
-      <ScrollView
+      <View
           style={styles.container}>
          <View style={styles.legendContainer}>
                 <Grid>
@@ -186,47 +186,63 @@ export default class Map extends Component {
             </MapView.Marker>
 
 
-              {global.foodBanks.map((item) => {
+              {this.state.showFood && global.foodBanks.map((item) => {
                 return (
                   <MapPin
                     item={item} 
                     key={item.resource_id}
                     type='food'
+                    navigation={this.props.navigation}
                   /> 
                 );
               })}
 
-              {global.homeShelters.map((item) => {
+              {this.state.showShelter && global.homeShelters.map((item) => {
                 return (
                   <MapPin
                     item={item} 
                     key={item.resource_id}
-                    type='food'
+                    type='shelter'
+                    navigation={this.props.navigation}
+
                   /> 
                 );
               })}
 
-              {global.resources.map((item) => {
+              {this.state.showSchool && global.education.map((item) => {
                 return (
                   <MapPin
                     item={item} 
                     key={item.resource_id}
-                    type='food'
+                    type='school'
+                    navigation={this.props.navigation}
                   /> 
                 );
               })}
 
-              {global.resources.map((item) => {
+              {this.state.showMisc && global.miscellaneous.map((item) => {
                 return (
                   <MapPin
                     item={item} 
                     key={item.resource_id}
-                    type='food'
+                    type='misc'
+                    navigation={this.props.navigation}
+                  /> 
+                );
+              })}
+
+              {this.state.showPeer && global.areaPeople.map((item) => {
+                return (
+                  <MapPin
+                    item={item} 
+                    key={item.resource_id}
+                    type='peer'
+                    navigation={this.props.navigation}
                   /> 
                 );
               })}
             </MapView>
-        </ScrollView>
+        </View>
     );
   }
 
