@@ -119,7 +119,9 @@ export default class ResourceCreate extends Component {
       location: this.state.location,
       phone: this.state.phone,
       openHours: this.state.openHours, 
-      closeHours: this.state.closedHours
+      closeHours: this.state.closedHours,
+      about: this.state.details,
+      name: ""
     }
 
     //console.log(resource)

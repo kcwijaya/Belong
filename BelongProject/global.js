@@ -1,5 +1,8 @@
 
 //START DB INITIALIZATION
+global.nextID = 100
+
+
 
 global.userInfo = {
     firstName:'Rodrigo',
@@ -617,17 +620,28 @@ global.functions = {
     },
 
     addResource: function(data) {
-        global.foodBanks.push(temp);
         console.log("ADDED!");
         console.log(data);
+        final = {
+            name: data.name,
+            img: require('./imgs/placeholders/resource.jpg'),
+            resource_id: global.nextID,
+            address: data.location,
+            lat: data.locationCoords.latitude,
+            lon: data.locationCoords.longitude,
+            hours: data.openHours.trim() + "-" + data.closeHours.trim(),
+            phone: data.phone,
+            about: data.about
+        };
+
         if (data.category == "Food Bank"){
-            global.foodBanks.push(data)
+            global.foodBanks.push(final)
         } else if (data.category == "Shelter"){
-            global.homeShelters.push(data)
+            global.homeShelters.push(final)
         } else if (data.category == "Education"){
-            global.education.push(data)
+            global.education.push(final)
         } else {
-            global.miscellaneous.push(data)
+            global.miscellaneous.push(final)
         }
     }
 
