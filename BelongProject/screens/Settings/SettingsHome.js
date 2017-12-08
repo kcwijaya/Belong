@@ -3,6 +3,7 @@ import {
   AppRegistry,
   StyleSheet,
   TouchableHighlight,
+  Alert,
   Text,
   Alert,
   View
@@ -54,6 +55,20 @@ export default class Settings extends Component {
   static navigationOptions = ({ navigation }) => ({
     header: null
   });
+
+
+signEmOut = () => {
+  Alert.alert(
+      "Confirm sign out",
+      '',
+      [
+        {text: "Don't Allow"},
+        {text: 'Sign out', onPress:  () => {this.props.navigation.navigate('InitialLogin')}}
+      ]
+    )
+}
+
+
 
   render() {
     return (
@@ -126,7 +141,7 @@ export default class Settings extends Component {
        
 
         <View style={styles.buttonGroup}>
-          <TouchableHighlight style={styles.logout}>
+          <TouchableHighlight style={styles.logout} onPress={() => {this.signEmOut()}}>
               <Text style={styles.buttonText}> Logout </Text>
               </TouchableHighlight>
               <View style={{width: 10}} />
