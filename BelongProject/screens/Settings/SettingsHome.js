@@ -4,6 +4,7 @@ import {
   StyleSheet,
   TouchableHighlight,
   Text,
+  Alert,
   View
 } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator'
@@ -25,6 +26,30 @@ function px2dp(px) {
 }
 
 export default class Settings extends Component {
+  constructor(){
+    super();
+    this.state = {
+      renderNotification: true,
+    }
+    this.triggerMatch = this.triggerMatch.bind(this)
+  }
+
+  triggerMatch = () => {
+    Alert.alert(
+      "There's another Belong member near you!",
+      '',
+      [
+        {text: "Dismiss"},
+        {text: 'See Profile', onPress:  () => {
+          if (this.state.renderNotification) {
+            this.state.renderNotification = false;
+          }
+          this.props.navigation.navigate('ProfilePage', global.users[7]);
+        }},
+      ]
+    )
+    this.forceUpdate()
+  }
 
   static navigationOptions = ({ navigation }) => ({
     header: null
@@ -78,7 +103,10 @@ export default class Settings extends Component {
           <Right>
             <Switch 
               value={true}
-              onValueChange={(val) => global.functions.updateAgeShare(val)}
+              onValueChange={(val) => {
+                global.functions.updateAgeShare(val);
+                this.triggerMatch();
+              }}
               backgroundActive={Colors.accent}/>
           </Right>
         </View>
