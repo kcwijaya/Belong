@@ -14,94 +14,10 @@ import ListingCarousel from '../../components/sliders/ListingCarousel.js'
 import { Colors } from '../../constants/Colors.js'
 import PlusIcon from '../../components/buttons/PlusIcon.js'
 import SearchIcon from '../../components/buttons/SearchIcon.js'
+// import CacheStore from 'react-native-cache-store';
 
 const deviceW = Dimensions.get('window').width
 const deviceH = Dimensions.get('window').height
-
-const ENTRIES1 = [
-  {
-    name: "Palo Alto Food Bank",
-    img: require('../../imgs/placeholders/resource.jpg'),
-    resource_id: 1,
-    address: '488 Winslow St Redwood City, CA 94019',
-    hours: '7AM-9PM',
-    phone: '6504900437',
-    about: 'The South Palo Alto Food Closet is a grocery program located at the Covenant Presbyterian Church. This food program is designed to help families with children by assisting them in their weekly food needs. Adults who are unable to use the services of the Downtown Food Closet are also served, provided they have a referral. Referrals can be obtained from a social service agency, any church, or Urban Ministry. Emergency food service is available. Assistance is limited to families that live in Palo Alto except for special requests from specified agencies.',
-  },
-  {
-    name: "Los Altos Food Bank",
-    img: require('../../imgs/placeholders/resource.jpg'),
-    resource_id: 2,
-    address: '488 Winslow St Redwood City, CA 94019',
-    hours: '7AM-9PM',
-    phone: '6504900437',
-    about: 'The South Palo Alto Food Closet is a grocery program located at the Covenant Presbyterian Church. This food program is designed to help families with children by assisting them in their weekly food needs. Adults who are unable to use the services of the Downtown Food Closet are also served, provided they have a referral. Referrals can be obtained from a social service agency, any church, or Urban Ministry. Emergency food service is available. Assistance is limited to families that live in Palo Alto except for special requests from specified agencies.',
-
-  },
-  {
-    name: "Menlo Park Food Bank",
-    img: require('../../imgs/placeholders/resource.jpg'),
-    resource_id: 3,
-    address: '488 Winslow St Redwood City, CA 94019',
-    hours: '7AM-9PM',
-    phone: '6504900437',
-    about: 'The South Palo Alto Food Closet is a grocery program located at the Covenant Presbyterian Church. This food program is designed to help families with children by assisting them in their weekly food needs. Adults who are unable to use the services of the Downtown Food Closet are also served, provided they have a referral. Referrals can be obtained from a social service agency, any church, or Urban Ministry. Emergency food service is available. Assistance is limited to families that live in Palo Alto except for special requests from specified agencies.',
-
-  },
-  {
-    name: "Redwood City Food Bank",
-    img: require('../../imgs/placeholders/resource.jpg'),
-    resource_id: 4,
-    address: '488 Winslow St Redwood City, CA 94019',
-    hours: '7AM-9PM',
-    phone: '6504900437',
-    about: 'The South Palo Alto Food Closet is a grocery program located at the Covenant Presbyterian Church. This food program is designed to help families with children by assisting them in their weekly food needs. Adults who are unable to use the services of the Downtown Food Closet are also served, provided they have a referral. Referrals can be obtained from a social service agency, any church, or Urban Ministry. Emergency food service is available. Assistance is limited to families that live in Palo Alto except for special requests from specified agencies.',
-  },
-  {
-    name: "Santa Clara Food Bank",
-    img: require('../../imgs/placeholders/resource.jpg'),
-    resource_id: 5,
-    address: '488 Winslow St Redwood City, CA 94019',
-    hours: '7AM-9PM',
-    phone: '6504900437',
-    about: 'The South Palo Alto Food Closet is a grocery program located at the Covenant Presbyterian Church. This food program is designed to help families with children by assisting them in their weekly food needs. Adults who are unable to use the services of the Downtown Food Closet are also served, provided they have a referral. Referrals can be obtained from a social service agency, any church, or Urban Ministry. Emergency food service is available. Assistance is limited to families that live in Palo Alto except for special requests from specified agencies.',
-  },
-  {
-    name: "Los Gatos Food Bank",
-    img: require('../../imgs/placeholders/resource.jpg'),
-    resource_id: 6,
-    address: '488 Winslow St Redwood City, CA 94019',
-    hours: '7AM-9PM',
-    phone: '6504900437',
-    about: 'The South Palo Alto Food Closet is a grocery program located at the Covenant Presbyterian Church. This food program is designed to help families with children by assisting them in their weekly food needs. Adults who are unable to use the services of the Downtown Food Closet are also served, provided they have a referral. Referrals can be obtained from a social service agency, any church, or Urban Ministry. Emergency food service is available. Assistance is limited to families that live in Palo Alto except for special requests from specified agencies.',
-  },
-  {
-    name: "Mountain View Food Bank",
-    img: require('../../imgs/placeholders/resource.jpg'),
-    resource_id: 7,
-    address: '488 Winslow St Redwood City, CA 94019',
-    hours: '7AM-9PM',
-    phone: 6504900437,
-    about: 'The South Palo Alto Food Closet is a grocery program located at the Covenant Presbyterian Church. This food program is designed to help families with children by assisting them in their weekly food needs. Adults who are unable to use the services of the Downtown Food Closet are also served, provided they have a referral. Referrals can be obtained from a social service agency, any church, or Urban Ministry. Emergency food service is available. Assistance is limited to families that live in Palo Alto except for special requests from specified agencies.',
-  },
-  {
-    name: "Sunnyvale Food Bank",
-    img: require('../../imgs/placeholders/resource.jpg'),
-    resource_id: 8,
-    hours: '7AM-9PM',
-    phone: '6504900437',
-    about: 'The South Palo Alto Food Closet is a grocery program located at the Covenant Presbyterian Church. This food program is designed to help families with children by assisting them in their weekly food needs. Adults who are unable to use the services of the Downtown Food Closet are also served, provided they have a referral. Referrals can be obtained from a social service agency, any church, or Urban Ministry. Emergency food service is available. Assistance is limited to families that live in Palo Alto except for special requests from specified agencies.',
-  },
-  {
-    name: "San Jose Food Bank",
-    img: require('../../imgs/placeholders/resource.jpg'),
-    resource_id: 9,
-    address: '488 Winslow St Redwood City, CA 94019',
-    hours: '7AM-9PM',
-    phone: '6504900437',
-    about: 'The South Palo Alto Food Closet is a grocery program located at the Covenant Presbyterian Church. This food program is designed to help families with children by assisting them in their weekly food needs. Adults who are unable to use the services of the Downtown Food Closet are also served, provided they have a referral. Referrals can be obtained from a social service agency, any church, or Urban Ministry. Emergency food service is available. Assistance is limited to families that live in Palo Alto except for special requests from specified agencies.',
-  }
-];
 
 export default class ResourcesHome extends Component {
 
@@ -134,13 +50,13 @@ export default class ResourcesHome extends Component {
                 <ListingCarousel
                   title='Food Banks'
                   subtitle='See all'
-                  data={ENTRIES1}
+                  data={global.foodBanks}
                   navigation={this.props.navigation}
                 />
                  <ListingCarousel
                   title='Home Shelters'
                   subtitle='See all'
-                  data={ENTRIES1}
+                  data={global.homeShelters}
                   navigation={this.props.navigation}
                 />
               </ScrollView>

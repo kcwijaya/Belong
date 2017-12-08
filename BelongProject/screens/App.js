@@ -15,6 +15,7 @@ import Colors from 'constants/Colors';
 import TabNavigator from 'react-native-tab-navigator';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {Dimensions} from 'react-native';
+// import CacheStore from 'react-native-cache-store';
 
 const deviceW = Dimensions.get('window').width
 
@@ -23,6 +24,8 @@ const basePx = 375
 function px2dp(px) {
   return px *  deviceW / basePx
 }
+
+
 
 class QA extends Component {
   render() {

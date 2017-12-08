@@ -20,13 +20,13 @@ export default class ResourceListingView extends Component {
 	render() {
     var resourceArray = [].concat(this.props.resources);
     var componentArray = [];
-    for(let i = 0; i < resourceArray.length; i++){
+    for(let i = 0; i < resourceArray.length; i+=2){
         componentArray.push(
           <Row key={i} style={styles.row}>
             <Col style={styles.firstColumn}>
               <ResourceCard 
                   ResourceInfo={resourceArray[i]} 
-                  key={resourceArray[i].user_id}
+                  key={resourceArray[i].resource_id}
                   navigation={this.props.navigation}
                 /> 
             </Col>
@@ -34,7 +34,7 @@ export default class ResourceListingView extends Component {
              {i != resourceArray.length - 1 && 
                <ResourceCard 
                   ResourceInfo={resourceArray[i+1]} 
-                  key={resourceArray[i+1].user_id}
+                  key={resourceArray[i+1].resource_id}
                   navigation={this.props.navigation}
                 />  
             }

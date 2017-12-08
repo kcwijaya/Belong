@@ -23,30 +23,20 @@ export default class MessageScreen extends Component {
   };
 
   componentWillMount = () => {
-    this.setState({
-       messages: [
-        {
-          _id: 1,
-          text: 'So nice to meet you!',
-          createdAt: new Date(),
-          user: {
-            _id: 2,
-            name: 'React Native',
-            avatar: 'https://facebook.github.io/react/img/logo_og.png',
-          },
-        },
-      ],
-    });
+    this.setState(global.functions.getMessages(this.props.navigation.state.params.user_id));
   }
 
   static navigationOptions = ({ navigation }) => ({
     header: null
   });
 
+
   onSend = (messages = []) => {
     this.setState((previousState) => ({
       messages: GiftedChat.append(previousState.messages, messages),
     }));
+    console.log('new message')
+    global.functions.addMessage(GiftedChat.append(this.state.messages, messages), this.props.navigation.state.params.user_id)
   }
 
   render() {
@@ -78,6 +68,11 @@ export default class MessageScreen extends Component {
   }
 
 }
+
+
+
+
+
 
 const styles = StyleSheet.create({
   container: {

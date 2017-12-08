@@ -21,65 +21,6 @@ function px2dp(px) {
   return px *  deviceW / basePx
 }
 
-const data = [
-  {
-    question: "Where's the best shelter around Sunnyvale?",
-    question_id: 1,
-    details: "Here are all the details of this question. Here are all the details of this question. Here are all the details of this question. Here are all the details of this question.",
-    user: "Kimberly Wijaya",
-  },
-  {
-    question: "Where do you go to print your HW?",
-    question_id: 2,
-    details: "Here are all the details of this question. Here are all the details of this question. Here are all the details of this question. Here are all the details of this question.",
-    user: "Maria Gutierrez", 
-  },
-  {
-    question: "How do you ask your GC for help?",
-    question_id: 3,
-    details: "Here are all the details of this question. Here are all the details of this question. Here are all the details of this question. Here are all the details of this question.",
-    user: "Eddy Rosales",
-  },
-  {
-    question: "Whre's the cheapest internet cafe near SCU?",
-    question_id: 4,
-    details: "Here are all the details of this question. Here are all the details of this question. Here are all the details of this question. Here are all the details of this question.",
-    user: "Belinda Esqueda",
-  },
-  {
-    question: "Does anyone buy bulk at TJs?",
-    question_id: 5,
-    details: "Here are all the details of this question. Here are all the details of this question. Here are all the details of this question. Here are all the details of this question.",
-    user: "Virgilio Urmeneta",
-  },
-  {
-    question: "Where do you recommend going for a cheap meal?",
-    question_id: 6,
-    details: "Here are all the details of this question. Here are all the details of this question. Here are all the details of this question. Here are all the details of this question.",
-    user: "Robert Wilkins",
-  },
-  {
-    question: "Have you told your friends you're homeless?",
-    question_id: 7,
-    details: "Here are all the details of this question. Here are all the details of this question. Here are all the details of this question. Here are all the details of this question.",
-    user: "Robert Wilkins",
-
-  },
-  {
-    question: "Have you ever gone busking?",
-    question_id: 8,
-    details: "Here are all the details of this question. Here are all the details of this question. Here are all the details of this question. Here are all the details of this question.",
-    user: "Robert Wilkins",
-
-  },
-  {
-    question: "Best way to ask a friend if you can crash?",
-    question_id: 9,
-    details: "Here are all the details of this question. Here are all the details of this question. Here are all the details of this question. Here are all the details of this question.",
-    user: "Robert Wilkins",
-
-  }
-];
 
 export default class QAHome extends Component {
 
@@ -93,7 +34,7 @@ export default class QAHome extends Component {
         <PlusIcon style={{bottom:20}}/>
         <Search/>
         <QAListingView 
-          questions={data}
+          questions={global.questions}
           navigation={this.props.navigation}
         />
      </View>
