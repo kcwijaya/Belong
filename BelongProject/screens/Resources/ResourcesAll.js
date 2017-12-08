@@ -24,7 +24,8 @@ export default class ResourcesHome extends Component {
   constructor(){
     super();
     this.state = {
-      showSearch: false
+      showSearch: false,
+      data: global.foodBanks
     }
     this.toggleSearch = this.toggleSearch.bind(this);
   }
@@ -37,14 +38,24 @@ export default class ResourcesHome extends Component {
     this.forceUpdate()
   }
 
+    changeData = (results) => {
+    console.log("new DAT")
+    console.log(results)
+    this.state.data = results
+    this.forceUpdate()
+  }
+
+  onBack = () => {
+    this.state.data = global.foodBanks
+    this.forceUpdate()
+  }
 
 
   render () {
        return (
           <View style={styles.container}>
-              <SearchIcon style={{bottom: 11}} onPress={() => this.toggleSearch()}/>
               <PlusIcon style={{bottom: 10}} onPress={()=> this.props.navigation.navigate('ResourceCreate')}/>
-              {this.state.showSearch && <Search/>}
+              {this.state.showSearch && <Search handleResults={this.changeData}  placeholder="Search for resource" data={global.questions} onBack={this.onBack}/>}
               <ScrollView
                 style={styles.scrollview}
                 contentContainerStyle={styles.scrollviewContentContainer}

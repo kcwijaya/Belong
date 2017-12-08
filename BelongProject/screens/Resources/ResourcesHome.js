@@ -45,8 +45,8 @@ const ResourcesTabNav = TabNavigator({
   animationEnabled: false,
   tabBarOptions: {
     activeTintColor: Colors.accent,
-    activeBackgroundColor: Colors.unselectedTop, 
-    inactiveBackgroundColor: Colors.white, 
+    activeBackgroundColor: Colors.white, 
+    inactiveBackgroundColor: Colors.unselectedTop, 
     inactiveTintColor: Colors.unselectedTab, 
     activeTintColor: Colors.accent,
     labelStyle: {

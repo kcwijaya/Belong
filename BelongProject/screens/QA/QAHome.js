@@ -34,8 +34,12 @@ export default class QAHome extends Component {
 
   });
 
-  changeData = (newData) => {
-    this.state.data = newData
+
+
+  changeData = (results) => {
+    console.log("new DAT")
+    console.log(results)
+    this.state.data = results
     this.forceUpdate()
   }
 
@@ -43,11 +47,12 @@ export default class QAHome extends Component {
     this.state.data = global.questions
     this.forceUpdate()
   }
+
   render() {
     return (
       <View style={styles.container}>
         <PlusIcon style={{bottom:20}} onPress={() => {this.props.navigation.navigate("CreateQuestion")}}/>
-        <Search data={global.questions} handleResults={this.changeData} onBack={this.onBack}/>
+        <Search handleResults={this.changeData}   placeholder="Search for question" data={global.questions} onBack={this.onBack}/>
         <QAListingView 
           questions={this.state.data}
           navigation={this.props.navigation}

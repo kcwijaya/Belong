@@ -15,6 +15,7 @@ import { Colors } from '../../constants/Colors.js'
 import PeopleListingView from '../../components/listings/PeopleListingView.js'
 import renderIf from '../../components/renderIf.js'
 const deviceW = Dimensions.get('window').width
+import SearchIcon from '../../components/buttons/SearchIcon.js'
 
 
 
@@ -22,9 +23,24 @@ export default class Peers extends Component {
   constructor(){
     super();
     this.state = {
-      showSearch: false
+      showSearch: false,
+      data: global.peers
     }
   }
+
+  changeData = (results) => {
+    console.log("new DAT")
+    console.log(results)
+    this.state.data = results
+    this.forceUpdate()
+  }
+
+  onBack = () => {
+    this.state.data = global.peers
+    this.showSearch = false
+    this.forceUpdate()
+  }
+
 
   static navigationOptions = ({ navigation }) => ({
     header: null
@@ -33,8 +49,10 @@ export default class Peers extends Component {
   render() {
     return (
       <View style = {styles.container}>
+         <Search handleResults={this.changeData}   placeholder="Search for peer" data={global.peers} onBack={this.onBack}/>
+
         <PeopleListingView
-          people={global.peers}
+          people={this.state.data}
           navigation={this.props.navigation}
         />
       </View>
@@ -52,5 +70,6 @@ export default class Peers extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'white'
   },
 });

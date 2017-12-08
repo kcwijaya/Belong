@@ -21,11 +21,26 @@ export default class Messages extends Component {
   constructor(){
     super();
     this.state = {
-      showSearch: false
+      showSearch: false,
+      data: global.haveMessaged
     }
 
     this.toggleSearch = this.toggleSearch.bind(this)
   }
+
+  changeData = (results) => {
+    console.log("new DAT")
+    console.log(results)
+    this.state.data = results
+    this.forceUpdate()
+  }
+
+  onBack = () => {
+    this.state.data = global.haveMessaged
+    this.showSearch = false
+    this.forceUpdate()
+  }
+
 
   static navigationOptions = ({ navigation }) => ({
     header: null
@@ -35,10 +50,9 @@ export default class Messages extends Component {
     return (
       <View style = {styles.container}>
         <PlusIcon style={{bottom: 15}}/>
-        <SearchIcon style={{bottom: 16}} onPress={() => this.toggleSearch()}/>
-        { this.state.showSearch && <Search />}
+        <Search handleResults={this.changeData}   placeholder="Search for message" data={global.haveMessaged} onBack={this.onBack}/>
         <MessagesListingView
-          messages={global.haveMessaged}
+          messages={this.state.data}
           navigation={this.props.navigation}
         />
       </View>

@@ -17,8 +17,9 @@ export default class Search extends Component {
               handleResults={this.props.handleResults}
               textColor={Colors.accent}
               placeholder={this.props.placeholder ? this.props.placeholder: "Search"}
-              placeholderTextColor={Colors.accent}    
-              onBack={this.props.onBack}     
+              placeholderTextColor={Colors.unselectedTab}    
+              onBack={this.props.onBack}
+              allDataOnEmptySearch  
             />
         );
     }

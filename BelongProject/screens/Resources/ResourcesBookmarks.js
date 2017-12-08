@@ -13,7 +13,7 @@ import LargeButton from '../../components/buttons/LargeButton.js'
 import Search from '../../components/Search.js'
 import { Colors } from '../../constants/Colors.js'
 import ResourceListingView from '../../components/listings/ResourceListingView.js'
-
+import SearchIcon from '../../components/buttons/SearchIcon.js'
 
 export default class ResourcesBookmarks extends Component {
   constructor(){
@@ -29,6 +29,19 @@ export default class ResourcesBookmarks extends Component {
     header: null
   });
 
+ changeData = (results) => {
+    console.log("new DAT")
+    console.log(results)
+    this.state.sources = results
+    console.log(this.state.sources)
+    this.forceUpdate()
+  }
+
+  onBack = () => {
+    this.state.sources = global.bookmarks
+    this.showSearch = false
+    this.forceUpdate()
+  }
 
   handler(){
     this.setState({showSearch: this.state.showSearch, sources: global.bookmarks})
@@ -37,9 +50,10 @@ export default class ResourcesBookmarks extends Component {
 
 
   render() {
-    //this.forceUpdate()
+    console.log("rerender")
     return (
       <View style = {styles.container}>
+
         <ResourceListingView
           resources={this.state.sources}
           navigation={this.props.navigation}
