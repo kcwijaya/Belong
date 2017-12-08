@@ -1,8 +1,12 @@
 
 //START DB INITIALIZATION
+global.nextID = 100
+
+
 
 global.userInfo = {
-    name:'Rodrigo Grabowsky',
+    firstName:'Rodrigo',
+    lastName:'Grabowsky',
     email:'rmgrab@gmail.com',
     password:'coffee',
     phone:'650-598-7301',
@@ -125,7 +129,7 @@ global.homeShelters = [
   {
     name: "Sunnyvale County Winter Shelter",
     img: require('./imgs/placeholders/resource.jpg'),
-    resource_id: 1,
+    resource_id: 10,
     address: '999 Hamlin Ct Sunnyvale, CA 94089',
     lat: 37.401492,
     lon: -122.029907,
@@ -136,7 +140,7 @@ global.homeShelters = [
   {
     name: "HomeFirst - Eight Trees Apartments",
     img: require('./imgs/placeholders/resource.jpg'),
-    resource_id: 2,
+    resource_id: 11,
     address: '183 Acalanes Dr Sunnyvale, CA 94086',
     lat: 37.382876,
     lon: -122.057574,
@@ -148,7 +152,7 @@ global.homeShelters = [
   {
     name: "Bill Wilson Center",
     img: require('./imgs/placeholders/resource.jpg'),
-    resource_id: 3,
+    resource_id: 12,
     address: '3490 The Alameda Santa Clara, CA 95050',
     lat: 37.353880,
     lon: -121.941636,
@@ -160,7 +164,7 @@ global.homeShelters = [
   {
     name: "YWCA Silicon Valley",
     img: require('./imgs/placeholders/resource.jpg'),
-    resource_id: 4,
+    resource_id: 13,
     address: '298 S Sunnyvale Ave Sunnyvale, CA 94086',
     lat: 37.374239,
     lon: -122.029505,
@@ -171,7 +175,7 @@ global.homeShelters = [
   {
     name: "HomeFirst Services of Santa County",
     img: require('./imgs/placeholders/resource.jpg'),
-    resource_id: 5,
+    resource_id: 14,
     address: '507 Valley Way Milpitas, CA 95035',
     lat: 37.427502,
     lon: -121.915947,
@@ -182,7 +186,7 @@ global.homeShelters = [
   {
     name: "HomeFirst - Sobrato House Youth Center",
     img: require('./imgs/placeholders/resource.jpg'),
-    resource_id: 6,
+    resource_id: 15,
     address: '496 S 3rd St San Jose, CA 95112',
     lat: 37.329895,
     lon: -121.882743,
@@ -193,13 +197,105 @@ global.homeShelters = [
   {
     name: "Project WeHOPE",
     img: require('./imgs/placeholders/resource.jpg'),
-    resource_id: 7,
+    resource_id: 16,
     address: '1854 Bay Rd East Palo Alto, CA 94303',
     lat: 37.472128,
     lon: -122.133445,
     hours: '7AM-9PM',
     phone: 6504900437,
     about: 'The mission of Project WeHOPE is to help homeless individuals and families, and those at risk, to rebuild their lives. If you or someone you know is homeless or at-risk, we can help. Below are three key programs we offer at Project WeHOPE. We offer a holistic approach to helping individuals rebuild their lives and ultimately get off the street.',
+  },
+];
+
+
+
+
+global.education = [
+  {
+    name: "Sunnyvale Public Library",
+    img: require('./imgs/placeholders/resource.jpg'),
+    resource_id: 17,
+    address: '655 W Olive Ave Sunnyvale, CA 94086',
+    lat: 37.371641,
+    lon: -122.039203,
+    hours: '7AM-9PM',
+    phone: '6504900437',
+    about: "Since 1908, Sunnyvale's Library has grown from a reading room with 50 books and a volunteer staff to today's City-owned and operated Sunnyvale Public Library, located in a 60,800-square-foot facility at 665 W. Olive Ave. The Library also operates a lending machine in the lobby of the Columbia Neighborhood Center at 785 Morse Ave.",
+  },
+  {
+    name: "Fremont High School",
+    img: require('./imgs/placeholders/resource.jpg'),
+    resource_id: 18,
+    address: '1279 Sunnyvale Saratoga Rd Sunnyvale, CA 94087',
+    lat: 37.352826,
+    lon: -122.032438,
+    hours: '7AM-9PM',
+    phone: '6504900437',
+    about: 'Fremont High School is a co-educational, public high school in Sunnyvale, California, United States. Fremont is currently the only open public high school located in the city of Sunnyvale and is part of the Fremont Union High School District.',
+  }
+];
+
+
+global.areaPeople = [
+  {
+    name: "Tristan Vanech",
+    resource_id: 19,
+    lat: 37.374239,
+    lon: -122.057574
+  },
+  {
+    name: "Greg Ramel",
+    resource_id: 20,
+    lat: 37.376046,
+    lon: -122.029907
+  }
+]
+
+
+global.miscellaneous = [
+  {
+    name: "Professor Consultation",
+    img: require('./imgs/placeholders/resource.jpg'),
+    resource_id: 21,
+    address: '849 Tolman Dr Stanford, CA 94305',
+    lat: 37.409807,
+    lon: -122.155934,
+    hours: '7AM-9PM',
+    phone: '6504900437',
+    about: 'Happy Easter!',
+  },
+  {
+    name: "FedEx Office Print & Ship Center",
+    img: require('./imgs/placeholders/resource.jpg'),
+    resource_id: 22,
+    address: '560 E El Camino Real Suite B',
+    lat: 37.362637,
+    lon: -122.027210,
+    hours: '7AM-9PM',
+    phone: '6504900437',
+    about: 'More than shipping.',
+  },
+  {
+    name: "McDonald's",
+    img: require('./imgs/placeholders/resource.jpg'),
+    resource_id: 23,
+    address: '5122 Stevens Creek Blvd San Jose, CA 95129',
+    lat: 37.322663,
+    lon: -122.992819,
+    hours: '24 hours',
+    phone: '6504900437',
+    about: 'Free wi-fi, open 24 hours, and a McPick 2 for $2.50 menu.',
+  },
+  {
+    name: "Sunnyvale Caltrain Station",
+    img: require('./imgs/placeholders/resource.jpg'),
+    resource_id: 24,
+    address: '121 W Evelyn Ave Sunnyvale, CA 94086',
+    lat: 37.378183,
+    lon: -122.030344,
+    hours: '7AM-9PM',
+    phone: '6504900437',
+    about: 'Cheap passes to get up to Palo Alto quickly.',
   },
 ];
 
@@ -253,65 +349,63 @@ global.bookmarks = [
   }
 ];
 
-
-
 global.numQuestions = 9
 global.questions = [
   {
     question: "Where's the best shelter around Sunnyvale?",
     question_id: 1,
     details: "Here are all the details of this question. Here are all the details of this question. Here are all the details of this question. Here are all the details of this question.",
-    user: "Kimberly Wijaya",
+    user: "Kimberly",
   },
   {
     question: "Where do you go to print your HW?",
     question_id: 2,
     details: "Here are all the details of this question. Here are all the details of this question. Here are all the details of this question. Here are all the details of this question.",
-    user: "Maria Gutierrez", 
+    user: "Maria", 
   },
   {
     question: "How do you ask your GC for help?",
     question_id: 3,
     details: "Here are all the details of this question. Here are all the details of this question. Here are all the details of this question. Here are all the details of this question.",
-    user: "Eddy Rosales",
+    user: "Eddy",
   },
   {
     question: "Whre's the cheapest internet cafe near SCU?",
     question_id: 4,
     details: "Here are all the details of this question. Here are all the details of this question. Here are all the details of this question. Here are all the details of this question.",
-    user: "Belinda Esqueda",
+    user: "Belinda",
   },
   {
     question: "Does anyone buy bulk at TJs?",
     question_id: 5,
     details: "Here are all the details of this question. Here are all the details of this question. Here are all the details of this question. Here are all the details of this question.",
-    user: "Virgilio Urmeneta",
+    user: "Virgilio",
   },
   {
     question: "Where do you recommend going for a cheap meal?",
     question_id: 6,
     details: "Here are all the details of this question. Here are all the details of this question. Here are all the details of this question. Here are all the details of this question.",
-    user: "Robert Wilkins",
+    user: "Robert",
   },
   {
     question: "Have you told your friends you're homeless?",
     question_id: 7,
     details: "Here are all the details of this question. Here are all the details of this question. Here are all the details of this question. Here are all the details of this question.",
-    user: "Robert Wilkins",
+    user: "Salvador",
 
   },
   {
     question: "Have you ever gone busking?",
     question_id: 8,
     details: "Here are all the details of this question. Here are all the details of this question. Here are all the details of this question. Here are all the details of this question.",
-    user: "Robert Wilkins",
+    user: "Nick",
 
   },
   {
     question: "Best way to ask a friend if you can crash?",
     question_id: 9,
     details: "Here are all the details of this question. Here are all the details of this question. Here are all the details of this question. Here are all the details of this question.",
-    user: "Robert Wilkins",
+    user: "Cristian",
 
   }
 ];
@@ -319,28 +413,149 @@ global.questions = [
 
 
 
-global.answers = [
-  {
+global.answers = {
+  1: [{
     answer: "Here's is my answer!",
     user: "Kimberly Wijaya",
     answer_id: 1,
-  },
-  {
+},
+{
     answer: "Here's is second answer!",
     user: "Tristan Vanech",
     answer_id: 2,
-  },
-  {
+},
+{
     answer: "Here's is third answer!",
     user: "Greg Ramel",
     answer_id: 3,
-  },
-  {
+},
+{
     answer: "Here's is fourth answer!",
     user: "Cameron Andrews",
     answer_id: 4,
-  },
-];
+}],
+
+2: [{
+    answer: "Here's is my answer!",
+    user: "Kimberly Wijaya",
+    answer_id: 1,
+},
+{
+    answer: "Here's is second answer!",
+    user: "Tristan Vanech",
+    answer_id: 2,
+},
+{
+    answer: "Here's is third answer!",
+    user: "Greg Ramel",
+    answer_id: 3,
+},
+{
+    answer: "Here's is fourth answer!",
+    user: "Cameron Andrews",
+    answer_id: 4,
+}],
+3: [{
+    answer: "Here's is my answer!",
+    user: "Kimberly Wijaya",
+    answer_id: 1,
+},
+{
+    answer: "Here's is second answer!",
+    user: "Tristan Vanech",
+    answer_id: 2,
+},
+{
+    answer: "Here's is third answer!",
+    user: "Greg Ramel",
+    answer_id: 3,
+},
+{
+    answer: "Here's is fourth answer!",
+    user: "Cameron Andrews",
+    answer_id: 4,
+}],
+5: [{
+    answer: "Here's is my answer!",
+    user: "Kimberly Wijaya",
+    answer_id: 1,
+},
+{
+    answer: "Here's is second answer!",
+    user: "Tristan Vanech",
+    answer_id: 2,
+},
+{
+    answer: "Here's is third answer!",
+    user: "Greg Ramel",
+    answer_id: 3,
+},
+{
+    answer: "Here's is fourth answer!",
+    user: "Cameron Andrews",
+    answer_id: 4,
+}],
+6: [{
+    answer: "Here's is my answer!",
+    user: "Kimberly Wijaya",
+    answer_id: 1,
+},
+{
+    answer: "Here's is second answer!",
+    user: "Tristan Vanech",
+    answer_id: 2,
+},
+{
+    answer: "Here's is third answer!",
+    user: "Greg Ramel",
+    answer_id: 3,
+},
+{
+    answer: "Here's is fourth answer!",
+    user: "Cameron Andrews",
+    answer_id: 4,
+}],
+7: [{
+    answer: "Here's is my answer!",
+    user: "Kimberly Wijaya",
+    answer_id: 1,
+},
+{
+    answer: "Here's is second answer!",
+    user: "Tristan Vanech",
+    answer_id: 2,
+},
+{
+    answer: "Here's is third answer!",
+    user: "Greg Ramel",
+    answer_id: 3,
+},
+{
+    answer: "Here's is fourth answer!",
+    user: "Cameron Andrews",
+    answer_id: 4,
+}],
+9:[{
+    answer: "Here's is my answer!",
+    user: "Kimberly Wijaya",
+    answer_id: 1,
+},
+{
+    answer: "Here's is second answer!",
+    user: "Tristan Vanech",
+    answer_id: 2,
+},
+{
+    answer: "Here's is third answer!",
+    user: "Greg Ramel",
+    answer_id: 3,
+},
+{
+    answer: "Here's is fourth answer!",
+    user: "Cameron Andrews",
+    answer_id: 4,
+}]
+};
 
 
 
@@ -578,21 +793,58 @@ global.functions = {
         if('password' in data){
             global.userInfo.password = data.password
         }
+    },
+
+    addResource: function(data) {
+        console.log("ADDED!");
+        console.log(data);
+        final = {
+            name: data.name,
+            img: require('./imgs/placeholders/resource.jpg'),
+            resource_id: global.nextID,
+            address: data.location,
+            lat: data.locationCoords.latitude,
+            lon: data.locationCoords.longitude,
+            hours: data.openHours.replace(" ", "") + "-" + data.closeHours.replace(" ", ""),
+            phone: data.phone,
+            about: data.about
+        };
+
+        if (data.category == "Food Bank"){
+            global.foodBanks.push(final)
+        } else if (data.category == "Shelter"){
+            global.homeShelters.push(final)
+        } else if (data.category == "Education"){
+            global.education.push(final)
+        } else {
+            global.miscellaneous.push(final)
+        }
+        global.nextID = global.nextID + 1
+    },
+
+    addQuestion: function(data) {
+        final = {
+            question: data.question,
+            question_id: global.nextID,
+            details: data.details,
+            user: "Anonymous",
+        };
+        if (data.visibility == 0){
+            final.user = global.userInfo.firstName
+        }
+
+        global.questions.push(final)
+
+
     }
-
-
 	
-// 	addUser: function(temp) {
-// 		global.foodBanks.push(temp);
-// 		console.log("ADDED!");
-// 		console.log(global.foodBanks);
-// },
 
 // 	addPeer: function(temp) {
 // 		global.foodBanks.push(temp);
 // 		console.log("ADDED!");
 // 		console.log(global.foodBanks);
 // },
+
 // 	updateSettings: function(temp) {
 // 		global.foodBanks.push(temp);
 // 		console.log("ADDED!");

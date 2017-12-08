@@ -64,6 +64,18 @@ export default class ResourcesHome extends Component {
                   data={global.homeShelters}
                   navigation={this.props.navigation}
                 />
+                <ListingCarousel
+                  title='Education'
+                  subtitle='See all'
+                  data={global.homeShelters}
+                  navigation={this.props.navigation}
+                />
+                <ListingCarousel
+                  title='Miscellaneous'
+                  subtitle='See all'
+                  data={global.miscellaneous}
+                  navigation={this.props.navigation}
+                />
               </ScrollView>
           </View>
       );

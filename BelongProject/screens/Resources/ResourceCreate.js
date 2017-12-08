@@ -115,13 +115,17 @@ export default class ResourceCreate extends Component {
     resource = {
       category: this.state.category,
       locationCoords: this.state.locationCoords,
+      img: require('../../imgs/placeholders/resource.jpg'),
       location: this.state.location,
       phone: this.state.phone,
       openHours: this.state.openHours, 
-      closeHours: this.state.closedHours
+      closeHours: this.state.closedHours,
+      about: this.state.details,
+      name: ""
     }
 
-    console.log(resource)
+    //console.log(resource)
+    global.functions.addResource(resource)
     this.props.navigation.navigate("ResourcesHome");
   }
 
