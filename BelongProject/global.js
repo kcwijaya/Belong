@@ -945,10 +945,19 @@ global.functions = {
 
     },
 	
-    addAnswer: function(data) {
+    addAnswer: function(data, answered) {
         //MAKE SURE TO INCLUDE score = 0 
         console.log("ADDED!");
+        const final = {
+            answer: answered,
+            user: global.userInfo.firstName + " " + global.userInfo.lastName,
+            answer_id: global.nextID,
+            votes: 0
+        }       
+        global.answers[data.question_id].push(final)
         console.log(data);
+        console.log(answered)
+        global.nextID = global.nextID + 1
     },
 
 

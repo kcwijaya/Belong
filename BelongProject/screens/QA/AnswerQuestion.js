@@ -37,6 +37,7 @@ export default class AnswerQuestion extends Component {
 
   checkSubmit = () => {
     console.log(this.state.answer)
+    global.functions.addAnswer(this.props.navigation.state.params, this.state.answer)
     this.forceUpdate()
   }
 
