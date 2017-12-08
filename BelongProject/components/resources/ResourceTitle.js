@@ -26,7 +26,10 @@ export default class ResourceTitle extends Component {
               </Text>
             </Col>
             <Col size={20}>
-            	<TouchableOpacity onPress={() => global.functions.addBookmark(this.props._id, this.props.name, this)}> 
+            	<TouchableOpacity onPress={() => {
+            		global.functions.addBookmark(this.props.info);
+            		this.forceUpdate()
+            	}}> 
                		<Icon size={25} style={styles.bookmark} name="bookmark" color='white'/>
             	</TouchableOpacity>
             </Col>

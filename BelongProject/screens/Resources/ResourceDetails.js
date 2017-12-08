@@ -33,7 +33,8 @@ export default class ResourceDetails extends Component {
       <ScrollView>
        <ResourceTitle 
           name={this.props.navigation.state.params.name}
-          _id = {this.props.navigation.state.params.resource_id}
+          //_id = {this.props.navigation.state.params.resource_id}
+          info = {this.props.navigation.state.params}
         />
         <Hr />
         <ResourceOverview
