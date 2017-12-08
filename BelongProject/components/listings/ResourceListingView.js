@@ -26,7 +26,7 @@ export default class ResourceListingView extends Component {
             <Col style={styles.firstColumn}>
               <ResourceCard 
                   ResourceInfo={resourceArray[i]} 
-                  key={resourceArray[i].user_id}
+                  key={resourceArray[i].resource_id}
                   navigation={this.props.navigation}
                 /> 
             </Col>
@@ -34,7 +34,7 @@ export default class ResourceListingView extends Component {
              {i != resourceArray.length - 1 && 
                <ResourceCard 
                   ResourceInfo={resourceArray[i+1]} 
-                  key={resourceArray[i+1].user_id}
+                  key={resourceArray[i+1].resource_id}
                   navigation={this.props.navigation}
                 />  
             }
