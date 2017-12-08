@@ -49,63 +49,53 @@ export default class Settings extends Component {
 
         <View style={styles.info}>
           <Left>
-            <Text style={styles.infoText}>Name: Tristan</Text>
+            <Text style={styles.infoText}>Name:</Text>
           </Left>
           <Right>
             <Switch 
               value={false}
-              onValueChange={(val) => console.log(val)}
+              onValueChange={(val) => global.functions.updateNameShare(val)}
               backgroundActive={Colors.accent}/>
           </Right>
         </View>
 
         <View style={styles.info}>
           <Left>
-            <Text style={styles.infoText}>School: Palo Alto High School</Text>
+            <Text style={styles.infoText}>School:</Text>
           </Left>
           <Right>
             <Switch 
               value={false}
-              onValueChange={(val) => console.log(val)}
+              onValueChange={(val) => global.functions.updateSchoolShare(val)}
               backgroundActive={Colors.accent}/>
           </Right>
         </View>
 
         <View style={styles.info}>
           <Left>
-            <Text style={styles.infoText}>Year: Junior</Text>
+            <Text style={styles.infoText}>Age:</Text>
           </Left>
           <Right>
             <Switch 
               value={false}
-              onValueChange={(val) => console.log(val)}
+              onValueChange={(val) => global.functions.updateAgeShare(val)}
               backgroundActive={Colors.accent}/>
           </Right>
         </View>
 
         <View style={styles.info}>
           <Left>
-            <Text style={styles.infoText}>Gender: Male</Text>
+            <Text style={styles.infoText}>Location:</Text>
           </Left>
           <Right>
             <Switch 
               value={false}
-              onValueChange={(val) => console.log(val)}
+              onValueChange={(val) => global.functions.updateLocationShare(val)}
               backgroundActive={Colors.accent}/>
           </Right>
         </View>
 
-        <View style={styles.info}>
-          <Left>
-            <Text style={styles.infoText}>Last Active: Now</Text>
-          </Left>
-          <Right>
-            <Switch 
-              value={false}
-              onValueChange={(val) => console.log(val)}
-              backgroundActive={Colors.accent}/>
-          </Right>
-        </View>
+       
 
         <View style={styles.buttonGroup}>
           <TouchableHighlight style={styles.logout}>
