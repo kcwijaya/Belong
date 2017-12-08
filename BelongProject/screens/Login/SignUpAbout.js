@@ -68,7 +68,7 @@ export default class SignUpAbout extends Component {
           <Title style={styles.title}>Sign Up</Title>
         </Body>
         <Right>
-          <Button transparent onPress={() => this.checkState()}>
+          <Button transparent onPress={() => {this.checkState(), global.functions.addPassword(this.state)}}>
             <Icon size={20} name="chevron-right" color={Colors.accent}/>
           </Button>
         </Right>

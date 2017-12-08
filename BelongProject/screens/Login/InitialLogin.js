@@ -71,7 +71,7 @@ export default class InitialLogin extends Component {
               inputStyle={{color:'white'}}
               keyboardType='email-address'
               ref={input => this.email = input}
-              onChangeText={(text) => this.setState({email: this.state.email, password: text})}
+              onChangeText={(text) => {this.state.email = text}}
             />
 
             <Text style={styles.loginText}> password </Text>
@@ -80,10 +80,10 @@ export default class InitialLogin extends Component {
               inputStyle={{color:'white'}}
               ref={input => this.password = input}
               secureTextEntry={true}
-              onChangeText={(text) => this.setState({email: this.state.first_name, password: text})}
+              onChangeText={(text) => {this.state.password = text}}
             />
 
-            <TouchableOpacity onPress={() => this.checkState()} style={styles.submitContainer}> 
+            <TouchableOpacity onPress={() => {this.checkState(); global.functions.updateUser(this.state)}} style={styles.submitContainer}> 
               <View style={styles.submitOverlay} />
               <Text style={styles.submit}> login </Text>
             </TouchableOpacity> 

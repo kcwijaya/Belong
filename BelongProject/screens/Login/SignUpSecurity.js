@@ -78,7 +78,7 @@ export default class SignUpSecurity extends Component {
           <Title style={styles.title}>Sign Up</Title>
         </Body>
         <Right>
-          <Button transparent onPress={() => this.checkState()}>
+          <Button transparent onPress={() => {this.checkState()}}>
             <Icon size={20} name="chevron-right" color={Colors.accent}/>
           </Button>
         </Right>

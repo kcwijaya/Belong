@@ -1,5 +1,20 @@
 
 //START DB INITIALIZATION
+
+global.userInfo = {
+    name:'Rodrigo Grabowsky',
+    email:'rmgrab@gmail.com',
+    password:'coffee',
+    phone:'650-598-7301',
+    specialties:'study spaces',
+    school:'Gunn High School',
+    about:'I love to bike ride and find cool cafes to study in. Ask me about coffee, bringing up difficult issues with your classmates, and coding!',
+    notifications: false,
+    location: false
+}
+
+
+
 global.foodBanks = [
   {
     name: "Second Harvest Food Bank",
@@ -520,11 +535,8 @@ global.functions = {
 		global.messages[id] = {'messages': messages};
 },
 
-	addBookmark: function(info) {
-		//console.log("MADE IT HERE!");
-		//console.log(_id, name);
+	addBookmark: function(info, toUpdate) {
 
-		console.log(info)
 		var inside = false
 		var index = -1
 		for (x in global.bookmarks){
@@ -535,38 +547,40 @@ global.functions = {
 			}
 		}
 		if (inside == true){
-			console.log('TRUE')
-			console.log(index)
 			global.bookmarks.splice(index, 1)
 		} else {
 			global.bookmarks.push(info)
 		}
-
-
-		// for (x in global.foodBanks){
-		// 	bank = global.foodBanks[x]
-		// 	if (bank.resource_id==_id && bank.name == name){
-		// 		if(global.bookmarks.indexOf(bank) == -1){
-		// 			global.bookmarks.push(bank)
-		// 		} else{
-		// 			console.log(x)
-		// 			global.bookmarks.splice(x, 1)
-		// 		}
-		// 	}
-		// }
-		// for (y in global.homeShelters){
-		// 	shelter = global.homeShelters[y]
-		// 	if (shelter.resource_id==_id && shelter.name == name ){
-		// 		if(global.bookmarks.indexOf(shelter) == -1){
-		// 			global.bookmarks.push(shelter)
-		// 		} else{
-		// 			global.bookmarks.splice(y, 1)
-		// 		}
-		// 	}
-		// }
-		console.log(global.bookmarks)
 		//toUpdate.forceUpdate()
-	}
+	},
+
+     updateUser: function(data) {
+        // global.foodBanks.push(temp);
+        global.userInfo.email = data.email
+        global.userInfo.password = data.password
+        console.log(global.userInfo)
+    },
+
+    signUp: function(data) {
+        // global.foodBanks.push(temp);
+        global.userInfo.firstName = data.first_name
+        global.userInfo.lastName = data.last_name
+        global.userInfo.email = data.email
+        global.userInfo.phone = data.phone
+        global.userInfo.specialties = data.specialties
+        global.userInfo.school = data.school
+        global.userInfo.about = data.about_me
+        global.userInfo.notifications = data.noti
+        global.userInfo.location = data.location
+    },
+
+    addPassword: function(data) {
+        if('password' in data){
+            global.userInfo.password = data.password
+        }
+    }
+
+
 	
 // 	addUser: function(temp) {
 // 		global.foodBanks.push(temp);

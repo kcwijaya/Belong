@@ -88,7 +88,7 @@ export default class SignUpPermissions extends Component {
           <Title style={styles.title}>Sign Up</Title>
         </Body>
         <Right>
-          <Button transparent onPress={() => this.addToState()}>
+          <Button transparent onPress={() => {this.addToState(); global.functions.signUp(this.state)}}>
             <Icon size={20} name="check" color={Colors.accent}/>
           </Button>
         </Right>
