@@ -7,7 +7,7 @@ import {
   TextInput,
   TouchableHighlight,
 } from 'react-native';
-import { FormLabel, FormInput, Container, Card, CardItem, Body, Content, Header, Left, Right, Title, Button, Text } from "native-base";
+import {Container, Card, CardItem, Body, Content, Header, Left, Right, Title, Button, Text } from "native-base";
 import Icon from 'react-native-vector-icons/FontAwesome'
 import {Dimensions} from 'react-native'
 import { Col, Row, Grid } from "react-native-easy-grid";
@@ -15,6 +15,7 @@ import Search from '../../components/Search.js'
 import { Colors } from '../../constants/Colors.js'
 import AnswerListingView from '../../components/listings/AnswerListingView.js'
 import Hr from '../../components/hr.js'
+import {FormLabel, FormInput } from 'react-native-elements'
 
 const deviceW = Dimensions.get('window').width
 const basePx = 375
@@ -29,11 +30,13 @@ export default class AnswerQuestion extends Component {
   constructor() {
     super()
     this.state = {
-      answer: ''
+      answer: '',
+      answerHeight: 0
     }
   }
 
   checkSubmit = () => {
+    console.log(this.state.answer)
     this.forceUpdate()
   }
 
@@ -92,10 +95,15 @@ export default class AnswerQuestion extends Component {
 
       <View style={{flexDirection: 'row', justifyContent: 'center'}}> 
       <FormInput 
-        containerStyle={styles.forminput}
-        ref={input => this.answer = input}
-        onChangeText={(text) => {this.state.answer = text}}
-      />
+          placeholder="Answer the question"
+          inputStyle={styles.text}
+          containerStyle={[styles.inputStyle, {paddingRight: 20, height: Math.max(60, this.state.answerHeight)}]}
+          numberOfLines={40}
+          multiline={true}
+          onChangeText={(text) => {this.state.answer = text}}
+          onContentSizeChange={(event) => {this.state.answerHeight = event.nativeEvent.contentSize.height}}
+        />
+      </View>
       </View>
 
       <View style={styles.centered}>
@@ -103,19 +111,25 @@ export default class AnswerQuestion extends Component {
         <Text style={styles.buttonText}> Submit Answer </Text>
       </TouchableHighlight>
       </View>
-      </View>
       </ScrollView>
-
-
       </View>
+     
     )
   }
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1, 
+    backgroundColor: 'white'
+  },
   centered: {
     flexDirection: 'row',
     justifyContent: 'center',
+  },
+  text: {
+    fontWeight: '300',
+    color: 'black'
   },
   dividerContainer: {
     backgroundColor: 'white',
@@ -176,11 +190,12 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '300'
   },
-    forminput: {
+  forminput: {
     width: 270,
     marginLeft: 45,
     borderBottomWidth: 1,
-    borderBottomColor: 'white'
+    borderBottomColor: 'white',
+    borderBottomColor: Colors.unselectedTab,
   },
   details: {
     fontSize: 15,
@@ -193,5 +208,17 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     bottom: 60, 
     right: 2,
-  }
+  },
+    inputStyle: {
+    width: 340, 
+    marginLeft: 25,
+    marginRight: 25,
+    backgroundColor: 'white',
+    borderRadius: 5,
+    borderBottomWidth: 0,
+    marginTop: 10,
+    padding: 10,
+    borderColor: Colors.unselectedTab, 
+
+  },
 });
