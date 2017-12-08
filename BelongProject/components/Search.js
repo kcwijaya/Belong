@@ -12,10 +12,13 @@ export default class Search extends Component {
            <SearchBar
               ref={(ref) => this.searchBar = ref}
               showOnLoad
-              hideBack
+              data={this.props.data}
+              hideBack={false}
+              handleResults={this.props.handleResults}
               textColor={Colors.accent}
               placeholder={this.props.placeholder ? this.props.placeholder: "Search"}
-              placeholderTextColor={Colors.accent}         
+              placeholderTextColor={Colors.accent}    
+              onBack={this.props.onBack}     
             />
         );
     }
