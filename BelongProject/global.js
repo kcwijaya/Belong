@@ -12,6 +12,7 @@ global.userInfo = {
     phone:'650-598-7301',
     specialties:'study spaces',
     school:'Gunn High School',
+    age: '',
     about:'I love to bike ride and find cool cafes to study in. Ask me about coffee, bringing up difficult issues with your classmates, and coding!',
     notifications: false,
     location: false,
@@ -913,7 +914,9 @@ global.functions = {
     },
 
     signUp: function(data) {
-        // global.foodBanks.push(temp);
+        console.log("AGEAGE")
+        console.log(data)
+        global.userInfo.age =data.age
         global.userInfo.firstName = data.first_name
         global.userInfo.lastName = data.last_name
         global.userInfo.email = data.email

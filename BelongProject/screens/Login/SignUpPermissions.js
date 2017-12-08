@@ -35,6 +35,7 @@ export default class SignUpPermissions extends Component {
   addToState = () => {
       this.state.first_name = this.props.navigation.state.params.first_name 
       this.state.last_name = this.props.navigation.state.params.last_name 
+      this.state.age = this.props.navigation.state.params.age
       this.state.email = this.props.navigation.state.params.email
       this.state.phone = this.props.navigation.state.params.phone
       this.state.specialties = this.props.navigation.state.params.specialties
