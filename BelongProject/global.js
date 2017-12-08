@@ -1,5 +1,20 @@
 
 //START DB INITIALIZATION
+
+global.userInfo = {
+    name:'Rodrigo Grabowsky',
+    email:'rmgrab@gmail.com',
+    password:'coffee',
+    phone:'650-598-7301',
+    specialties:'study spaces',
+    school:'Gunn High School',
+    about:'I love to bike ride and find cool cafes to study in. Ask me about coffee, bringing up difficult issues with your classmates, and coding!',
+    notifications: false,
+    location: false
+}
+
+
+
 global.foodBanks = [
   {
     name: "Second Harvest Food Bank",
@@ -536,9 +551,36 @@ global.functions = {
 		} else {
 			global.bookmarks.push(info)
 		}
-		console.log(global.bookmarks)
 		//toUpdate.forceUpdate()
-	}
+	},
+
+     updateUser: function(data) {
+        // global.foodBanks.push(temp);
+        global.userInfo.email = data.email
+        global.userInfo.password = data.password
+        console.log(global.userInfo)
+    },
+
+    signUp: function(data) {
+        // global.foodBanks.push(temp);
+        global.userInfo.firstName = data.first_name
+        global.userInfo.lastName = data.last_name
+        global.userInfo.email = data.email
+        global.userInfo.phone = data.phone
+        global.userInfo.specialties = data.specialties
+        global.userInfo.school = data.school
+        global.userInfo.about = data.about_me
+        global.userInfo.notifications = data.noti
+        global.userInfo.location = data.location
+    },
+
+    addPassword: function(data) {
+        if('password' in data){
+            global.userInfo.password = data.password
+        }
+    }
+
+
 	
 // 	addUser: function(temp) {
 // 		global.foodBanks.push(temp);

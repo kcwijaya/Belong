@@ -34,7 +34,7 @@ export default class SignUpName extends Component {
 
   checkSubmit = () => {
     if (this.state.first_name != '' && this.state.last_name != '') {
-      this.props.navigation.navigate("SignUpContact", {first_name: this.first_name, last_name: this.last_name})
+      this.props.navigation.navigate("SignUpContact", {first_name: this.state.first_name, last_name: this.state.last_name})
     } else {
       if (this.state.first_name == '') {
         this.first_name.shake()
