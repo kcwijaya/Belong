@@ -14,12 +14,6 @@ import { Colors } from '../../constants/Colors.js'
 import ProfilePicture from '../../components/people/ProfilePicture.js'
 import PeerSummary from '../../components/people/PeerSummary.js'
 import MentorSummary from '../../components/people/MentorSummary.js'
-import {Dimensions} from 'react-native'
-import ActionButtons from '../../components/buttons/ActionButtons.js'
-const deviceW = Dimensions.get('window').width
-const deviceH = Dimensions.get('window').height;
-
-
 export default class ProfilePage extends Component {
   constructor(){
     super();
@@ -28,15 +22,6 @@ export default class ProfilePage extends Component {
   static navigationOptions = ({ navigation }) => ({
     header: null
   });
-
-  isSaved = () => {
-    for (var i = 0; i < global.peers.length; i++) {
-      if (global.peers[i].user_id == this.props.navigation.state.params.user_id) {
-        return true
-      }
-    }
-    return false
-  }
 
   render() {
     var payload = this.props.navigation.state.params;
@@ -56,23 +41,46 @@ export default class ProfilePage extends Component {
         <Right></Right>
       </Header>
     
-      <ScrollView style={styles.ccontainer}> 
-        <ProfilePicture source={this.props.navigation.state.params.img} />
-        <View style={styles.nameContainer}>
-        <Text style={styles.name}> {this.props.navigation.state.params.name.split(' ')[0]} </Text>
-        <MentorSummary
+      <ScrollView>
+
+      <ProfilePicture 
+        source={this.props.navigation.state.params.img}
+      />
+
+      <MentorSummary
         location={this.props.navigation.state.params.location}
         about={this.props.navigation.state.params.about}
         specialties={this.props.navigation.state.params.specialties}
         time={this.props.navigation.state.params.time}
-         /> 
-        <ActionButtons
-          profile={this.props.navigation.state.params}
-          saved={this.isSaved}
-          navigation={this.props.navigation}
-         /> 
-        </View>
-      </ScrollView> 
+      /> 
+
+      { !this.props.navigation.state.params.is_saved ? 
+       <View style={styles.buttonGroup}>
+        <TouchableHighlight style={styles.answerButton} onPress={() => {this.props.navigation.navigate("MessageScreen", payload)}}>
+              <Text style={styles.buttonText}> Message </Text>
+            </TouchableHighlight>
+            <View style={{width: 10}} />
+        <TouchableHighlight style={styles.addButton} onPress={() => {global.functions.addPeer(this.props.navigation.state.params), this.forceUpdate()}}>
+              <Text style={styles.buttonText}> Add Peer </Text>
+            </TouchableHighlight>
+          </View>
+      :
+      <View style={styles.buttonGroup}>
+        <TouchableHighlight style={styles.answerButton}>
+              <Text style={styles.buttonText}> Message </Text>
+            </TouchableHighlight>
+            <View style={{width: 10}} />
+        <TouchableHighlight style={styles.deleteButton} onPress={() => {global.functions.removePeer(this.props.navigation.state.params.user_id), this.forceUpdate()}}>
+              <Text style={styles.buttonText}> Delete Peer </Text>
+            </TouchableHighlight>
+      </View>
+    }
+      <View style={{flexDirection: 'row', justifyContent: 'center'}}>
+        <TouchableHighlight style={styles.reportButton}>
+                <Text style={styles.buttonText}> Report/Block </Text>
+        </TouchableHighlight>
+      </View>
+    </ScrollView>
       </View>
     )
   }
@@ -80,52 +88,10 @@ export default class ProfilePage extends Component {
 }
 
 const styles = StyleSheet.create({
-  name: {
-    letterSpacing: 4,
-    fontWeight: 'bold',
-    marginLeft: 10,
-    fontSize: 25, 
-    color: Colors.unselectedTab,
-  },
-  nameContainer: {
-    top: 320, 
-    left: 40
-  },
-  ccontainer: {
-    flex: 1,
-    height: deviceH, 
-    width: deviceW
-  },
-  opacityOverlay: {
-    opacity: 0.7,
-    backgroundColor: Colors.offwhite,
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-  },
-  overlay: {
-    backgroundColor: 'white', 
-    position: 'absolute', 
-    top: 80, 
-    left: 70, 
-    width: 250, 
-    height: 400,
-    borderWidth: 1,
-    borderRadius: 2,
-    borderColor: Colors.unselectedTop,
-    borderBottomWidth: 0,
-    shadowColor: Colors.unselectedTab,
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.8,
-    shadowRadius: 1,
-    elevation: 1,
-  },
   container: {
     flex: 1,
-      // backgroundColor: '#FFFCFC',
     backgroundColor: 'white'
+
   },
   buttonText: {
     textAlign: 'center',

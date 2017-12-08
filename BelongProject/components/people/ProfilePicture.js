@@ -19,15 +19,16 @@ export default class ProfilePicture extends Component {
 
 const styles = StyleSheet.create({
   image: {
-    width: 200, 
-    height: 200, 
-    borderRadius: 100,
-    marginTop: 40, 
-    marginBottom: 20
+    width: 340, 
+    height: 340, 
+    borderRadius: 170,
+    position: 'absolute', 
+    left: 120, 
+    top: -30
   },
   container: {
     flex: 1, 
     justifyContent: 'center',
     flexDirection: 'row'
-  }
+  },
 });

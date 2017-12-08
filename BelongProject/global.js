@@ -443,170 +443,170 @@ global.answers = {
 
   1: [{
     answer: "Here's is my answer!",
-    user: "Kimberly Wijaya",
+    user: "Kimberly",
     answer_id: 1,
     votes: 0
 },
 {
     answer: "Here's is second answer!",
-    user: "Tristan Vanech",
+    user: "Tristan",
     answer_id: 2,
     votes: 0
 },
 {
     answer: "Here's is third answer!",
-    user: "Greg Ramel",
+    user: "Greg",
     answer_id: 3,
     votes: 0
 },
 {
     answer: "Here's is fourth answer!",
-    user: "Cameron Andrews",
+    user: "Cameron",
     answer_id: 4,
     votes: 0
 }],
 
 2: [{
     answer: "Here's is my answer!",
-    user: "Kimberly Wijaya",
+    user: "Kimberly",
     answer_id: 1,
     votes: 0
 },
 {
     answer: "Here's is second answer!",
-    user: "Tristan Vanech",
+    user: "Tristan",
     answer_id: 2,
     votes: 0
 },
 {
     answer: "Here's is third answer!",
-    user: "Greg Ramel",
+    user: "Greg",
     answer_id: 3,
     votes: 0
 },
 {
     answer: "Here's is fourth answer!",
-    user: "Cameron Andrews",
+    user: "Cameron",
     answer_id: 4,
     votes: 0
 }],
 3: [{
     answer: "Here's is my answer!",
-    user: "Kimberly Wijaya",
+    user: "Kimberly",
     answer_id: 1,
     votes: 0
 },
 {
     answer: "Here's is second answer!",
-    user: "Tristan Vanech",
+    user: "Tristan",
     answer_id: 2,
     votes: 0
 },
 {
     answer: "Here's is third answer!",
-    user: "Greg Ramel",
+    user: "Greg",
     answer_id: 3,
     votes: 0
 },
 {
     answer: "Here's is fourth answer!",
-    user: "Cameron Andrews",
+    user: "Cameron",
     answer_id: 4,
     votes: 0
 }],
 5: [{
     answer: "Here's is my answer!",
-    user: "Kimberly Wijaya",
+    user: "Kimberly",
     answer_id: 1,
     votes: 0
 },
 {
     answer: "Here's is second answer!",
-    user: "Tristan Vanech",
+    user: "Tristan",
     answer_id: 2,
     votes: 0
 },
 {
     answer: "Here's is third answer!",
-    user: "Greg Ramel",
+    user: "Greg",
     answer_id: 3,
     votes: 0
 },
 {
     answer: "Here's is fourth answer!",
-    user: "Cameron Andrews",
+    user: "Cameron",
     answer_id: 4,
     votes: 0
 }],
 6: [{
     answer: "Here's is my answer!",
-    user: "Kimberly Wijaya",
+    user: "Kimberly",
     answer_id: 1,
     votes: 0
 },
 {
     answer: "Here's is second answer!",
-    user: "Tristan Vanech",
+    user: "Tristan",
     answer_id: 2,
     votes: 0
 },
 {
     answer: "Here's is third answer!",
-    user: "Greg Ramel",
+    user: "Greg",
     answer_id: 3,
     votes: 0
 },
 {
     answer: "Here's is fourth answer!",
-    user: "Cameron Andrews",
+    user: "Cameron",
     answer_id: 4,
     votes: 0
 }],
 7: [{
     answer: "Here's is my answer!",
-    user: "Kimberly Wijaya",
+    user: "Kimberly",
     answer_id: 1,
     votes: 0
 },
 {
     answer: "Here's is second answer!",
-    user: "Tristan Vanech",
+    user: "Tristan",
     answer_id: 2,
     votes: 0
 },
 {
     answer: "Here's is third answer!",
-    user: "Greg Ramel",
+    user: "Greg",
     answer_id: 3,
     votes: 0
 },
 {
     answer: "Here's is fourth answer!",
-    user: "Cameron Andrews",
+    user: "Cameron",
     answer_id: 4,
     votes: 0
 }],
 9:[{
     answer: "Here's is my answer!",
-    user: "Kimberly Wijaya",
+    user: "Kimberly",
     answer_id: 1,
     votes: 0
 },
 {
     answer: "Here's is second answer!",
-    user: "Tristan Vanech",
+    user: "Tristan",
     answer_id: 2,
     votes: 0
 },
 {
     answer: "Here's is third answer!",
-    user: "Greg Ramel",
+    user: "Greg",
     answer_id: 3,
     votes: 0
 },
 {
     answer: "Here's is fourth answer!",
-    user: "Cameron Andrews",
+    user: "Cameron",
     answer_id: 4,
     votes: 0
 }]
@@ -945,10 +945,19 @@ global.functions = {
 
     },
 	
-    addAnswer: function(data) {
+    addAnswer: function(data, answered) {
         //MAKE SURE TO INCLUDE score = 0 
         console.log("ADDED!");
+        const final = {
+            answer: answered,
+            user: global.userInfo.firstName,
+            answer_id: global.nextID,
+            votes: 0
+        }       
+        global.answers[data.question_id].push(final)
         console.log(data);
+        console.log(answered)
+        global.nextID = global.nextID + 1
     },
 
 
@@ -995,6 +1004,7 @@ global.functions = {
 
     removePeer: function(id) {
         console.log(global.peers)
+        console.log(id)
         for (x in global.peers){
             person = global.peers[x]
             if (person.user_id == id){

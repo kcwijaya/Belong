@@ -23,18 +23,38 @@ function px2dp(px) {
 
 
 export default class QAHome extends Component {
-
+  constructor() {
+    super()
+    this.state = {
+      data: global.questions
+    }
+  }
   static navigationOptions = ({ navigation }) => ({
     header: null
+
   });
+
+
+
+  changeData = (results) => {
+    console.log("new DAT")
+    console.log(results)
+    this.state.data = results
+    this.forceUpdate()
+  }
+
+  onBack = () => {
+    this.state.data = global.questions
+    this.forceUpdate()
+  }
 
   render() {
     return (
       <View style={styles.container}>
         <PlusIcon style={{bottom:20}} onPress={() => {this.props.navigation.navigate("CreateQuestion")}}/>
-        <Search/>
+        <Search handleResults={this.changeData}   placeholder="Search for question" data={global.questions} onBack={this.onBack}/>
         <QAListingView 
-          questions={global.questions}
+          questions={this.state.data}
           navigation={this.props.navigation}
         />
      </View>
@@ -44,7 +64,8 @@ export default class QAHome extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#F5FCFF',
+    backgroundColor: 'white',
+    flex: 1
   },
   plus: {
     position: 'absolute', 
