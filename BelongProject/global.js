@@ -24,7 +24,7 @@ global.userInfo = {
 global.foodBanks = [
   {
     name: "Second Harvest Food Bank",
-    img: require('./imgs/placeholders/resource.jpg'),
+    img: require('./imgs/resources/secondharvest.jpg'),
     resource_id: 1,
     address: '1051 Bing St San Carlos, CA 94070',
     lat: 37.496094,
@@ -35,7 +35,7 @@ global.foodBanks = [
   },
   {
     name: "Second Harvest Food Bank",
-    img: require('./imgs/placeholders/resource.jpg'),
+    img: require('./imgs/resources/secondharvest.jpg'),
     resource_id: 2,
     address: '4001 N 1st St San Jose, CA 95134',
     lat: 37.413259,
@@ -47,7 +47,7 @@ global.foodBanks = [
   },
   {
     name: "St. Anthony's Padua Dining Room",
-    img: require('./imgs/placeholders/resource.jpg'),
+    img: require('./imgs/resources/anthonyspadua.jpg'),
     resource_id: 3,
     address: '3500 Middlefield Road Menlo Park, CA 94025',
     lat: 37.469098,
@@ -59,7 +59,7 @@ global.foodBanks = [
   },
   {
     name: "Ecumenical Hunger Program",
-    img: require('./imgs/placeholders/resource.jpg'),
+    img: require('./imgs/resources/ehp.png'),
     resource_id: 4,
     address: '2411 Pulgas Ave East Pal Alto, CA 94303',
     lat: 37.470811,
@@ -70,7 +70,7 @@ global.foodBanks = [
   },
   {
     name: "South Palo Alto Food Closet",
-    img: require('./imgs/placeholders/resource.jpg'),
+    img: require('./imgs/resources/foodcloset.jpg'),
     resource_id: 5,
     address: '670 E Meadow Dr Palo Alto, CA 94306',
     lat: 37.423259,
@@ -81,7 +81,7 @@ global.foodBanks = [
   },
   {
     name: "All Saints Episcopal Church",
-    img: require('./imgs/placeholders/resource.jpg'),
+    img: require('./imgs/resources/episcopalpa.jpg'),
     resource_id: 6,
     address: '555 Waverley St Palo Alto, CA 94301',
     lat: 37.446853,
@@ -92,7 +92,7 @@ global.foodBanks = [
   },
   {
     name: "Second Harvest Food Bank of Santa Clara and San Mateo Counties - Curtner Center",
-    img: require('./imgs/placeholders/resource.jpg'),
+    img: require('./imgs/resources/secondharvest.jpg'),
     resource_id: 7,
     address: '750 Curtner Ave San Jose, CA 95125',
     lat: 37.291686,
@@ -103,7 +103,7 @@ global.foodBanks = [
   },
   {
     name: "Sunnyvale Community Services",
-    img: require('./imgs/placeholders/resource.jpg'),
+    img: require('./imgs/resources/sunnyvalecomm.jpg'),
     resource_id: 8,
     address: '725 Kifer Rd Sunnyvale, CA 94076',
     lat: 37.376046,
@@ -114,7 +114,7 @@ global.foodBanks = [
   },
   {
     name: "Sunnyvale Fish",
-    img: require('./imgs/placeholders/resource.jpg'),
+    img: require('./imgs/resources/sunnyvalefish.gif'),
     resource_id: 9,
     address: '581 E Fremont Ave Sunnyvale, CA 94087',
     lat: 37.352897,
