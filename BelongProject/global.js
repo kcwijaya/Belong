@@ -130,7 +130,7 @@ global.foodBanks = [
 global.homeShelters = [
   {
     name: "Sunnyvale County Winter Shelter",
-    img: require('./imgs/placeholders/resource.jpg'),
+    img: require('./imgs/resources/wintershelter.jpg'),
     resource_id: 10,
     address: '999 Hamlin Ct Sunnyvale, CA 94089',
     lat: 37.401492,
@@ -141,7 +141,7 @@ global.homeShelters = [
   },
   {
     name: "HomeFirst - Eight Trees Apartments",
-    img: require('./imgs/placeholders/resource.jpg'),
+    img: require('./imgs/placeholders/resource.png'),
     resource_id: 11,
     address: '183 Acalanes Dr Sunnyvale, CA 94086',
     lat: 37.382876,
@@ -153,7 +153,7 @@ global.homeShelters = [
   },
   {
     name: "Bill Wilson Center",
-    img: require('./imgs/placeholders/resource.jpg'),
+    img: require('./imgs/resources/billwilson.jpg'),
     resource_id: 12,
     address: '3490 The Alameda Santa Clara, CA 95050',
     lat: 37.353880,
@@ -165,7 +165,7 @@ global.homeShelters = [
   },
   {
     name: "YWCA Silicon Valley",
-    img: require('./imgs/placeholders/resource.jpg'),
+    img: require('./imgs/resources/ywca.png'),
     resource_id: 13,
     address: '298 S Sunnyvale Ave Sunnyvale, CA 94086',
     lat: 37.374239,
@@ -176,7 +176,7 @@ global.homeShelters = [
   },
   {
     name: "HomeFirst Services of Santa County",
-    img: require('./imgs/placeholders/resource.jpg'),
+    img: require('./imgs/resources/homefirst.png'),
     resource_id: 14,
     address: '507 Valley Way Milpitas, CA 95035',
     lat: 37.427502,
@@ -187,7 +187,7 @@ global.homeShelters = [
   },
   {
     name: "HomeFirst - Sobrato House Youth Center",
-    img: require('./imgs/placeholders/resource.jpg'),
+    img: require('./imgs/resources/homefirst.png'),
     resource_id: 15,
     address: '496 S 3rd St San Jose, CA 95112',
     lat: 37.329895,
@@ -198,7 +198,7 @@ global.homeShelters = [
   },
   {
     name: "Project WeHOPE",
-    img: require('./imgs/placeholders/resource.jpg'),
+    img: require('./imgs/resources/wehope.jpeg'),
     resource_id: 16,
     address: '1854 Bay Rd East Palo Alto, CA 94303',
     lat: 37.472128,
@@ -215,7 +215,7 @@ global.homeShelters = [
 global.education = [
   {
     name: "Sunnyvale Public Library",
-    img: require('./imgs/placeholders/resource.jpg'),
+    img: require('./imgs/resources/library.jpg'),
     resource_id: 17,
     address: '655 W Olive Ave Sunnyvale, CA 94086',
     lat: 37.371641,
@@ -226,7 +226,7 @@ global.education = [
   },
   {
     name: "Fremont High School",
-    img: require('./imgs/placeholders/resource.jpg'),
+    img: require('./imgs/resources/fremonthigh.jpg'),
     resource_id: 18,
     address: '1279 Sunnyvale Saratoga Rd Sunnyvale, CA 94087',
     lat: 37.352826,
@@ -257,7 +257,7 @@ global.areaPeople = [
 global.miscellaneous = [
   {
     name: "Professor Consultation",
-    img: require('./imgs/placeholders/resource.jpg'),
+    img: require('./imgs/resources/landay.jpeg'),
     resource_id: 21,
     address: '849 Tolman Dr Stanford, CA 94305',
     lat: 37.409807,
@@ -268,7 +268,7 @@ global.miscellaneous = [
   },
   {
     name: "FedEx Office Print & Ship Center",
-    img: require('./imgs/placeholders/resource.jpg'),
+    img: require('./imgs/resources/fedex.jpg'),
     resource_id: 22,
     address: '560 E El Camino Real Suite B',
     lat: 37.362637,
@@ -279,18 +279,18 @@ global.miscellaneous = [
   },
   {
     name: "McDonald's",
-    img: require('./imgs/placeholders/resource.jpg'),
+    img: require('./imgs/resources/mcd.jpg'),
     resource_id: 23,
     address: '5122 Stevens Creek Blvd San Jose, CA 95129',
     lat: 37.322663,
     lon: -122.992819,
-    hours: '24 hours',
+    hours: '12AM-12AM',
     phone: '6504900437',
     about: 'Free wi-fi, open 24 hours, and a McPick 2 for $2.50 menu.',
   },
   {
     name: "Sunnyvale Caltrain Station",
-    img: require('./imgs/placeholders/resource.jpg'),
+    img: require('./imgs/resources/caltrain.jpg'),
     resource_id: 24,
     address: '121 W Evelyn Ave Sunnyvale, CA 94086',
     lat: 37.378183,
@@ -618,22 +618,22 @@ global.answers = {
 global.peers = [
   {
     name: "Kimberly Wijaya",
-    img: require('./imgs/placeholders/user.jpg'),
+    img: require('./imgs/people/kim.jpg'),
     user_id: 1,
   },
   {
     name: "Tristan Vanech",
-    img: require('./imgs/placeholders/user.jpg'),
+    img: require('./imgs/people/tristan.jpg'),
     user_id: 2,
   },
   {
     name: "Greg Ramel",
-    img: require('./imgs/placeholders/user.jpg'),
+    img: require('./imgs/people/greg.jpg'),
     user_id: 3,
   },
   {
     name: "Cameron Andrews",
-    img: require('./imgs/placeholders/user.jpg'),
+    img: require('./imgs/people/cameron.jpg'),
     user_id: 4,
   },
   {
