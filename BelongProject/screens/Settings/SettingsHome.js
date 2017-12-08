@@ -35,21 +35,21 @@ export default class Settings extends Component {
 
       <View style={styles.container}>
         <Header>
-          <Title style={{fontWeight: '300'}} color={Colors.accent}>Settings</Title>
-        </Header>
-
-        <Header>
-          <Left>
-            <Text color={Colors.accent}>Info</Text>
-          </Left>
-          <Right>
-            <Text color={Colors.accent}>Public?</Text>
-          </Right>
+          <Title color={Colors.accent}>Settings</Title>
         </Header>
 
         <View style={styles.info}>
           <Left>
-            <Text>Name: Tristan Vanech</Text>
+            <Text style={styles.headerText}>Info</Text>
+          </Left>
+          <Right>
+            <Text style={styles.headerText}>Public?</Text>
+          </Right>
+        </View>
+
+        <View style={styles.info}>
+          <Left>
+            <Text style={styles.infoText}>Name: Tristan</Text>
           </Left>
           <Right>
             <Switch 
@@ -61,7 +61,7 @@ export default class Settings extends Component {
 
         <View style={styles.info}>
           <Left>
-            <Text>School: Palo Alto High School</Text>
+            <Text style={styles.infoText}>School: Palo Alto High School</Text>
           </Left>
           <Right>
             <Switch 
@@ -73,7 +73,7 @@ export default class Settings extends Component {
 
         <View style={styles.info}>
           <Left>
-            <Text>Year: Junior</Text>
+            <Text style={styles.infoText}>Year: Junior</Text>
           </Left>
           <Right>
             <Switch 
@@ -85,7 +85,7 @@ export default class Settings extends Component {
 
         <View style={styles.info}>
           <Left>
-            <Text>Gender: Male</Text>
+            <Text style={styles.infoText}>Gender: Male</Text>
           </Left>
           <Right>
             <Switch 
@@ -97,7 +97,7 @@ export default class Settings extends Component {
 
         <View style={styles.info}>
           <Left>
-            <Text>Last Active: Now</Text>
+            <Text style={styles.infoText}>Last Active: Now</Text>
           </Left>
           <Right>
             <Switch 
@@ -129,6 +129,16 @@ const styles = StyleSheet.create({
   info: {
     flex: 1,
     flexDirection: 'row',
+    marginLeft: 30,
+    marginRight: 30,
+  },
+  infoText: {
+    // fontWeight: 'bold',
+    fontSize: 20,
+  },
+  headerText: {
+    fontWeight: 'bold',
+    fontSize: 20,
   },
   buttonText: {
     textAlign: 'center',
