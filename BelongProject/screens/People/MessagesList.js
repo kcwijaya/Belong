@@ -24,6 +24,10 @@ export default class Messages extends Component {
       showSearch: false,
       data: global.haveMessaged
     }
+    setInterval(() => {
+      this.setState({showSearch: this.state.showSearch, data: global.haveMessaged})
+      this.forceUpdate()
+    }, 1500);
 
     this.toggleSearch = this.toggleSearch.bind(this)
   }

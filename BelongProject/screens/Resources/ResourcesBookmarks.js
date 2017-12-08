@@ -42,8 +42,6 @@ export default class ResourcesBookmarks extends Component {
   }
 
 
- 
-
 
   onBack = () => {
     this.state.sources = global.bookmarks

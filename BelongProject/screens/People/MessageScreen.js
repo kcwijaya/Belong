@@ -35,8 +35,7 @@ export default class MessageScreen extends Component {
     this.setState((previousState) => ({
       messages: GiftedChat.append(previousState.messages, messages),
     }));
-    console.log('new message')
-    global.functions.addMessage(GiftedChat.append(this.state.messages, messages), this.props.navigation.state.params.user_id)
+    global.functions.addMessage(GiftedChat.append(this.state.messages, messages), messages, this.props.navigation.state.params.user_id)
   }
 
   render() {
