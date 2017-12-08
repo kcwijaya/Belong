@@ -22,7 +22,6 @@ export default class SignUpAbout extends Component {
   constructor(){
     super();
     this.state = {
-      age: '',
       specialties: '', 
       about_me: '', 
       school: ''
@@ -33,6 +32,7 @@ export default class SignUpAbout extends Component {
   addToState = () => {
       this.state.first_name = this.props.navigation.state.params.first_name 
       this.state.last_name = this.props.navigation.state.params.last_name 
+      this.state.age = this.props.navigation.state.params.age
       this.state.email = this.props.navigation.state.params.email
       this.state.phone = this.props.navigation.state.params.phone
       this.state.password = this.props.navigation.state.params.password
@@ -90,7 +90,7 @@ export default class SignUpAbout extends Component {
               containerStyle={styles.forminput}
               inputStyle={{color:Colors.accent}}
               ref={input => this.password = input}
-              onChangeText={(text) => this.setState({age: this.state.age, about_me: this.state.about_me, school: this.state.school, specialties: text})}
+              onChangeText={(text) => this.setState({about_me: this.state.about_me, school: this.state.school, specialties: text})}
             />
 
            <Text style={styles.loginText}> school </Text>
@@ -98,7 +98,7 @@ export default class SignUpAbout extends Component {
               containerStyle={styles.forminput}
               inputStyle={{color:Colors.accent}}
               ref={input => this.password = input}
-              onChangeText={(text) => this.setState({age: this.state.age, about_me: this.state.about_me, school: text, specialties: this.state.specialties})}
+              onChangeText={(text) => this.setState({about_me: this.state.about_me, school: text, specialties: this.state.specialties})}
             />
 
            <Text style={styles.loginText}> about you </Text>
@@ -106,8 +106,10 @@ export default class SignUpAbout extends Component {
               containerStyle={styles.forminput}
               inputStyle={{color:Colors.accent}}
               ref={input => this.password = input}
-              onChangeText={(text) => this.setState({age: this.state.age, about_me: this.state.about_me, school: this.state.school, specialties: text})}
+              onChangeText={(text) => this.setState({about_me: this.state.about_me, school: this.state.school, specialties: text})}
             />
+
+
           </View>
         </View>
 

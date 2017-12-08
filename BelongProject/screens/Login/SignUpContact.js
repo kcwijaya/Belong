@@ -31,6 +31,7 @@ export default class SignUpContact extends Component {
   addToState = () => {
       this.state.first_name = this.props.navigation.state.params.first_name 
       this.state.last_name = this.props.navigation.state.params.last_name 
+      this.state.age = this.props.navigation.state.params.age
   }
 
   static navigationOptions = ({ navigation }) => ({

@@ -23,7 +23,8 @@ export default class SignUpName extends Component {
     super();
     this.state = {
       first_name: '',
-      last_name: ''
+      last_name: '',
+      age: ''
     }
     this.checkSubmit = this.checkSubmit.bind(this)
   }
@@ -33,14 +34,17 @@ export default class SignUpName extends Component {
   });
 
   checkSubmit = () => {
-    if (this.state.first_name != '' && this.state.last_name != '') {
-      this.props.navigation.navigate("SignUpContact", {first_name: this.state.first_name, last_name: this.state.last_name})
+    if (this.state.first_name != '' && this.state.last_name != '' && this.state.age != '') {
+      this.props.navigation.navigate("SignUpContact", {first_name: this.state.first_name, last_name: this.state.last_name, age: this.state.age})
     } else {
       if (this.state.first_name == '') {
         this.first_name.shake()
       } 
       if (this.state.last_name == '') {
         this.last_name.shake()
+      }
+      if (this.state.age == '') {
+        this.age.shake()
       }
     }
   }
@@ -88,7 +92,7 @@ export default class SignUpName extends Component {
               containerStyle={styles.forminput}
               inputStyle={{color:Colors.accent}}
               ref={input => this.first_name = input}
-              onChangeText={(text) => this.setState({first_name: text, last_name: this.state.last_name})}
+              onChangeText={(text) => this.setState({first_name: text, last_name: this.state.last_name, age: this.state.age})}
 
             />
 
@@ -97,8 +101,17 @@ export default class SignUpName extends Component {
               containerStyle={styles.forminput}
               inputStyle={{color:Colors.accent}}
               ref={input => this.last_name = input}
-              onChangeText={(text) => this.setState({first_name: this.state.first_name, last_name: text})}
+              onChangeText={(text) => this.setState({first_name: this.state.first_name, last_name: text, age: this.state.age})}
             />
+
+            <Text style={styles.loginText}> age </Text>
+            <FormInput 
+              containerStyle={styles.forminput}
+              inputStyle={{color:Colors.accent}}
+              ref={input => this.age = input}
+              onChangeText={(text) => this.setState({first_name: this.state.first_name, last_name: this.state.last_name, age: text})}
+            />
+
           </View>
         </View>
 
@@ -177,7 +190,7 @@ const styles = StyleSheet.create({
   },
   loginContainer: {
     backgroundColor: 'transparent',
-    height:240,
+    height:270,
     marginTop: 50,
     flexDirection: 'row', 
     justifyContent: 'center'
