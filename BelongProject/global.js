@@ -14,7 +14,9 @@ global.userInfo = {
     school:'Gunn High School',
     about:'I love to bike ride and find cool cafes to study in. Ask me about coffee, bringing up difficult issues with your classmates, and coding!',
     notifications: false,
-    location: false
+    location: false,
+    user_id: 666
+
 }
 
 
@@ -412,6 +414,19 @@ global.questions = [
   }
 ];
 
+
+
+global.QtoU = {
+    1: 1, 
+    2: 7,
+    3: 5,
+    4: 6,
+    5: 8,
+    6: 9,
+    7: 9,
+    8: 9,
+    9: 9,
+};
 
 
 
@@ -812,6 +827,8 @@ global.functions = {
             about: data.about
         };
 
+
+
         if (data.category == "Food Bank"){
             global.foodBanks.push(final)
         } else if (data.category == "Shelter"){
@@ -825,15 +842,18 @@ global.functions = {
     },
 
     addQuestion: function(data) {
+        const  = global.nextID
         final = {
             question: data.question,
-            question_id: global.nextID,
+            question_id: id,
             details: data.details,
             user: "Anonymous",
         };
         if (data.visibility == 0){
             final.user = global.userInfo.firstName
         }
+
+        global.QtoU[id] = global.userInfo.user_id
 
         global.questions.push(final)
 
