@@ -284,7 +284,7 @@ global.miscellaneous = [
     address: '5122 Stevens Creek Blvd San Jose, CA 95129',
     lat: 37.322663,
     lon: -122.992819,
-    hours: '24 hours',
+    hours: '12AM-12AM',
     phone: '6504900437',
     about: 'Free wi-fi, open 24 hours, and a McPick 2 for $2.50 menu.',
   },
@@ -631,6 +631,27 @@ global.peers = [
     img: require('./imgs/placeholders/user.jpg'),
     user_id: 3,
   },
+];
+
+
+
+
+global.users = [
+  {
+    name: "Kimberly Wijaya",
+    img: require('./imgs/placeholders/user.jpg'),
+    user_id: 1,
+  },
+  {
+    name: "Tristan Vanech",
+    img: require('./imgs/placeholders/user.jpg'),
+    user_id: 2,
+  },
+  {
+    name: "Greg Ramel",
+    img: require('./imgs/placeholders/user.jpg'),
+    user_id: 3,
+  },
   {
     name: "Cameron Andrews",
     img: require('./imgs/placeholders/user.jpg'),
@@ -662,6 +683,8 @@ global.peers = [
     user_id: 9,
   }
 ];
+
+
 
 
 
@@ -917,19 +940,19 @@ global.functions = {
         global.QtoU[id] = global.userInfo.user_id
 
         global.questions.push(final)
+        global.nextID = global.nextID + 1
 
 
     },
 	
     addAnswer: function(data) {
-        //global.foodBanks.push(temp);
+        //MAKE SURE TO INCLUDE score = 0 
         console.log("ADDED!");
         console.log(data);
     },
 
 
     getAnswers: function(data) {
-        //global.foodBanks.push(temp);
         console.log("ADDED!");
         console.log(data);
         if (global.answers[data.question_id]) {
@@ -950,14 +973,50 @@ global.functions = {
     },
 
 
+	addPeer: function(data) {
+        console.log(data)
+        var fullName = data.name
+        for (x in global.users){
+            if (global.users[x].user_id == data.user_id){
+                fullName = global.users[x].name
+            }
+        }
 
+        final = {
+            name: fullName,
+            img: require('./imgs/placeholders/user.jpg'),
+            user_id: data.user_id,
+        }
+        global.peers.push(final)
+		console.log("ADDING PEER!");
+        console.log(global.peers)
+        global.nextID = global.nextID + 1
+},
 
+    removePeer: function(id) {
+        console.log(global.peers)
+        for (x in global.peers){
+            person = global.peers[x]
+            if (person.user_id == id){
+                global.peers.splice(x, 1)
+            }
+        }
+        console.log("REMOVING PEER!");
+        console.log(global.peers)
+    },
 
-// 	addPeer: function(temp) {
-// 		global.foodBanks.push(temp);
-// 		console.log("ADDED!");
-// 		console.log(global.foodBanks);
-// },
+    getUserInfo: function(data) {
+        console.log("GETTING DATA!");
+        console.log(data)
+        return {
+            img: require('./imgs/placeholders/user.jpg'),
+            name: data.user,
+            user_id: global.QtoU[data.question_id]
+        };
+    },
+
+//{img: require('../../imgs/placeholders/user.jpg'),name: this.props.navigation.state.params.user}
+
 
 // 	updateSettings: function(temp) {
 // 		global.foodBanks.push(temp);
@@ -967,11 +1026,6 @@ global.functions = {
 
 
 }
-
-
-
-
-
 
 
 
