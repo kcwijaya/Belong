@@ -15,6 +15,7 @@ import {Dimensions} from 'react-native'
 import Legend from '../../components/Legend.js'
 import { Colors } from '../../constants/Colors.js' 
 import { Col, Row, Grid } from "react-native-easy-grid";
+import MapPin from '../../components/map/MapPin.js'
 
 const deviceW = Dimensions.get('window').width
 const deviceH = Dimensions.get('window').height
@@ -30,53 +31,70 @@ export default class Map extends Component {
     super();
     this.state = {
       location: false,
-      foodOpacity: 1,
-      schoolOpacity: 1, 
-      shelterOpacity: 1,
+      foodColor: Colors.accent,
+      schoolColor: Colors.accent,
+      shelterColor: Colors.accent,
+      peerColor: Colors.accent, 
+      miscColor: Colors.accent,
       showFood: true, 
       showSchool: true, 
-      showShelter: true
+      showShelter: true,
+      showPeer: true, 
+      showMisc: true
     };
     this.showObject = this.showObject.bind(this);
   }
 
   showObject = (name) => {
     console.log(name)
-    console.log(this.state.showFood)
-    console.log(this.state.showSchool)
-    console.log(this.state.showShelter)
-    console.log(this.state.foodOpacity)
-    console.log(this.state.schoolOpacity)
-    console.log(this.state.shelterOpacity)
     if (name == 'food') {
       if (this.state.showFood) {
-        this.state.foodOpacity = 0.5;
+        this.state.foodColor = 'gray';
       } else 
       {
-        this.state.foodOpacity = 1;
+        this.state.foodColor = Colors.accent;
       }
       this.state.showFood = !this.state.showFood
-      console.log(this.state.foodOpacity)
     }
 
     if (name == 'shelters') {
       if (this.state.showShelter) {
-        this.state.shelterOpacity = 0.5;
+        this.state.shelterColor = 'gray';
       } else 
       {
-        this.state.shelterOpacity = 1;
+        this.state.shelterColor = Colors.accent;
       }
-      this.state.showShelters = !this.state.showShelters
+      this.state.showShelter = !this.state.showShelter
     }
 
     if (name == 'school') {
-      if (this.state.showShelter) {
-        this.state.schoolOpacity = 0.5;
+      if (this.state.showSchool) {
+        this.state.schoolColor = 'gray';
       } else 
       {
-        this.state.schoolOpacity = 1;
+        this.state.schoolColor = Colors.accent;
       }
       this.state.showSchool = !this.state.showSchool
+    }
+
+     if (name == 'misc') {
+      if (this.state.showMisc) {
+        this.state.miscColor = 'gray';
+      } else 
+      {
+        this.state.miscColor = Colors.accent;
+      }
+      this.state.showMisc = !this.state.showMisc
+    }
+
+     if (name == 'peer') {
+      if (this.state.showPeer) {
+        this.state.peerColor = 'gray';
+      } else 
+      {
+        this.state.peerColor = Colors.accent;
+      }
+      this.state.showPeer = !this.state.showPeer
     }
 
     this.forceUpdate()
@@ -96,22 +114,22 @@ export default class Map extends Component {
                     <Row>
                         <Col size={5}></Col>
                         <Col size={20}>
-                           <Icon size={20} name='ios-pizza'  color={Colors.accent}/>
+                           <Icon size={25} name='ios-pizza'  color={this.state.foodColor}/>
                         </Col>
                         <Col size={75}>
                           <TouchableHighlight onPress={() => {this.showObject('food')}}>
-                            <Text style={[styles.legend,{opacity: this.state.foodOpacity}]}> Food </Text>
+                            <Text style={[styles.legend,{color: this.state.foodColor}]}> Food </Text>
                           </TouchableHighlight>
                         </Col>
                     </Row>
                     <Row>
                         <Col size={5}></Col>
                         <Col size={20}>
-                            <Icon size={20} name='ios-school' color={Colors.accent}/>
+                            <Icon size={25} name='ios-school' color={this.state.schoolColor}/>
                         </Col>
                         <Col size={75}>
                             <TouchableHighlight onPress={() => {this.showObject('school')}}>
-                              <Text style={[styles.legend, {opacity: this.state.schoolOpacity}]}> Schools </Text>
+                              <Text style={[styles.legend, {color: this.state.schoolColor}]}> Schools </Text>
                             </TouchableHighlight>
 
                         </Col>
@@ -119,14 +137,37 @@ export default class Map extends Component {
                     <Row>
                         <Col size={5}></Col>                    
                         <Col size={20}>
-                            <Icon size={20} name='ios-home'   color={Colors.accent}/>
+                            <Icon size={25} name='ios-home'   color={this.state.shelterColor}/>
                         </Col>
                         <Col size={75}>
                            <TouchableHighlight onPress={() => {this.showObject('shelters')}}>
-                            <Text style={[styles.legend,{opacity: this.state.shelterOpacity}]}> Shelters </Text>
+                            <Text style={[styles.legend,{color: this.state.shelterColor}]}> Shelters </Text>
                           </TouchableHighlight>
                         </Col>
                     </Row>
+                    <Row>
+                        <Col size={5}></Col>
+                        <Col size={20}>
+                           <Icon size={25} name='ios-person'  color={this.state.peerColor}/>
+                        </Col>
+                        <Col size={75}>
+                            <TouchableHighlight onPress={() => {this.showObject('peer')}}>
+                              <Text style={[styles.legend,{color: this.state.peerColor}]}> Peer </Text>
+                          </TouchableHighlight>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col size={5}></Col>
+                        <Col size={20}>
+                            <Icon size={25} name='ios-cog'   color={this.state.miscColor}/>
+                        </Col>
+                        <Col size={75}>
+                            <TouchableHighlight onPress={() => {this.showObject('misc')}}>
+                              <Text style={[styles.legend,{color: this.state.miscColor}]}> Misc </Text>
+                            </TouchableHighlight>
+                        </Col>
+                    </Row>
+
                 </Grid>
             </View>
           <TouchableOpacity style={styles.ghost} onPress={() => this.toggleLocation()}> 
@@ -139,9 +180,51 @@ export default class Map extends Component {
               latitudeDelta: 0.1,
               longitudeDelta: 0.1}}
             >
+
             <MapView.Marker coordinate={{latitude: 37.2969326, longitude: -121.9578387}}>
-              <Icon type='ionicon' name='ios-navigate' size={40} color={Colors.accent} />
+              <Icon type='ionicon' name='ios-radio-button-on' size={40} color={this.state.location ? Colors.accent : 'gray'} />
             </MapView.Marker>
+
+
+              {global.foodBanks.map((item) => {
+                return (
+                  <MapPin
+                    item={item} 
+                    key={item.resource_id}
+                    type='food'
+                  /> 
+                );
+              })}
+
+              {global.homeShelters.map((item) => {
+                return (
+                  <MapPin
+                    item={item} 
+                    key={item.resource_id}
+                    type='food'
+                  /> 
+                );
+              })}
+
+              {global.resources.map((item) => {
+                return (
+                  <MapPin
+                    item={item} 
+                    key={item.resource_id}
+                    type='food'
+                  /> 
+                );
+              })}
+
+              {global.resources.map((item) => {
+                return (
+                  <MapPin
+                    item={item} 
+                    key={item.resource_id}
+                    type='food'
+                  /> 
+                );
+              })}
             </MapView>
         </ScrollView>
     );
@@ -191,8 +274,8 @@ const styles = StyleSheet.create({
         borderColor: Colors.accent, 
         borderWidth: 2,
         zIndex: 10,
-        width: 110,
-        height: 110,
+        width: 140,
+        height: 140,
         backgroundColor: 'white',
         marginLeft: 20, 
         marginTop: 20,
@@ -201,10 +284,10 @@ const styles = StyleSheet.create({
         borderRadius: 30
     },
     legend: {
-        fontSize: 12,
+        fontSize: 14,
         marginTop: 2,
         marginLeft: 5,
-        fontWeight: '300'
+        fontWeight: '400'
     },
     buttonContainer: {
         width: 150,
