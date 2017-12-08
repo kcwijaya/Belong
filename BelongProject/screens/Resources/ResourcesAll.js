@@ -78,7 +78,7 @@ export default class ResourcesHome extends Component {
                 <ListingCarousel
                   title='Education'
                   subtitle='See all'
-                  data={global.homeShelters}
+                  data={global.education}
                   navigation={this.props.navigation}
                 />
                 <ListingCarousel
