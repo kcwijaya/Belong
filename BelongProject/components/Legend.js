@@ -36,6 +36,34 @@ export default class Legend extends Component {
                             <Text style={styles.legend}> Shelters </Text>
                         </Col>
                     </Row>
+                    <Row>
+                        <Col size={5}></Col>
+                        <Col size={20}>
+                           <Icon size={20} name='ios-pizza'  color={Colors.accent}/>
+                        </Col>
+                        <Col size={75}>
+                            <Text style={styles.legend}> Food </Text>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col size={5}></Col>
+                        <Col size={20}>
+                            <Icon size={20} name='ios-school'   color={Colors.accent}/>
+                        </Col>
+                        <Col size={75}>
+                            <Text style={styles.legend}> Schools </Text>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col size={5}></Col>                    
+                        <Col size={20}>
+                            <Icon size={20} name='ios-home'   color={Colors.accent}/>
+                        </Col>
+                        <Col size={75}>
+                            <Text style={styles.legend}> Shelters </Text>
+                        </Col>
+                    </Row>
+                    
                 </Grid>
             </View>
         );
