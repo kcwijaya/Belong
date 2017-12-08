@@ -629,7 +629,7 @@ global.functions = {
             address: data.location,
             lat: data.locationCoords.latitude,
             lon: data.locationCoords.longitude,
-            hours: data.openHours.trim() + "-" + data.closeHours.trim(),
+            hours: data.openHours.replace(" ", "") + "-" + data.closeHours.replace(" ", ""),
             phone: data.phone,
             about: data.about
         };
@@ -643,21 +643,18 @@ global.functions = {
         } else {
             global.miscellaneous.push(final)
         }
+        global.nextID = global.nextID + 1
     }
 
 
 	
-// 	addUser: function(temp) {
-// 		global.foodBanks.push(temp);
-// 		console.log("ADDED!");
-// 		console.log(global.foodBanks);
-// },
 
 // 	addPeer: function(temp) {
 // 		global.foodBanks.push(temp);
 // 		console.log("ADDED!");
 // 		console.log(global.foodBanks);
 // },
+
 // 	updateSettings: function(temp) {
 // 		global.foodBanks.push(temp);
 // 		console.log("ADDED!");
