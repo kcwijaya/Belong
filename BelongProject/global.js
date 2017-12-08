@@ -438,148 +438,177 @@ global.answers = {
     answer: "Be the first to comment!",
     user: "",
     answer_id: 1,
+    votes: 0
 }],
 
   1: [{
     answer: "Here's is my answer!",
     user: "Kimberly Wijaya",
     answer_id: 1,
+    votes: 0
 },
 {
     answer: "Here's is second answer!",
     user: "Tristan Vanech",
     answer_id: 2,
+    votes: 0
 },
 {
     answer: "Here's is third answer!",
     user: "Greg Ramel",
     answer_id: 3,
+    votes: 0
 },
 {
     answer: "Here's is fourth answer!",
     user: "Cameron Andrews",
     answer_id: 4,
+    votes: 0
 }],
 
 2: [{
     answer: "Here's is my answer!",
     user: "Kimberly Wijaya",
     answer_id: 1,
+    votes: 0
 },
 {
     answer: "Here's is second answer!",
     user: "Tristan Vanech",
     answer_id: 2,
+    votes: 0
 },
 {
     answer: "Here's is third answer!",
     user: "Greg Ramel",
     answer_id: 3,
+    votes: 0
 },
 {
     answer: "Here's is fourth answer!",
     user: "Cameron Andrews",
     answer_id: 4,
+    votes: 0
 }],
 3: [{
     answer: "Here's is my answer!",
     user: "Kimberly Wijaya",
     answer_id: 1,
+    votes: 0
 },
 {
     answer: "Here's is second answer!",
     user: "Tristan Vanech",
     answer_id: 2,
+    votes: 0
 },
 {
     answer: "Here's is third answer!",
     user: "Greg Ramel",
     answer_id: 3,
+    votes: 0
 },
 {
     answer: "Here's is fourth answer!",
     user: "Cameron Andrews",
     answer_id: 4,
+    votes: 0
 }],
 5: [{
     answer: "Here's is my answer!",
     user: "Kimberly Wijaya",
     answer_id: 1,
+    votes: 0
 },
 {
     answer: "Here's is second answer!",
     user: "Tristan Vanech",
     answer_id: 2,
+    votes: 0
 },
 {
     answer: "Here's is third answer!",
     user: "Greg Ramel",
     answer_id: 3,
+    votes: 0
 },
 {
     answer: "Here's is fourth answer!",
     user: "Cameron Andrews",
     answer_id: 4,
+    votes: 0
 }],
 6: [{
     answer: "Here's is my answer!",
     user: "Kimberly Wijaya",
     answer_id: 1,
+    votes: 0
 },
 {
     answer: "Here's is second answer!",
     user: "Tristan Vanech",
     answer_id: 2,
+    votes: 0
 },
 {
     answer: "Here's is third answer!",
     user: "Greg Ramel",
     answer_id: 3,
+    votes: 0
 },
 {
     answer: "Here's is fourth answer!",
     user: "Cameron Andrews",
     answer_id: 4,
+    votes: 0
 }],
 7: [{
     answer: "Here's is my answer!",
     user: "Kimberly Wijaya",
     answer_id: 1,
+    votes: 0
 },
 {
     answer: "Here's is second answer!",
     user: "Tristan Vanech",
     answer_id: 2,
+    votes: 0
 },
 {
     answer: "Here's is third answer!",
     user: "Greg Ramel",
     answer_id: 3,
+    votes: 0
 },
 {
     answer: "Here's is fourth answer!",
     user: "Cameron Andrews",
     answer_id: 4,
+    votes: 0
 }],
 9:[{
     answer: "Here's is my answer!",
     user: "Kimberly Wijaya",
     answer_id: 1,
+    votes: 0
 },
 {
     answer: "Here's is second answer!",
     user: "Tristan Vanech",
     answer_id: 2,
+    votes: 0
 },
 {
     answer: "Here's is third answer!",
     user: "Greg Ramel",
     answer_id: 3,
+    votes: 0
 },
 {
     answer: "Here's is fourth answer!",
     user: "Cameron Andrews",
     answer_id: 4,
+    votes: 0
 }]
 };
 
@@ -880,7 +909,21 @@ global.functions = {
         //global.foodBanks.push(temp);
         console.log("ADDED!");
         console.log(data);
-        return global.answers['start']
+        if (global.answers[data.question_id]) {
+            return global.answers[data.question_id]
+        } else {
+            return global.answers['start']
+        }
+    },
+
+
+    voteAnswer: function(Qid, Aid, delta) {
+        for (x in global.answers[Qid]){
+            answer = global.answers[Qid][x]
+            if (answer.answer_id == Aid){
+                global.answers[Qid][x].votes = global.answers[Qid][x].votes + delta
+            }
+        }
     },
 
 
