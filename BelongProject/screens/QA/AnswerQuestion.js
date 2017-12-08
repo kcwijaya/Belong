@@ -7,7 +7,7 @@ import {
   TextInput,
   TouchableHighlight,
 } from 'react-native';
-import { Container, Card, CardItem, Body, Content, Header, Left, Right, Title, Button, Text } from "native-base";
+import { FormLabel, FormInput, Container, Card, CardItem, Body, Content, Header, Left, Right, Title, Button, Text } from "native-base";
 import Icon from 'react-native-vector-icons/FontAwesome'
 import {Dimensions} from 'react-native'
 import { Col, Row, Grid } from "react-native-easy-grid";
@@ -25,6 +25,18 @@ function px2dp(px) {
 
 
 export default class AnswerQuestion extends Component {
+
+  constructor() {
+    super()
+    this.state = {
+      answer: ''
+    }
+  }
+
+  checkSubmit = () => {
+    this.forceUpdate()
+  }
+
 
   static navigationOptions = ({ navigation }) => ({
     header: null
@@ -79,13 +91,15 @@ export default class AnswerQuestion extends Component {
         <Text style={styles.question}> Your Answer </Text>
 
       <View style={{flexDirection: 'row', justifyContent: 'center'}}> 
-      <TextInput style={styles.answerBox}>
-
-      </TextInput>
+      <FormInput 
+        containerStyle={styles.forminput}
+        ref={input => this.answer = input}
+        onChangeText={(text) => {this.state.answer = text}}
+      />
       </View>
 
       <View style={styles.centered}>
-      <TouchableHighlight style={styles.answerButton}>
+      <TouchableHighlight style={styles.answerButton} onPress={() => {this.checkSubmit()}}>
         <Text style={styles.buttonText}> Submit Answer </Text>
       </TouchableHighlight>
       </View>
@@ -161,6 +175,12 @@ const styles = StyleSheet.create({
     color: Colors.accent, 
     fontSize: 18,
     fontWeight: '300'
+  },
+    forminput: {
+    width: 270,
+    marginLeft: 45,
+    borderBottomWidth: 1,
+    borderBottomColor: 'white'
   },
   details: {
     fontSize: 15,

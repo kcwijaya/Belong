@@ -809,20 +809,43 @@ global.functions = {
 
 		var inside = false
 		var index = -1
-		for (x in global.bookmarks){
-			var mark = global.bookmarks[x]
-			if (mark.name == info.name && mark.about == info.about && mark.resource_id == info.resource_id && mark.address == info.address){
+		for (i = 0; i < global.bookmarks.length; i++){
+			var mark = global.bookmarks[i]
+			if (mark.name == info.name){
 				inside = true
-				index = x
+				index = i
 			}
 		}
+
+        console.log(global.bookmarks)
+        console.log(inside)
+        console.log(info)
 		if (inside == true){
 			global.bookmarks.splice(index, 1)
 		} else {
 			global.bookmarks.push(info)
 		}
+        console.log(global.bookmarks)
 		//toUpdate.forceUpdate()
 	},
+    deleteBookmark: function(info, toUpdate) {
+
+        var inside = false
+        var index = -1
+        for (x in global.bookmarks){
+            var mark = global.bookmarks[x]
+            if (mark.name == info.name && mark.about == info.about && mark.resource_id == info.resource_id && mark.address == info.address){
+                inside = true
+                index = x
+            }
+        }
+        if (inside == true){
+            global.bookmarks.splice(index, 1)
+        } else {
+            global.bookmarks.push(info)
+        }
+        //toUpdate.forceUpdate()
+    },
 
      updateUser: function(data) {
         // global.foodBanks.push(temp);

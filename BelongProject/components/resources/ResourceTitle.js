@@ -16,10 +16,30 @@ import { Col, Row, Grid } from "react-native-easy-grid";
 const deviceW = Dimensions.get('window').width
 
 export default class ResourceTitle extends Component {
+	constructor() {
+		super()
+		this.state = {
+			bookmarkColor: Colors.unselectedTab
+		}
+	}
 
 	render() {
-		console.log('final')
-		console.log(this.props.update)
+		console.log(global.bookmarks)
+		bookmarked = false
+		for (i = 0; i < global.bookmarks.length; i++) {
+			if (this.props.info.name == global.bookmarks[i].name) {
+				bookmarked = true
+				break;
+			}
+		}
+
+		console.log(bookmarked)
+		if (bookmarked) {
+			this.state.bookmarkColor = Colors.accent
+		} else {
+			this.state.bookmarkColor = Colors.unselectedTab
+		}
+
 		return (
 		<Grid style={styles.container}>
           <Row> 
@@ -32,8 +52,9 @@ export default class ResourceTitle extends Component {
             	<TouchableOpacity onPress={() => {
             		global.functions.addBookmark(this.props.info);
             		this.props.update;
+            		this.forceUpdate()
             	}}> 
-               		<Icon size={25} style={styles.bookmark} name="bookmark" color='white'/>
+               		<Icon size={25} style={[styles.bookmark, {backgroundColor: this.state.bookmarkColor}]} name="bookmark" color='white'/>
             	</TouchableOpacity>
             </Col>
           </Row>
@@ -61,7 +82,6 @@ const styles = StyleSheet.create({
 	       justifyContent:'center',
 	       width:40,
 	       height:40,
-	       backgroundColor: Colors.accent,
 	       borderRadius:20,
 	       padding: 7,
 	       paddingLeft: 10,
