@@ -53,7 +53,7 @@ export default class Settings extends Component {
           </Left>
           <Right>
             <Switch 
-              value={false}
+              value={true}
               onValueChange={(val) => global.functions.updateNameShare(val)}
               backgroundActive={Colors.accent}/>
           </Right>
@@ -65,7 +65,7 @@ export default class Settings extends Component {
           </Left>
           <Right>
             <Switch 
-              value={false}
+              value={true}
               onValueChange={(val) => global.functions.updateSchoolShare(val)}
               backgroundActive={Colors.accent}/>
           </Right>
@@ -77,7 +77,7 @@ export default class Settings extends Component {
           </Left>
           <Right>
             <Switch 
-              value={false}
+              value={true}
               onValueChange={(val) => global.functions.updateAgeShare(val)}
               backgroundActive={Colors.accent}/>
           </Right>
@@ -89,7 +89,7 @@ export default class Settings extends Component {
           </Left>
           <Right>
             <Switch 
-              value={false}
+              value={global.userInfo.location}
               onValueChange={(val) => global.functions.updateLocationShare(val)}
               backgroundActive={Colors.accent}/>
           </Right>

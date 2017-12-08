@@ -5,6 +5,7 @@ import {
   StyleSheet,
   Text,
   View,
+  Alert,
   ScrollView,
   TouchableOpacity,
   TouchableHighlight
@@ -104,6 +105,29 @@ export default class Map extends Component {
     header: null
   });
 
+
+
+  checkLocation = () => {
+    if (global.userInfo.location){
+      this.toggleLocation()
+    } else {
+      Alert.alert(
+      "To share your location, you must turn on Location Services in settings!",
+      '',
+      [
+        {text: "Don't Allow"},
+        {text: 'Okay, go to settings!', onPress:  () => {this.props.navigation.navigate('Settings')}},
+        // {text: "Don't Allow"},
+        // {text: 'Okay, take me to settings!'},
+      ]
+    )
+    //this.forceUpdate()
+    }
+  }
+  
+
+
+
   render() {
 
     return (
@@ -170,7 +194,7 @@ export default class Map extends Component {
 
                 </Grid>
             </View>
-          <TouchableOpacity style={styles.ghost} onPress={() => this.toggleLocation()}> 
+          <TouchableOpacity style={styles.ghost} onPress={() => {this.checkLocation()}}> 
             <Icon type='ionicon' size={26} style={styles.eye} name={this.state.location ? "ios-eye" : "ios-eye-off"} color='white'/>
           </TouchableOpacity>
            <MapView

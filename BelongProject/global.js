@@ -15,15 +15,12 @@ global.userInfo = {
     about:'I love to bike ride and find cool cafes to study in. Ask me about coffee, bringing up difficult issues with your classmates, and coding!',
     notifications: false,
     location: false,
+    nameShare: true,
+    schoolShare: true,
+    ageShare: true,
     user_id: 666
 }
 
-
-
-global.nameShare = true
-global.schoolShare = true
-global.ageShare = true
-global.locationShare = true
 
 
 
@@ -969,7 +966,7 @@ global.functions = {
             details: data.details,
             user: "Anonymous",
         };
-        if (data.visibility == 0){
+        if (data.visibility == 0. && global.nameShare == true){
             final.user = global.userInfo.firstName
         }
 
@@ -1083,23 +1080,19 @@ global.functions = {
     },
 
     updateNameShare: function(val) {
-        console.log("UPDATED!");
-        console.log(val);
+        global.userInfo.nameShare = val
     },
 
     updateSchoolShare: function(val) {
-        console.log("UPDATED!");
-        console.log(val);
+        global.userInfo.schoolShare = val
     },
 
     updateAgeShare: function(val) {
-         console.log("UPDATED!");
-         console.log(val);  
+        global.userInfo.ageShare = val
     },
 
     updateLocationShare: function(val) {
-         console.log("UPDATED!");
-         console.log(val);
+        global.userInfo.location = val
     }
 
 
