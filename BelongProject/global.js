@@ -14,7 +14,9 @@ global.userInfo = {
     school:'Gunn High School',
     about:'I love to bike ride and find cool cafes to study in. Ask me about coffee, bringing up difficult issues with your classmates, and coding!',
     notifications: false,
-    location: false
+    location: false,
+    user_id: 666
+
 }
 
 
@@ -412,8 +414,32 @@ global.questions = [
 
 
 
+global.QtoU = {
+    1: 1, 
+    2: 7,
+    3: 5,
+    4: 6,
+    5: 8,
+    6: 9,
+    7: 9,
+    8: 9,
+    9: 9,
+};
+
+
+
+
+
+
+
 
 global.answers = {
+    'start': [{
+    answer: "Be the first to comment!",
+    user: "",
+    answer_id: 1,
+}],
+
   1: [{
     answer: "Here's is my answer!",
     user: "Kimberly Wijaya",
@@ -727,12 +753,12 @@ global.functions = {
 		//console.log("ADDED BOOKMARK!");
 		//console.log(global.bookmarks);
 },
-	addQuestion: function(temp) {
-		global.numQuestions = global.numQuestions + 1
-		global.questions.push(temp);
-		//console.log("ADDED QUESTION!");
-		//console.log(global.numQuestions);
-},
+// 	addQuestion: function(temp) {
+// 		global.numQuestions = global.numQuestions + 1
+// 		global.questions.push(temp);
+// 		//console.log("ADDED QUESTION!");
+// 		//console.log(global.numQuestions);
+// },
 	addAnswer: function(temp) {
 		global.foodBanks.push(temp);
 		//console.log("ADDED!");
@@ -810,6 +836,8 @@ global.functions = {
             about: data.about
         };
 
+
+
         if (data.category == "Food Bank"){
             global.foodBanks.push(final)
         } else if (data.category == "Shelter"){
@@ -823,9 +851,10 @@ global.functions = {
     },
 
     addQuestion: function(data) {
+        const id = global.nextID
         final = {
             question: data.question,
-            question_id: global.nextID,
+            question_id: id,
             details: data.details,
             user: "Anonymous",
         };
@@ -833,11 +862,30 @@ global.functions = {
             final.user = global.userInfo.firstName
         }
 
+        global.QtoU[id] = global.userInfo.user_id
+
         global.questions.push(final)
 
 
-    }
+    },
 	
+    addAnswer: function(data) {
+        //global.foodBanks.push(temp);
+        console.log("ADDED!");
+        console.log(data);
+    },
+
+
+    getAnswers: function(data) {
+        //global.foodBanks.push(temp);
+        console.log("ADDED!");
+        console.log(data);
+        return global.answers['start']
+    },
+
+
+
+
 
 // 	addPeer: function(temp) {
 // 		global.foodBanks.push(temp);
