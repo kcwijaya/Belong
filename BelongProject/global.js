@@ -16,7 +16,6 @@ global.userInfo = {
     notifications: false,
     location: false,
     user_id: 666
-
 }
 
 
@@ -429,7 +428,37 @@ global.QtoU = {
 
 
 
-
+global.AtoU={
+    1:0,
+    2:1,
+    3:2,
+    4:3,
+    5:4,
+    6:1,
+    7:2,
+    8:3,
+    9:4,
+    10:1,
+    11:2,
+    12:3,
+    13:4,
+    14:1,
+    15:2,
+    16:3,
+    17:4,
+    18:1,
+    19:2,
+    20:3,
+    21:4,
+    22:1,
+    23:2,
+    24:3,
+    25:4,
+    26:1,
+    27:2,
+    28:3,
+    29:4
+}
 
 
 
@@ -444,170 +473,170 @@ global.answers = {
   1: [{
     answer: "Here's is my answer!",
     user: "Kimberly",
-    answer_id: 1,
+    answer_id: 2,
     votes: 0
 },
 {
     answer: "Here's is second answer!",
     user: "Tristan",
-    answer_id: 2,
+    answer_id: 3,
     votes: 0
 },
 {
     answer: "Here's is third answer!",
     user: "Greg",
-    answer_id: 3,
+    answer_id: 4,
     votes: 0
 },
 {
     answer: "Here's is fourth answer!",
     user: "Cameron",
-    answer_id: 4,
+    answer_id: 5,
     votes: 0
 }],
 
 2: [{
     answer: "Here's is my answer!",
     user: "Kimberly",
-    answer_id: 1,
+    answer_id: 6,
     votes: 0
 },
 {
     answer: "Here's is second answer!",
     user: "Tristan",
-    answer_id: 2,
+    answer_id: 7,
     votes: 0
 },
 {
     answer: "Here's is third answer!",
     user: "Greg",
-    answer_id: 3,
+    answer_id: 8,
     votes: 0
 },
 {
     answer: "Here's is fourth answer!",
     user: "Cameron",
-    answer_id: 4,
+    answer_id: 9,
     votes: 0
 }],
 3: [{
     answer: "Here's is my answer!",
     user: "Kimberly",
-    answer_id: 1,
+    answer_id: 10,
     votes: 0
 },
 {
     answer: "Here's is second answer!",
     user: "Tristan",
-    answer_id: 2,
+    answer_id: 11,
     votes: 0
 },
 {
     answer: "Here's is third answer!",
     user: "Greg",
-    answer_id: 3,
+    answer_id: 12,
     votes: 0
 },
 {
     answer: "Here's is fourth answer!",
     user: "Cameron",
-    answer_id: 4,
+    answer_id: 13,
     votes: 0
 }],
 5: [{
     answer: "Here's is my answer!",
     user: "Kimberly",
-    answer_id: 1,
+    answer_id: 14,
     votes: 0
 },
 {
     answer: "Here's is second answer!",
     user: "Tristan",
-    answer_id: 2,
+    answer_id: 15,
     votes: 0
 },
 {
     answer: "Here's is third answer!",
     user: "Greg",
-    answer_id: 3,
+    answer_id: 16,
     votes: 0
 },
 {
     answer: "Here's is fourth answer!",
     user: "Cameron",
-    answer_id: 4,
+    answer_id: 17,
     votes: 0
 }],
 6: [{
     answer: "Here's is my answer!",
     user: "Kimberly",
-    answer_id: 1,
+    answer_id: 18,
     votes: 0
 },
 {
     answer: "Here's is second answer!",
     user: "Tristan",
-    answer_id: 2,
+    answer_id: 19,
     votes: 0
 },
 {
     answer: "Here's is third answer!",
     user: "Greg",
-    answer_id: 3,
+    answer_id: 20,
     votes: 0
 },
 {
     answer: "Here's is fourth answer!",
     user: "Cameron",
-    answer_id: 4,
+    answer_id: 21,
     votes: 0
 }],
 7: [{
     answer: "Here's is my answer!",
     user: "Kimberly",
-    answer_id: 1,
+    answer_id: 22,
     votes: 0
 },
 {
     answer: "Here's is second answer!",
     user: "Tristan",
-    answer_id: 2,
+    answer_id: 23,
     votes: 0
 },
 {
     answer: "Here's is third answer!",
     user: "Greg",
-    answer_id: 3,
+    answer_id: 24,
     votes: 0
 },
 {
     answer: "Here's is fourth answer!",
     user: "Cameron",
-    answer_id: 4,
+    answer_id: 25,
     votes: 0
 }],
 9:[{
     answer: "Here's is my answer!",
     user: "Kimberly",
-    answer_id: 1,
+    answer_id: 26,
     votes: 0
 },
 {
     answer: "Here's is second answer!",
     user: "Tristan",
-    answer_id: 2,
+    answer_id: 27,
     votes: 0
 },
 {
     answer: "Here's is third answer!",
     user: "Greg",
-    answer_id: 3,
+    answer_id: 28,
     votes: 0
 },
 {
     answer: "Here's is fourth answer!",
     user: "Cameron",
-    answer_id: 4,
+    answer_id: 29,
     votes: 0
 }]
 };
@@ -953,7 +982,8 @@ global.functions = {
             user: global.userInfo.firstName,
             answer_id: global.nextID,
             votes: 0
-        }       
+        }
+        global.AtoU[global.nextID] = global.userInfo.user_id
         global.answers[data.question_id].push(final)
         console.log(data);
         console.log(answered)
@@ -1024,6 +1054,30 @@ global.functions = {
             user_id: global.QtoU[data.question_id]
         };
     },
+
+    getUserInfoByAID: function(data) {
+        console.log("GETTING DATA!");
+        console.log(data)
+        var id = global.AtoU[data.answer_id]
+        var named = data.user
+        var imgs = require('./imgs/placeholders/user.jpg')
+        for (x in global.users){
+            person = global.users[x]
+            if (person.user_id == id){
+                imgs = person.img
+                named = person.name
+            }
+        }
+        return {
+            img: imgs,
+            name: named,
+            user_id: id
+        };
+    },
+
+
+
+    
 
 //{img: require('../../imgs/placeholders/user.jpg'),name: this.props.navigation.state.params.user}
 
