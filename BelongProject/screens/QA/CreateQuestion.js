@@ -73,8 +73,8 @@ export default class ResourceCreate extends Component {
       this.state.detailsColor = '#9e9e9e'
     }
 
-    console.log(this.state.visibility)
-    console.log(this.state.visibility == -1)
+    //console.log(this.state.visibility)
+    //console.log(this.state.visibility == -1)
     if (this.state.visibility == -1) {
       this.state.visibilityColor = Colors.accent
       canSubmit = false
@@ -97,8 +97,10 @@ export default class ResourceCreate extends Component {
       visibility: this.state.visibility
     }
 
-    console.log(resource)
-    this.props.navigation.navigate("ResourcesHome");
+    global.functions.addQuestion(resource)
+    this.forceUpdate()
+    //console.log(resource)
+    this.props.navigation.navigate("QAHome");
   }
 
   static navigationOptions = ({ navigation }) => ({

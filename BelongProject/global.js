@@ -358,28 +358,149 @@ global.questions = [
 
 
 
-global.answers = [
-  {
+global.answers = {
+  1: [{
     answer: "Here's is my answer!",
     user: "Kimberly Wijaya",
     answer_id: 1,
-  },
-  {
+},
+{
     answer: "Here's is second answer!",
     user: "Tristan Vanech",
     answer_id: 2,
-  },
-  {
+},
+{
     answer: "Here's is third answer!",
     user: "Greg Ramel",
     answer_id: 3,
-  },
-  {
+},
+{
     answer: "Here's is fourth answer!",
     user: "Cameron Andrews",
     answer_id: 4,
-  },
-];
+}],
+
+2: [{
+    answer: "Here's is my answer!",
+    user: "Kimberly Wijaya",
+    answer_id: 1,
+},
+{
+    answer: "Here's is second answer!",
+    user: "Tristan Vanech",
+    answer_id: 2,
+},
+{
+    answer: "Here's is third answer!",
+    user: "Greg Ramel",
+    answer_id: 3,
+},
+{
+    answer: "Here's is fourth answer!",
+    user: "Cameron Andrews",
+    answer_id: 4,
+}],
+3: [{
+    answer: "Here's is my answer!",
+    user: "Kimberly Wijaya",
+    answer_id: 1,
+},
+{
+    answer: "Here's is second answer!",
+    user: "Tristan Vanech",
+    answer_id: 2,
+},
+{
+    answer: "Here's is third answer!",
+    user: "Greg Ramel",
+    answer_id: 3,
+},
+{
+    answer: "Here's is fourth answer!",
+    user: "Cameron Andrews",
+    answer_id: 4,
+}],
+5: [{
+    answer: "Here's is my answer!",
+    user: "Kimberly Wijaya",
+    answer_id: 1,
+},
+{
+    answer: "Here's is second answer!",
+    user: "Tristan Vanech",
+    answer_id: 2,
+},
+{
+    answer: "Here's is third answer!",
+    user: "Greg Ramel",
+    answer_id: 3,
+},
+{
+    answer: "Here's is fourth answer!",
+    user: "Cameron Andrews",
+    answer_id: 4,
+}],
+6: [{
+    answer: "Here's is my answer!",
+    user: "Kimberly Wijaya",
+    answer_id: 1,
+},
+{
+    answer: "Here's is second answer!",
+    user: "Tristan Vanech",
+    answer_id: 2,
+},
+{
+    answer: "Here's is third answer!",
+    user: "Greg Ramel",
+    answer_id: 3,
+},
+{
+    answer: "Here's is fourth answer!",
+    user: "Cameron Andrews",
+    answer_id: 4,
+}],
+7: [{
+    answer: "Here's is my answer!",
+    user: "Kimberly Wijaya",
+    answer_id: 1,
+},
+{
+    answer: "Here's is second answer!",
+    user: "Tristan Vanech",
+    answer_id: 2,
+},
+{
+    answer: "Here's is third answer!",
+    user: "Greg Ramel",
+    answer_id: 3,
+},
+{
+    answer: "Here's is fourth answer!",
+    user: "Cameron Andrews",
+    answer_id: 4,
+}],
+9:[{
+    answer: "Here's is my answer!",
+    user: "Kimberly Wijaya",
+    answer_id: 1,
+},
+{
+    answer: "Here's is second answer!",
+    user: "Tristan Vanech",
+    answer_id: 2,
+},
+{
+    answer: "Here's is third answer!",
+    user: "Greg Ramel",
+    answer_id: 3,
+},
+{
+    answer: "Here's is fourth answer!",
+    user: "Cameron Andrews",
+    answer_id: 4,
+}]
+};
 
 
 
@@ -644,9 +765,23 @@ global.functions = {
             global.miscellaneous.push(final)
         }
         global.nextID = global.nextID + 1
+    },
+
+    addQuestion: function(data) {
+        final = {
+            question: data.question,
+            question_id: global.nextID,
+            details: data.details,
+            user: "Anonymous",
+        };
+        if (data.visibility == 0){
+            final.user = global.userInfo.firstName
+        }
+
+        global.questions.push(final)
+
+
     }
-
-
 	
 
 // 	addPeer: function(temp) {
