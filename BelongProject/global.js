@@ -2,7 +2,8 @@
 //START DB INITIALIZATION
 
 global.userInfo = {
-    name:'Rodrigo Grabowsky',
+    firstName:'Rodrigo',
+    lastName:'Grabowsky',
     email:'rmgrab@gmail.com',
     password:'coffee',
     phone:'650-598-7301',
@@ -612,6 +613,21 @@ global.functions = {
     addPassword: function(data) {
         if('password' in data){
             global.userInfo.password = data.password
+        }
+    },
+
+    addResource: function(data) {
+        global.foodBanks.push(temp);
+        console.log("ADDED!");
+        console.log(data);
+        if (data.category == "Food Bank"){
+            global.foodBanks.push(data)
+        } else if (data.category == "Shelter"){
+            global.homeShelters.push(data)
+        } else if (data.category == "Education"){
+            global.education.push(data)
+        } else {
+            global.miscellaneous.push(data)
         }
     }
 
