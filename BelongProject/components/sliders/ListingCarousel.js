@@ -77,7 +77,7 @@ export default class ListingCarousel extends Component {
                   <Text style={sliderstyle.title}>{this.props.title}</Text>
                   </Left>
                   <Right>
-                  <Button transparent style={sliderstyle.button} onPress={() => {this.props.navigation.navigate("ResourcesCategory", {category: this.props.title})}}>
+                  <Button transparent style={sliderstyle.button} onPress={() => {this.props.navigation.navigate("ResourcesCategory", {category: this.props.title, info:this.props.data})}}>
                   <Text style={sliderstyle.subtitle}>
                      {this.props.subtitle}
                   </Text>

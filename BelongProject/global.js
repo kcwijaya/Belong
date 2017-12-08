@@ -204,6 +204,41 @@ global.homeShelters = [
 ];
 
 
+
+
+global.education = [
+  {
+    name: "Second Harvest Food Bank",
+    img: require('./imgs/placeholders/resource.jpg'),
+    resource_id: 1,
+    address: '1051 Bing St San Carlos, CA 94070',
+    lat: 37.496094,
+    lon: -122.244577,
+    hours: '7AM-9PM',
+    phone: '6504900437',
+    about: 'Based in Silicon Valley, Second Harvest Food Bank of Santa Clara and San Mateo Counties is one of the largest food banks in the nation. Currently providing food to more than one quarter of a million people every month, Second Harvest is a trusted community-based organization that was founded in 1974. Despite the immense wealth in Silicon Valley, and partly due to the high cost of living, hunger and malnutrition are pervasive. The Food Bank distributes nutritious food, including more fresh produce than almost any other food bank in the country, through a network of 300 nonprofit partners at 905 sites. Second Harvest is pursuing innovative efforts to increase access to food resources as it seeks to feed an additional 100,000 hungry people each month. To reach more people, it connects those in need to federal nutrition programs and other food resources.',
+  }
+];
+
+
+
+
+
+global.miscellaneous = [
+  {
+    name: "Second Harvest Food Bank",
+    img: require('./imgs/placeholders/resource.jpg'),
+    resource_id: 1,
+    address: '1051 Bing St San Carlos, CA 94070',
+    lat: 37.496094,
+    lon: -122.244577,
+    hours: '7AM-9PM',
+    phone: '6504900437',
+    about: 'Based in Silicon Valley, Second Harvest Food Bank of Santa Clara and San Mateo Counties is one of the largest food banks in the nation. Currently providing food to more than one quarter of a million people every month, Second Harvest is a trusted community-based organization that was founded in 1974. Despite the immense wealth in Silicon Valley, and partly due to the high cost of living, hunger and malnutrition are pervasive. The Food Bank distributes nutritious food, including more fresh produce than almost any other food bank in the country, through a network of 300 nonprofit partners at 905 sites. Second Harvest is pursuing innovative efforts to increase access to food resources as it seeks to feed an additional 100,000 hungry people each month. To reach more people, it connects those in need to federal nutrition programs and other food resources.',
+  }
+];
+
+
 global.bookmarks = [
 	{
     name: "Second Harvest Food Bank",
