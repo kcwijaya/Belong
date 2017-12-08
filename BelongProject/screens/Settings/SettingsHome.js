@@ -5,7 +5,6 @@ import {
   TouchableHighlight,
   Alert,
   Text,
-  Alert,
   View
 } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator'
