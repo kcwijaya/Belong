@@ -75,12 +75,8 @@ export default class SignUpPermissions extends Component {
     return (
       <View style={styles.container}>
      
-        <LinearGradient 
-          start= {{x: 0, y: 1}}
-          end={{x:-1, y:0}}
-          colors={[Colors.accent,'#FADBD8',]} 
-          style={styles.linearGradient}>
-        </LinearGradient>
+         <View style={styles.linearGradient} />
+
 
       <Header stye={styles.header}>
         <Left>
@@ -198,7 +194,8 @@ const styles = StyleSheet.create({
     bottom: 0, 
     right: 0, 
     left: 0,
-    position: 'absolute'
+    position: 'absolute',
+    backgroundColor: Colors.accent
   },
   container: {
     flex: 1,

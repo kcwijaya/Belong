@@ -58,7 +58,7 @@ export default class SignUpContact extends Component {
         <LinearGradient 
           start= {{x: 0, y: 1}}
           end={{x: 0.4, y:0.6}}
-          colors={[Colors.accent,'#FADBD8',]} 
+          colors={[Colors.accent,Colors.lightGradient,]} 
           style={styles.linearGradient}>
         </LinearGradient>
 

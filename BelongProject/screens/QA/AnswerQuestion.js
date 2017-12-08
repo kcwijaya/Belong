@@ -40,7 +40,7 @@ export default class AnswerQuestion extends Component {
           </Button>
         </Left>
         <Body>
-          <Title color={Colors.accent}>Answer</Title>
+          <Title style={{fontWeight: '300'}} color={Colors.accent}>Answer</Title>
         </Body>
         <Right>
         </Right>

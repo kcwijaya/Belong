@@ -36,7 +36,7 @@ export default class ProfilePage extends Component {
           </Button>
         </Left>
         <Body>
-          <Title color={Colors.accent}>{this.props.navigation.state.params.name.split(' ')[0]}</Title>
+          <Title style={{fontWeight: '300'}} color={Colors.accent}>{this.props.navigation.state.params.name.split(' ')[0]}</Title>
         </Body>
         <Right></Right>
       </Header>

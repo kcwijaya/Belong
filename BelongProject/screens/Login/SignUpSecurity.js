@@ -63,8 +63,8 @@ export default class SignUpSecurity extends Component {
      
         <LinearGradient 
           start= {{x: 0, y: 1}}
-          end={{x: 0.6, y:0.4}}
-          colors={[Colors.accent,'#FADBD8',]} 
+          end={{x: 0.7, y:0.3}}
+          colors={[Colors.accent,Colors.lightGradient,]} 
           style={styles.linearGradient}>
         </LinearGradient>
 

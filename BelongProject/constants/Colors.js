@@ -15,5 +15,6 @@ export const Colors = {
   message: '#38A6E1',
   buttongen: '#D84E4E',
   unselectedTop: '#F3F1F1',
-  formbg: '#F5F0F0'
+  formbg: '#F5F0F0',
+  lightGradient: '#FAF2F2'
 };

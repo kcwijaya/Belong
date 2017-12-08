@@ -56,7 +56,7 @@ export default class MessageScreen extends Component {
         </Left>
         <Body>
           <TouchableHighlight onPress={() => this.props.navigation.navigate("ProfilePage", this.props.navigation.state.params)}>
-            <Title color={Colors.accent}>{this.props.navigation.state.params.name.split(' ')[0]}</Title>
+            <Title style={{fontWeight: '300'}} color={Colors.accent}>{this.props.navigation.state.params.name.split(' ')[0]}</Title>
           </TouchableHighlight>
         </Body>
         <Right></Right>
