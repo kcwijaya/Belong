@@ -30,8 +30,8 @@ export default class ProfilePage extends Component {
   });
 
   isSaved = () => {
-    for (i = 0; i < global.peers.length; i++) {
-      if (global.peers[i].user_id = this.props.navigation.state.params.user_id) {
+    for (var i = 0; i < global.peers.length; i++) {
+      if (global.peers[i].user_id == this.props.navigation.state.params.user_id) {
         return true
       }
     }
@@ -59,7 +59,7 @@ export default class ProfilePage extends Component {
       <ScrollView style={styles.ccontainer}> 
         <ProfilePicture source={this.props.navigation.state.params.img} />
         <View style={styles.nameContainer}>
-        <Text style={styles.name}> {this.props.navigation.state.params.name.split(' ')[0] + "  " + this.props.navigation.state.params.name.split(' ')[1] } </Text>
+        <Text style={styles.name}> {this.props.navigation.state.params.name.split(' ')[0]} </Text>
         <MentorSummary
         location={this.props.navigation.state.params.location}
         about={this.props.navigation.state.params.about}

@@ -26,7 +26,7 @@ export default class MentorSummary extends Component {
 
   isSaved = () => {
     for (i = 0; i < global.peers.length; i++) {
-      if (global.peers[i].user_id = this.props.profile.user_id) {
+      if (global.peers[i].user_id == this.props.profile.user_id) {
         return true
       }
     }
@@ -34,17 +34,24 @@ export default class MentorSummary extends Component {
   }
 
   handlePeer = () => {
-    if (!this.state.saved) {
+    if (!this.isSaved()) {
       global.functions.addPeer(this.props.profile)
       this.state.saved = true
     } else {
-       global.functions.removePeer(this.props.profile)
+       global.functions.removePeer(this.props.profile.user_id)
        this.state.saved = false
     }
     this.forceUpdate()
   }
 
+  getName =  () => {
+    if (!this.isSaved()) {
+      return 'ios-add-circle-outline'
+    } else {
+       return 'ios-remove-circle-outline'
+    }
 
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -58,7 +65,7 @@ export default class MentorSummary extends Component {
 
           <Col> 
               <TouchableOpacity onPress={() => {this.handlePeer()}}>
-                <Icon size={40} color={Colors.accent} name={this.state.saved ? 'ios-remove-circle-outline' : 'ios-add-circle-outline'}/>
+                <Icon size={40} color={Colors.accent} name={this.getName()}/>
               </TouchableOpacity> 
           </Col> 
         </Row> 
