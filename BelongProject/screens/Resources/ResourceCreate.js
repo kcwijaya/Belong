@@ -121,6 +121,7 @@ export default class ResourceCreate extends Component {
       closeHours: this.state.closedHours
     }
 
+    console.log(resource)
     this.props.navigation.navigate("ResourcesHome");
   }
 

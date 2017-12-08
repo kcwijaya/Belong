@@ -31,7 +31,7 @@ export default class QAHome extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <PlusIcon style={{bottom:20}}/>
+        <PlusIcon style={{bottom:20}} onPress={() => {this.props.navigation.navigate("CreateQuestion")}}/>
         <Search/>
         <QAListingView 
           questions={global.questions}
