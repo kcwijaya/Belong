@@ -33,6 +33,11 @@ export default class ResourcesHome extends Component {
       header: null
   });    
 
+  handler(){
+    this.forceUpdate()
+  }
+
+
 
   render () {
        return (

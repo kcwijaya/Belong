@@ -25,7 +25,12 @@ export default class ResourceDetails extends Component {
     header: null
   });
 
+  // console.log("IN RESOURCEDETAILS")
+  // console.log(this.props.navigation.state.params)
+
   render() {
+    console.log("RD")
+    console.log(this.props.navigation.state.params)
     return (
       <View style={styles.container}> 
         <Icon onPress={() => {this.props.navigation.goBack()}} size={30} name="chevron-left" style={styles.back} color={Colors.accent}/>
@@ -33,8 +38,10 @@ export default class ResourceDetails extends Component {
       <ScrollView>
        <ResourceTitle 
           name={this.props.navigation.state.params.name}
+          update = {this.props.navigation.state.params.update}
           //_id = {this.props.navigation.state.params.resource_id}
           info = {this.props.navigation.state.params}
+          //toUpdate = {this}
         />
         <Hr />
         <ResourceOverview

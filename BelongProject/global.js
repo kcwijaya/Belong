@@ -511,11 +511,8 @@ global.functions = {
 		global.messages[id] = {'messages': messages};
 },
 
-	addBookmark: function(info) {
-		//console.log("MADE IT HERE!");
-		//console.log(_id, name);
+	addBookmark: function(info, toUpdate) {
 
-		console.log(info)
 		var inside = false
 		var index = -1
 		for (x in global.bookmarks){
@@ -526,35 +523,10 @@ global.functions = {
 			}
 		}
 		if (inside == true){
-			console.log('TRUE')
-			console.log(index)
 			global.bookmarks.splice(index, 1)
 		} else {
 			global.bookmarks.push(info)
 		}
-
-
-		// for (x in global.foodBanks){
-		// 	bank = global.foodBanks[x]
-		// 	if (bank.resource_id==_id && bank.name == name){
-		// 		if(global.bookmarks.indexOf(bank) == -1){
-		// 			global.bookmarks.push(bank)
-		// 		} else{
-		// 			console.log(x)
-		// 			global.bookmarks.splice(x, 1)
-		// 		}
-		// 	}
-		// }
-		// for (y in global.homeShelters){
-		// 	shelter = global.homeShelters[y]
-		// 	if (shelter.resource_id==_id && shelter.name == name ){
-		// 		if(global.bookmarks.indexOf(shelter) == -1){
-		// 			global.bookmarks.push(shelter)
-		// 		} else{
-		// 			global.bookmarks.splice(y, 1)
-		// 		}
-		// 	}
-		// }
 		console.log(global.bookmarks)
 		//toUpdate.forceUpdate()
 	}

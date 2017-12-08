@@ -16,7 +16,10 @@ import { Col, Row, Grid } from "react-native-easy-grid";
 const deviceW = Dimensions.get('window').width
 
 export default class ResourceTitle extends Component {
+
 	render() {
+		console.log('final')
+		console.log(this.props.update)
 		return (
 		<Grid style={styles.container}>
           <Row> 
@@ -28,7 +31,7 @@ export default class ResourceTitle extends Component {
             <Col size={20}>
             	<TouchableOpacity onPress={() => {
             		global.functions.addBookmark(this.props.info);
-            		this.forceUpdate()
+            		this.props.update;
             	}}> 
                		<Icon size={25} style={styles.bookmark} name="bookmark" color='white'/>
             	</TouchableOpacity>

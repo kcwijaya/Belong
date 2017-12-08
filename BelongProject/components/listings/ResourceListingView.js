@@ -28,6 +28,7 @@ export default class ResourceListingView extends Component {
                   ResourceInfo={resourceArray[i]} 
                   key={resourceArray[i].resource_id}
                   navigation={this.props.navigation}
+                  update = {this.props.update}
                 /> 
             </Col>
             <Col style={styles.secondColumn}> 
@@ -36,6 +37,7 @@ export default class ResourceListingView extends Component {
                   ResourceInfo={resourceArray[i+1]} 
                   key={resourceArray[i+1].resource_id}
                   navigation={this.props.navigation}
+                  update = {this.props.update}
                 />  
             }
             </Col>

@@ -19,7 +19,8 @@ export default class ResourcesBookmarks extends Component {
   constructor(){
     super();
     this.state = {
-      showSearch: false
+      showSearch: false,
+      sources: global.bookmarks
     }
     this.toggleSearch = this.toggleSearch.bind(this);
   }
@@ -28,12 +29,23 @@ export default class ResourcesBookmarks extends Component {
     header: null
   });
 
+
+  handler(){
+    this.setState({showSearch: this.state.showSearch, sources: global.bookmarks})
+    this.forceUpdate()
+  }
+
+
   render() {
+    //this.forceUpdate()
     return (
       <View style = {styles.container}>
         <ResourceListingView
-          resources={global.bookmarks}
+          resources={this.state.sources}
           navigation={this.props.navigation}
+          update = {this.handler.bind(this)}
+
+          //toUpdate = {this}
         />
       </View>
     )

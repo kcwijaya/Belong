@@ -20,8 +20,11 @@ export default class ResourceCard extends Component {
 		super(props);
 	}
 	render() {
-		var ResourceInfo = this.props.ResourceInfo;
+		var ResourceInfo = this.props.ResourceInfo
+		ResourceInfo.update = this.props.update
 		ResourceInfo.navigation = this.props.navigation;
+		console.log('RC')
+		console.log(ResourceInfo)
 		return (
 			<View style={styles.container}>
 				<TouchableHighlight onPress={() => this.props.navigation.navigate('ResourceDetails', ResourceInfo)}>
