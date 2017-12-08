@@ -12,7 +12,7 @@ global.userInfo = {
     phone:'650-598-7301',
     specialties:'study spaces',
     school:'Gunn High School',
-    age: '',
+    age: 18,
     about:'I love to bike ride and find cool cafes to study in. Ask me about coffee, bringing up difficult issues with your classmates, and coding!',
     notifications: false,
     location: false,
@@ -833,12 +833,7 @@ global.functions = {
 		//console.log("ADDED BOOKMARK!");
 		//console.log(global.bookmarks);
 },
-// 	addQuestion: function(temp) {
-// 		global.numQuestions = global.numQuestions + 1
-// 		global.questions.push(temp);
-// 		//console.log("ADDED QUESTION!");
-// 		//console.log(global.numQuestions);
-// },
+
 	addAnswer: function(temp) {
 		global.foodBanks.push(temp);
 		//console.log("ADDED!");
@@ -867,7 +862,8 @@ global.functions = {
 				index = i
 			}
 		}
-
+        
+        console.log("BOOKMARK IT")
         console.log(global.bookmarks)
         console.log(inside)
         console.log(info)

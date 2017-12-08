@@ -38,7 +38,7 @@ export default class ResourcesHome extends Component {
     this.forceUpdate()
   }
 
-    changeData = (results) => {
+  changeData = (results) => {
     console.log("new DAT")
     console.log(results)
     this.state.data = results
@@ -50,8 +50,11 @@ export default class ResourcesHome extends Component {
     this.forceUpdate()
   }
 
-
+  componentDidMount(){
+    this.forceUpdate();
+  }
   render () {
+      
        return (
           <View style={styles.container}>
               <PlusIcon style={{bottom: 10}} onPress={()=> this.props.navigation.navigate('ResourceCreate')}/>

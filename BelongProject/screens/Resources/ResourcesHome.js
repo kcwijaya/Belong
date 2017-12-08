@@ -43,6 +43,7 @@ const ResourcesTabNav = TabNavigator({
 {
   tabBarPosition: 'top',
   animationEnabled: false,
+  //screenProps: false,
   tabBarOptions: {
     activeTintColor: Colors.accent,
     activeBackgroundColor: Colors.white, 

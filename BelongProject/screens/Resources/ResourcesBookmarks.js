@@ -49,8 +49,8 @@ export default class ResourcesBookmarks extends Component {
   }
 
 
+
   render() {
-    console.log("rerender")
     return (
       <View style = {styles.container}>
 
