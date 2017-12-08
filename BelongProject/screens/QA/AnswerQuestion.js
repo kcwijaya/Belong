@@ -70,7 +70,7 @@ export default class AnswerQuestion extends Component {
       <View style={styles.questionContainer} >
         <Text style={styles.question}> Answers </Text>
       <AnswerListingView 
-        answers={global.answers}
+        answers={global.functions.getAnswers(this.props.navigation.state.params)}
         navigation={this.props.navigation}
         />
       </View>

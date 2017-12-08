@@ -428,7 +428,18 @@ global.QtoU = {
 
 
 
+
+
+
+
+
 global.answers = {
+    'start': [{
+    answer: "Be the first to comment!",
+    user: "",
+    answer_id: 1,
+}],
+
   1: [{
     answer: "Here's is my answer!",
     user: "Kimberly Wijaya",
@@ -742,12 +753,12 @@ global.functions = {
 		//console.log("ADDED BOOKMARK!");
 		//console.log(global.bookmarks);
 },
-	addQuestion: function(temp) {
-		global.numQuestions = global.numQuestions + 1
-		global.questions.push(temp);
-		//console.log("ADDED QUESTION!");
-		//console.log(global.numQuestions);
-},
+// 	addQuestion: function(temp) {
+// 		global.numQuestions = global.numQuestions + 1
+// 		global.questions.push(temp);
+// 		//console.log("ADDED QUESTION!");
+// 		//console.log(global.numQuestions);
+// },
 	addAnswer: function(temp) {
 		global.foodBanks.push(temp);
 		//console.log("ADDED!");
@@ -840,7 +851,7 @@ global.functions = {
     },
 
     addQuestion: function(data) {
-        const  = global.nextID
+        const id = global.nextID
         final = {
             question: data.question,
             question_id: id,
@@ -856,8 +867,25 @@ global.functions = {
         global.questions.push(final)
 
 
-    }
+    },
 	
+    addAnswer: function(data) {
+        //global.foodBanks.push(temp);
+        console.log("ADDED!");
+        console.log(data);
+    },
+
+
+    getAnswers: function(data) {
+        //global.foodBanks.push(temp);
+        console.log("ADDED!");
+        console.log(data);
+        return global.answers['start']
+    },
+
+
+
+
 
 // 	addPeer: function(temp) {
 // 		global.foodBanks.push(temp);
