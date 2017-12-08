@@ -52,9 +52,9 @@ export default class SignUpAbout extends Component {
       <View style={styles.container}>
      
         <LinearGradient 
-          start= {{x: 0, y: 1}}
-          end={{x: 0.8, y:0.2}}
-          colors={[Colors.accent,'#FADBD8',]} 
+          start= {{x: 0.5, y: 1}}
+          end={{x: 1, y:0}}
+          colors={[Colors.accent,Colors.lightGradient,]} 
           style={styles.linearGradient}>
         </LinearGradient>
 
@@ -90,7 +90,6 @@ export default class SignUpAbout extends Component {
               containerStyle={styles.forminput}
               inputStyle={{color:Colors.accent}}
               ref={input => this.password = input}
-              secureTextEntry={true}
               onChangeText={(text) => this.setState({age: this.state.age, about_me: this.state.about_me, school: this.state.school, specialties: text})}
             />
 
@@ -99,7 +98,6 @@ export default class SignUpAbout extends Component {
               containerStyle={styles.forminput}
               inputStyle={{color:Colors.accent}}
               ref={input => this.password = input}
-              secureTextEntry={true}
               onChangeText={(text) => this.setState({age: this.state.age, about_me: this.state.about_me, school: text, specialties: this.state.specialties})}
             />
 
@@ -108,7 +106,6 @@ export default class SignUpAbout extends Component {
               containerStyle={styles.forminput}
               inputStyle={{color:Colors.accent}}
               ref={input => this.password = input}
-              secureTextEntry={true}
               onChangeText={(text) => this.setState({age: this.state.age, about_me: this.state.about_me, school: this.state.school, specialties: text})}
             />
           </View>
@@ -146,7 +143,8 @@ const styles = StyleSheet.create({
     bottom: 0, 
     right: 0, 
     left: 0,
-    position: 'absolute'
+    position: 'absolute',
+    backgroundColor: Colors.accent
   },
   container: {
     flex: 1,

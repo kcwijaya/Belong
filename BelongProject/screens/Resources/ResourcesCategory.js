@@ -122,7 +122,7 @@ export default class ResourcesBookmarks extends Component {
           </Button>
         </Left>
         <Body>
-          <Title color={Colors.accent}>{this.props.navigation.state.params.category}</Title>
+          <Title style={{fontWeight: '300'}} color={Colors.accent}>{this.props.navigation.state.params.category}</Title>
         </Body>
         <Right>
           <Button transparent onPress={() => this.toggleSearch()}>

@@ -19,6 +19,6 @@ export default (DrawNav = StackNavigator(
     SignUpPermissions: {screen: SignUpPermissions},
   },
   {
-    initialRouteName: 'InitialLogin'
+    initialRouteName: 'TabNavigation'
   }
 ));

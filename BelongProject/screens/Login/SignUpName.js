@@ -52,7 +52,7 @@ export default class SignUpName extends Component {
         <LinearGradient 
           start= {{x: 0, y: 1}}
           end={{x: 0.2, y:0.8}}
-          colors={[Colors.accent,'#FADBD8',]} 
+          colors={[Colors.accent, Colors.lightGradient,]} 
           style={styles.linearGradient}>
         </LinearGradient>
 
