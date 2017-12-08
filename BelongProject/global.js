@@ -7,7 +7,7 @@ global.foodBanks = [
     resource_id: 1,
     address: '1051 Bing St San Carlos, CA 94070',
     lat: 37.496094,
-    lon: -122.244577
+    lon: -122.244577,
     hours: '7AM-9PM',
     phone: '6504900437',
     about: 'Based in Silicon Valley, Second Harvest Food Bank of Santa Clara and San Mateo Counties is one of the largest food banks in the nation. Currently providing food to more than one quarter of a million people every month, Second Harvest is a trusted community-based organization that was founded in 1974. Despite the immense wealth in Silicon Valley, and partly due to the high cost of living, hunger and malnutrition are pervasive. The Food Bank distributes nutritious food, including more fresh produce than almost any other food bank in the country, through a network of 300 nonprofit partners at 905 sites. Second Harvest is pursuing innovative efforts to increase access to food resources as it seeks to feed an additional 100,000 hungry people each month. To reach more people, it connects those in need to federal nutrition programs and other food resources.',
@@ -64,7 +64,7 @@ global.foodBanks = [
     resource_id: 6,
     address: '555 Waverley St Palo Alto, CA 94301',
     lat: 37.446853,
-    lon: -122.159305
+    lon: -122.159305,
     hours: '7AM-9PM',
     phone: '6504900437',
     about: 'The food bank is located at All Saints Episcopal Church. This food program is designed to help families with children by assisting them in their weekly food needs. Adults who are unable to use the services of the Downtown Food Closet are also served, provided they have a referral. Referrals can be obtained from a social service agency, any church, or Urban Ministry. Emergency food service is available. Assistance is limited to families that live in Palo Alto except for special requests from specified agencies.',
@@ -75,7 +75,7 @@ global.foodBanks = [
     resource_id: 7,
     address: '750 Curtner Ave San Jose, CA 95125',
     lat: 37.291686,
-    lon: -121.877206
+    lon: -121.877206,
     hours: '7AM-9PM',
     phone: 6504900437,
     about: 'Based in Silicon Valley, Second Harvest Food Bank of Santa Clara and San Mateo Counties is one of the largest food banks in the nation. Currently providing food to more than one quarter of a million people every month, Second Harvest is a trusted community-based organization that was founded in 1974. Despite the immense wealth in Silicon Valley, and partly due to the high cost of living, hunger and malnutrition are pervasive. The Food Bank distributes nutritious food, including more fresh produce than almost any other food bank in the country, through a network of 300 nonprofit partners at 905 sites. Second Harvest is pursuing innovative efforts to increase access to food resources as it seeks to feed an additional 100,000 hungry people each month. To reach more people, it connects those in need to federal nutrition programs and other food resources.',
@@ -196,7 +196,7 @@ global.bookmarks = [
     resource_id: 1,
     address: '1051 Bing St San Carlos, CA 94070',
     lat: 37.496094,
-    lon: -122.244577
+    lon: -122.244577,
     hours: '7AM-9PM',
     phone: '6504900437',
     about: 'Based in Silicon Valley, Second Harvest Food Bank of Santa Clara and San Mateo Counties is one of the largest food banks in the nation. Currently providing food to more than one quarter of a million people every month, Second Harvest is a trusted community-based organization that was founded in 1974. Despite the immense wealth in Silicon Valley, and partly due to the high cost of living, hunger and malnutrition are pervasive. The Food Bank distributes nutritious food, including more fresh produce than almost any other food bank in the country, through a network of 300 nonprofit partners at 905 sites. Second Harvest is pursuing innovative efforts to increase access to food resources as it seeks to feed an additional 100,000 hungry people each month. To reach more people, it connects those in need to federal nutrition programs and other food resources.',
