@@ -2,7 +2,7 @@
 //START DB INITIALIZATION
 global.foodBanks = [
   {
-    name: "TESTPalo Alto Food Bank",
+    name: "Palo Alto Food Bank",
     img: require('./imgs/placeholders/resource.jpg'),
     resource_id: 1,
     address: '488 Winslow St Redwood City, CA 94019',
@@ -89,7 +89,7 @@ global.foodBanks = [
 
 global.homeShelters = [
   {
-    name: "TESTPalo Alto Home Shelter",
+    name: "Palo Alto Home Shelter",
     img: require('./imgs/placeholders/resource.jpg'),
     resource_id: 1,
     address: '488 Winslow St Redwood City, CA 94019',
@@ -175,41 +175,58 @@ global.homeShelters = [
 
 global.bookmarks = [
 	{
-    name: "TESTPalo Alto Food Bank",
-    img: require('./imgs/placeholders/resource.jpg'),
-    resource_id: 1,
-    address: '488 Winslow St Redwood City, CA 94019',
-    hours: '7AM-9PM',
-    phone: '6504900437',
-    about: 'The South Palo Alto Food Closet is a grocery program located at the Covenant Presbyterian Church. This food program is designed to help families with children by assisting them in their weekly food needs. Adults who are unable to use the services of the Downtown Food Closet are also served, provided they have a referral. Referrals can be obtained from a social service agency, any church, or Urban Ministry. Emergency food service is available. Assistance is limited to families that live in Palo Alto except for special requests from specified agencies.',
-  },
-  {
-    name: "Los Altos Food Bank",
-    img: require('./imgs/placeholders/resource.jpg'),
-    resource_id: 2,
-    address: '488 Winslow St Redwood City, CA 94019',
-    hours: '7AM-9PM',
-    phone: '6504900437',
-    about: 'The South Palo Alto Food Closet is a grocery program located at the Covenant Presbyterian Church. This food program is designed to help families with children by assisting them in their weekly food needs. Adults who are unable to use the services of the Downtown Food Closet are also served, provided they have a referral. Referrals can be obtained from a social service agency, any church, or Urban Ministry. Emergency food service is available. Assistance is limited to families that live in Palo Alto except for special requests from specified agencies.',
-  },
-  {
-    name: "TESTPalo Alto Home Shelter",
-    img: require('./imgs/placeholders/resource.jpg'),
-    resource_id: 1,
-    address: '488 Winslow St Redwood City, CA 94019',
-    hours: '7AM-9PM',
-    phone: '6504900437',
-    about: 'The South Palo Alto Food Closet is a grocery program located at the Covenant Presbyterian Church. This food program is designed to help families with children by assisting them in their weekly food needs. Adults who are unable to use the services of the Downtown Food Closet are also served, provided they have a referral. Referrals can be obtained from a social service agency, any church, or Urban Ministry. Emergency food service is available. Assistance is limited to families that live in Palo Alto except for special requests from specified agencies.',
-  },
-  {
-    name: "Los Altos Food Bank",
-    img: require('./imgs/placeholders/resource.jpg'),
-    resource_id: 2,
-    address: '488 Winslow St Redwood City, CA 94019',
-    hours: '7AM-9PM',
-    phone: '6504900437',
-    about: 'The South Palo Alto Food Closet is a grocery program located at the Covenant Presbyterian Church. This food program is designed to help families with children by assisting them in their weekly food needs. Adults who are unable to use the services of the Downtown Food Closet are also served, provided they have a referral. Referrals can be obtained from a social service agency, any church, or Urban Ministry. Emergency food service is available. Assistance is limited to families that live in Palo Alto except for special requests from specified agencies.',
-  }
+	  name: "Redwood City Food Bank",
+	  img: require('./imgs/placeholders/resource.jpg'),
+	  resource_id: 4,
+	  address: '488 Winslow St Redwood City, CA 94019',
+	  hours: '7AM-9PM',
+	  phone: '6504900437',
+	  about: 'The South Palo Alto Food Closet is a grocery program located at the Covenant Presbyterian Church. This food program is designed to help families with children by assisting them in their weekly food needs. Adults who are unable to use the services of the Downtown Food Closet are also served, provided they have a referral. Referrals can be obtained from a social service agency, any church, or Urban Ministry. Emergency food service is available. Assistance is limited to families that live in Palo Alto except for special requests from specified agencies.',
+	},
+	{
+	  name: "Santa Clara Food Bank",
+	  img: require('./imgs/placeholders/resource.jpg'),
+	  resource_id: 5,
+	  address: '488 Winslow St Redwood City, CA 94019',
+	  hours: '7AM-9PM',
+	  phone: '6504900437',
+	  about: 'The South Palo Alto Food Closet is a grocery program located at the Covenant Presbyterian Church. This food program is designed to help families with children by assisting them in their weekly food needs. Adults who are unable to use the services of the Downtown Food Closet are also served, provided they have a referral. Referrals can be obtained from a social service agency, any church, or Urban Ministry. Emergency food service is available. Assistance is limited to families that live in Palo Alto except for special requests from specified agencies.',
+	},
+	{
+	  name: "Los Gatos Food Bank",
+	  img: require('./imgs/placeholders/resource.jpg'),
+	  resource_id: 6,
+	  address: '488 Winslow St Redwood City, CA 94019',
+	  hours: '7AM-9PM',
+	  phone: '6504900437',
+	  about: 'The South Palo Alto Food Closet is a grocery program located at the Covenant Presbyterian Church. This food program is designed to help families with children by assisting them in their weekly food needs. Adults who are unable to use the services of the Downtown Food Closet are also served, provided they have a referral. Referrals can be obtained from a social service agency, any church, or Urban Ministry. Emergency food service is available. Assistance is limited to families that live in Palo Alto except for special requests from specified agencies.',
+	},
+	{
+	  name: "Mountain View Food Bank",
+	  img: require('./imgs/placeholders/resource.jpg'),
+	  resource_id: 7,
+	  address: '488 Winslow St Redwood City, CA 94019',
+	  hours: '7AM-9PM',
+	  phone: 6504900437,
+	  about: 'The South Palo Alto Food Closet is a grocery program located at the Covenant Presbyterian Church. This food program is designed to help families with children by assisting them in their weekly food needs. Adults who are unable to use the services of the Downtown Food Closet are also served, provided they have a referral. Referrals can be obtained from a social service agency, any church, or Urban Ministry. Emergency food service is available. Assistance is limited to families that live in Palo Alto except for special requests from specified agencies.',
+	},
+	{
+	  name: "Sunnyvale Food Bank",
+	  img: require('./imgs/placeholders/resource.jpg'),
+	  resource_id: 8,
+	  hours: '7AM-9PM',
+	  phone: '6504900437',
+	  about: 'The South Palo Alto Food Closet is a grocery program located at the Covenant Presbyterian Church. This food program is designed to help families with children by assisting them in their weekly food needs. Adults who are unable to use the services of the Downtown Food Closet are also served, provided they have a referral. Referrals can be obtained from a social service agency, any church, or Urban Ministry. Emergency food service is available. Assistance is limited to families that live in Palo Alto except for special requests from specified agencies.',
+	},
+	{
+	  name: "San Jose Food Bank",
+	  img: require('./imgs/placeholders/resource.jpg'),
+	  resource_id: 9,
+	  address: '488 Winslow St Redwood City, CA 94019',
+	  hours: '7AM-9PM',
+	  phone: '6504900437',
+	  about: 'The South Palo Alto Food Closet is a grocery program located at the Covenant Presbyterian Church. This food program is designed to help families with children by assisting them in their weekly food needs. Adults who are unable to use the services of the Downtown Food Closet are also served, provided they have a referral. Referrals can be obtained from a social service agency, any church, or Urban Ministry. Emergency food service is available. Assistance is limited to families that live in Palo Alto except for special requests from specified agencies.',
+	}
 ];
 
 
@@ -217,7 +234,7 @@ global.bookmarks = [
 global.numQuestions = 9
 global.questions = [
   {
-    question: "TESTWhere's the best shelter around Sunnyvale?",
+    question: "Where's the best shelter around Sunnyvale?",
     question_id: 1,
     details: "Here are all the details of this question. Here are all the details of this question. Here are all the details of this question. Here are all the details of this question.",
     user: "Kimberly Wijaya",
@@ -280,7 +297,7 @@ global.questions = [
 
 global.answers = [
   {
-    answer: "TESTere's is my answer!",
+    answer: "Here's is my answer!",
     user: "Kimberly Wijaya",
     answer_id: 1,
   },
@@ -458,54 +475,63 @@ global.functions = {
     addFood: function(temp) {
 		global.foodBanks.push(temp);
 		//console.log("ADDED FOOD!");
-		console.log(global.foodBanks);
+		//console.log(global.foodBanks);
 },
     addShelter: function(temp) {
 		global.homeShelters.push(temp);
 		//console.log("ADDED SHELTER!");
-		console.log(global.foodBanks)
+		//console.log(global.foodBanks)
 },
 	addBookmark: function(temp) {
 		//key = {temp.bookmarks}
 		global.bookmarks.push(temp);
 		//console.log("ADDED BOOKMARK!");
-		console.log(global.bookmarks);
+		//console.log(global.bookmarks);
 },
 	addQuestion: function(temp) {
 		global.numQuestions = global.numQuestions + 1
 		global.questions.push(temp);
 		//console.log("ADDED QUESTION!");
-		console.log(global.numQuestions);
+		//console.log(global.numQuestions);
 },
 	addAnswer: function(temp) {
 		global.foodBanks.push(temp);
 		//console.log("ADDED!");
-		console.log(global.foodBanks);
+		//console.log(global.foodBanks);
 },
 	getMessages: function(id) {
-		console.log('get messages:')
-		console.log(id==1)
-		// if (Object.keys(global.messages).indexOf(id) > -1) {
 		if (global.messages[id]) {
-			console.log('found exiting messages')
-			console.log(global.messages)
 			return global.messages[id]
 		} else {
-			console.log('returning start')
-			console.log(global.messages)
 			return global.messages['start']
-
 		}
 
-		//return global.messages['all']
-		//global.foodBanks.push(temp);
-		//console.log("ADDED!");
-		console.log(global.foodBanks);
+
 }, 	addMessage: function(messages, id) {
 		global.messages[id] = {'messages': messages};
-		console.log("ADDED!");
-		console.log(global.messages[id]);
-}
+},
+
+	addBookmark: function(_id, name, toUpdate) {
+		//console.log("MADE IT HERE!");
+		//console.log(_id, name);
+		for (x in global.foodBanks){
+			bank = global.foodBanks[x]
+			//console.log(bank)
+			if (bank.resource_id==_id && bank.name == name && global.bookmarks.indexOf(bank) == -1 ){
+				//console.log("ADDING NEW BOOKMARK FROM BANKS")
+				global.bookmarks.push(bank)
+			}
+		}
+		for (y in global.homeShelters){
+			shelter = global.homeShelters[y]
+			if (shelter.resource_id==_id && shelter.name == name && global.bookmarks.indexof(bank) == -1 ){
+				//console.log("ADDING NEW BOOKMARK FROM SHELTERS")
+				global.bookmarks.push(shelter)
+			}
+		}
+		//console.log(global.bookmarks)
+		//toUpdate.forceUpdate()
+	}
 	
 // 	addUser: function(temp) {
 // 		global.foodBanks.push(temp);

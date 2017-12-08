@@ -20,7 +20,7 @@ export default class ResourceListingView extends Component {
 	render() {
     var resourceArray = [].concat(this.props.resources);
     var componentArray = [];
-    for(let i = 0; i < resourceArray.length; i++){
+    for(let i = 0; i < resourceArray.length; i+=2){
         componentArray.push(
           <Row key={i} style={styles.row}>
             <Col style={styles.firstColumn}>
