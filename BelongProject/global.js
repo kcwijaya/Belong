@@ -426,9 +426,9 @@ global.QtoU = {
     4: 6,
     5: 8,
     6: 9,
-    7: 9,
-    8: 9,
-    9: 9,
+    7: 10,
+    8: 11,
+    9: 12,
 };
 
 
@@ -716,7 +716,23 @@ global.users = [
     name: "Robert Wilkins",
     img: require('./imgs/placeholders/user.jpg'),
     user_id: 9,
-  }
+  },
+  {
+    name: "Salvador Rodriguez",
+    img: require('./imgs/placeholders/user.jpg'),
+    user_id: 10,
+  },
+  {
+    name: "Nick Romanov",
+    img: require('./imgs/placeholders/user.jpg'),
+    user_id: 11,
+  },
+  {
+    name: "Christian Brown",
+    img: require('./imgs/placeholders/user.jpg'),
+    user_id: 12,
+  },
+
 ];
 
 
@@ -851,7 +867,34 @@ global.functions = {
         console.log(message)
         console.log(id)
 		global.messages[id] = {'messages': messages};
-        global.haveMessaged[id-1].message = message[0].text
+        entry = undefined
+        for (x in global.haveMessaged){
+                person = global.haveMessaged[x]
+                if (person.user_id == id){
+                    entry = x
+                }
+        }
+        if (entry != undefined) {
+            global.haveMessaged[entry].message = message[0].text
+        } else {
+            var name = "ERROR"
+            for (x in global.users){
+                person = global.users[x]
+                if (person.user_id == id){
+                    name = person.name
+                }
+            }
+            final =   {
+                name: name,
+                img: require('./imgs/placeholders/user.jpg'),
+                user_id: id-1,
+                message: "It's so nice to meet you",
+                is_saved: true,
+            },
+            global.haveMessaged[[id-1]] = final
+        }
+        var first = global.haveMessaged[[id-1]];
+        global.haveMessaged.sort(function(x,y){ return x == first ? -1 : y == first ? 1 : 0; });
 },
 
 	addBookmark: function(info, toUpdate) {
@@ -984,16 +1027,16 @@ global.functions = {
             votes: 0
         }
         global.AtoU[global.nextID] = global.userInfo.user_id
-        global.answers[data.question_id].push(final)
-        console.log(data);
-        console.log(answered)
+        if (global.answers[data.question_id]){
+            global.answers[data.question_id].push(final)
+        } else {
+            global.answers[data.question_id] = [final]
+        }
         global.nextID = global.nextID + 1
     },
 
 
     getAnswers: function(data) {
-        console.log("ADDED!");
-        console.log(data);
         if (global.answers[data.question_id]) {
             return global.answers[data.question_id]
         } else {
@@ -1013,7 +1056,6 @@ global.functions = {
 
 
 	addPeer: function(data) {
-        console.log(data)
         var fullName = data.name
         for (x in global.users){
             if (global.users[x].user_id == data.user_id){
@@ -1027,27 +1069,19 @@ global.functions = {
             user_id: data.user_id,
         }
         global.peers.push(final)
-		console.log("ADDING PEER!");
-        console.log(global.peers)
         global.nextID = global.nextID + 1
 },
 
     removePeer: function(id) {
-        console.log(global.peers)
-        console.log(id)
         for (x in global.peers){
             person = global.peers[x]
             if (person.user_id == id){
                 global.peers.splice(x, 1)
             }
         }
-        console.log("REMOVING PEER!");
-        console.log(global.peers)
     },
 
     getUserInfo: function(data) {
-        console.log("GETTING DATA!");
-        console.log(data)
         return {
             img: require('./imgs/placeholders/user.jpg'),
             name: data.user,
