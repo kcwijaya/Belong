@@ -13,7 +13,7 @@ import QA from '../screens/QA/index.js'
 import Resources from '../screens/Resources/index.js'
 import Map from '../screens/Map/index.js'
 import People from '../screens/People/index.js'
-import Settings from '../screens/Settings/SettingsHome.js'
+import Settings from '../screens/Settings/index.js'
 import {Dimensions} from 'react-native';
 const deviceW = Dimensions.get('window').width
 const basePx = 375

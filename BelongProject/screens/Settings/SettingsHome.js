@@ -74,8 +74,16 @@ signEmOut = () => {
     return (
 
       <View style={styles.container}>
+
         <Header>
+           <Left>
+          <Button transparent onPress={() => this.props.navigation.goBack()}>
+            <Icon size={20} name="chevron-left" color={Colors.accent}/>
+          </Button>
+        </Left>
+        <Body>
           <Title style={{fontWeight: '300', marginTop: 5}} color={Colors.accent}>Settings</Title>
+        </Body>
         </Header>
 
         <View style={styles.optionContainer}> 

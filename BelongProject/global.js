@@ -13,9 +13,10 @@ global.userInfo = {
     specialties:'study spaces',
     school:'Gunn High School',
     age: 18,
-    about:'I love to bike ride and find cool cafes to study in. Ask me about coffee, bringing up difficult issues with your classmates, and coding!',
+    about:'I love to bike ride and to code!',
     notifications: false,
     location: false,
+    img: require('./imgs/placeholders/user.jpg'),
     nameShare: true,
     schoolShare: true,
     ageShare: true,
@@ -1123,6 +1124,9 @@ global.functions = {
 
     updateLocationShare: function(val) {
         global.userInfo.location = val
+    },
+    updateUserInfo: function(data) {
+        global.userInfo = data
     }
 
 
