@@ -1006,7 +1006,9 @@ global.functions = {
             details: data.details,
             user: "Anonymous",
         };
-        if (data.visibility == 0. && global.nameShare == true){
+        // console.log('DATA VISIBILITY')
+        // console.log(data.visibility)
+        if (data.visibility == 0 && global.userInfo.nameShare == true){
             final.user = global.userInfo.firstName
         }
 
@@ -1023,9 +1025,12 @@ global.functions = {
         console.log("ADDED!");
         const final = {
             answer: answered,
-            user: global.userInfo.firstName,
+            user: 'Anonymous',
             answer_id: global.nextID,
             votes: 0
+        }
+        if (global.userInfo.nameShare == true){
+            final.user = global.userInfo.firstName
         }
         global.AtoU[global.nextID] = global.userInfo.user_id
         if (global.answers[data.question_id]){
